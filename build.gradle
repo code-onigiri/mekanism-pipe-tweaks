@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'net.neoforged.moddev' version '2.0.148'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
 
 version = mod_version
@@ -10,13 +10,21 @@ base {
     archivesName = mod_id
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 
 repositories {
     mavenCentral()
-    // Mod dependencies resolve from CurseForge Maven.
+    // Mekanism publishes its own 1.20.1 builds (1.20.1-10.4.x) to its maven.
+    maven {
+        name = 'Mekanism'
+        url = 'https://modmaven.dev'
+        content {
+            includeGroup 'mekanism'
+        }
+    }
+    // Fallback for any CurseForge-only mod dependency.
     maven {
         name = 'CurseForge'
         url = 'https://cursemaven.com'
@@ -26,48 +34,54 @@ repositories {
     }
 }
 
-neoForge {
-    version = neoforge_version
+dependencies {
+    minecraft "net.minecraftforge:forge:${forge_version}"
+    // Mekanism 10.4.16 for Minecraft 1.20.1 (Forge build; verified from its META-INF/mods.toml).
+    compileOnly fg.deobf('mekanism:Mekanism:1.20.1-10.4.16.80')
+    runtimeOnly fg.deobf('mekanism:Mekanism:1.20.1-10.4.16.80')
+}
+
+minecraft {
+    mappings channel: 'official', version: minecraft_version
 
     runs {
         client {
-            client()
-            gameDirectory = project.file('run-test-client')
-            jvmArgument '-Dmpt.autotest=true'
-            programArguments.addAll '--quickPlayMultiplayer', '127.0.0.1:25565', '--width', '1280', '--height', '720'
+            workingDirectory project.file('run-test-client')
+            jvmArg '-Dmpt.autotest=true'
+            args '--quickPlayMultiplayer', '127.0.0.1:25566', '--width', '1280', '--height', '720'
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
         }
         server {
-            server()
-            gameDirectory = project.file('run-test-server')
-            programArgument '--nogui'
+            workingDirectory project.file('run-test-server')
+            args '--nogui'
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
         }
         data {
-            data()
-            gameDirectory = project.file('run-data')
-            programArguments.addAll '--mod', mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
-        }
-    }
-
-    mods {
-        "${mod_id}" {
-            sourceSet sourceSets.main
+            workingDirectory project.file('run-data')
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
         }
     }
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-dependencies {
-    // Mekanism 10.7.x for Minecraft 1.21.1 (CurseForge file id pinned for reproducibility).
-    implementation 'curse.maven:mekanism-268560:7904058'
-    // TEMPORARY verification dependency: the fake addon under test.
-    runtimeOnly files('/home/hatch/workspace/mpt-fake-addon/build/libs/mpt_fake_addon-1.0.0.jar')
-}
-
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
             minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
-            neoforge_version: neoforge_version, neoforge_version_range: neoforge_version_range,
+            forge_version: forge_version, forge_version_range: forge_version_range,
             loader_version_range: loader_version_range,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description,
@@ -75,7 +89,7 @@ tasks.named('processResources', ProcessResources).configure {
     ]
     inputs.properties replaceProperties
 
-    filesMatching(['META-INF/neoforge.mods.toml', 'pack.mcmeta']) {
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties + [project: project]
     }
 }
@@ -99,4 +113,9 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+// ForgeGradle creates the run tasks lazily; forward the console so scripts can drive them.
+tasks.withType(JavaExec).configureEach {
+    standardInput = System.in
 }

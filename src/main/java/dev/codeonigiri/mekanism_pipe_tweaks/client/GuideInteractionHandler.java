@@ -1,14 +1,14 @@
 package dev.codeonigiri.mekanism_pipe_tweaks.client;
 
-import dev.codeonigiri.mekanism_pipe_tweaks.network.CycleSidePayload;
-import dev.codeonigiri.mekanism_pipe_tweaks.network.PlaceTransmitterPayload;
+import dev.codeonigiri.mekanism_pipe_tweaks.network.CycleSideMessage;
+import dev.codeonigiri.mekanism_pipe_tweaks.network.ModNetwork;
+import dev.codeonigiri.mekanism_pipe_tweaks.network.PlaceTransmitterMessage;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.bus.api.EventPriority;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.neoforged.neoforge.network.PacketDistributor;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public final class GuideInteractionHandler {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -29,16 +29,16 @@ public final class GuideInteractionHandler {
             }
             event.setCanceled(true);
             event.setCancellationResult(InteractionResult.SUCCESS);
-            PacketDistributor.sendToServer(new CycleSidePayload(target.pos(), target.cell().side()));
+            ModNetwork.CHANNEL.sendToServer(new CycleSideMessage(target.pos(), target.cell().side()));
             return;
         }
-        PlaceTransmitterPayload payload = placementPayload(target, event.getHand());
-        if (payload == null) {
+        PlaceTransmitterMessage message = placementMessage(target, event.getHand());
+        if (message == null) {
             return;
         }
         event.setCanceled(true);
         event.setCancellationResult(InteractionResult.SUCCESS);
-        PacketDistributor.sendToServer(payload);
+        ModNetwork.CHANNEL.sendToServer(message);
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -52,13 +52,13 @@ public final class GuideInteractionHandler {
         }
         // The vanilla ray can be a plain item use (air / entity) while the expanded ray still
         // points at a transmitter; intercept the placement in that case too.
-        PlaceTransmitterPayload payload = placementPayload(target, event.getHand());
-        if (payload == null) {
+        PlaceTransmitterMessage message = placementMessage(target, event.getHand());
+        if (message == null) {
             return;
         }
         event.setCanceled(true);
         event.setCancellationResult(InteractionResult.SUCCESS);
-        PacketDistributor.sendToServer(payload);
+        ModNetwork.CHANNEL.sendToServer(message);
     }
 
     /**
@@ -66,7 +66,7 @@ public final class GuideInteractionHandler {
      * click must fall through to vanilla. The centre cell is the clicked face itself, so it is
      * left to the vanilla placement path.
      */
-    private static PlaceTransmitterPayload placementPayload(GuideTarget target, InteractionHand hand) {
+    private static PlaceTransmitterMessage placementMessage(GuideTarget target, InteractionHand hand) {
         if (target.mode() != GuideTarget.Mode.PLACEMENT) {
             return null;
         }
@@ -74,6 +74,6 @@ public final class GuideInteractionHandler {
         if (cell.side() == target.face()) {
             return null;
         }
-        return new PlaceTransmitterPayload(target.pos(), cell.side(), target.face(), hand);
+        return new PlaceTransmitterMessage(target.pos(), cell.side(), target.face(), hand);
     }
 }

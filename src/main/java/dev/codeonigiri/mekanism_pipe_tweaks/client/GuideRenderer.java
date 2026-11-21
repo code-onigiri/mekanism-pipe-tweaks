@@ -18,10 +18,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.bus.api.EventPriority;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.client.event.RenderHighlightEvent;
-import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
+import net.minecraftforge.client.event.RenderHighlightEvent;
+import net.minecraftforge.client.event.RenderLevelStageEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public final class GuideRenderer {
     private static final double GRID_OFFSET = 0.002;
@@ -187,10 +187,11 @@ public final class GuideRenderer {
 
     private static void texturedVertex(VertexConsumer consumer, PoseStack.Pose pose, Vec3 position,
                                        float u, float v, int argb) {
-        consumer.addVertex(pose, (float) position.x, (float) position.y, (float) position.z)
-                .setColor(argb)
-                .setUv(u, v)
-                .setLight(LightTexture.FULL_BRIGHT);
+        consumer.vertex(pose.pose(), (float) position.x, (float) position.y, (float) position.z)
+                .color(argb)
+                .uv(u, v)
+                .uv2(LightTexture.FULL_BRIGHT)
+                .endVertex();
     }
 
     private static void addColoredQuad(VertexConsumer consumer, PoseStack.Pose pose, Vec3 centre,
@@ -206,7 +207,9 @@ public final class GuideRenderer {
     }
 
     private static void coloredVertex(VertexConsumer consumer, PoseStack.Pose pose, Vec3 position, int argb) {
-        consumer.addVertex(pose, (float) position.x, (float) position.y, (float) position.z).setColor(argb);
+        consumer.vertex(pose.pose(), (float) position.x, (float) position.y, (float) position.z)
+                .color(argb)
+                .endVertex();
     }
 
     private static int gridArgb() {

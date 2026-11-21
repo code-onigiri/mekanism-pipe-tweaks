@@ -1,0 +1,262 @@
+[23:21:46] watching run-test-client/logs/latest.log
+[23:23:09] marker: harness registration: enabled=true
+[23:23:09] marker: harness registered on the game bus
+[23:23:38] marker: waiting screen=ReceivingLevelScreen pos=(22.000, -60.000, 20.500)
+[23:23:38] marker: world_ready player=Dev pos=(22.000, -60.000, 20.500) level=minecraft:overworld
+[23:23:38] tp Dev 14.5 -60.0 22.6 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:23:38] marker: HOTBAR 0=mekanism:configurator 1=mekanism:basic_mechanical_pipe 2=mekanism:basic_universal_cable 3=mekanism:basic_pressurized_tube 4=mekanism:basic_thermodynamic_conductor 5=mekanism:basic_logistical_transporter 6=empty 7=empty 8=empty
+[23:23:40] marker: SETUP base
+[23:23:42] fill 8 -60 8 40 -48 28 minecraft:air -> Successfully filled 1 block(s)
+[23:23:42] fill 8 -61 8 40 -61 28 minecraft:smooth_stone -> Successfully filled 693 block(s)
+[23:23:42] setblock 14 -60 19 minecraft:stone -> Changed the block at 14, -60, 19
+[23:23:42] setblock 14 -60 20 minecraft:air -> Could not set the block
+[23:23:43] setblock 14 -60 21 minecraft:air -> Could not set the block
+[23:23:43] gamemode creative Dev -> 
+[23:23:44]   inventory: Dev has the following entity data: [{Slot: 0b, id: "mekanism:configurator", Count: 1b}, {Slot: 1b, id: "mekanism:basic_mechanical_pipe", Count: 64b}, {Slot: 2b, id: "mekanism:basic_universal_cable", Count: 64b}, {Slot: 3b, id: "mekanism:basic_pressurized_tube", Count: 64b}, {Slot: 4b, id: "mekanism:
+[23:23:45]   CHECK wall                 (14, -60, 19) minecraft:stone                        PRESENT
+[23:23:45]   base: anchor=(14, -60, 20), placed=(14, -60, 21)
+[23:23:45] marker: TP 14.500 -60.000 22.600
+[23:23:45] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:23:45] teleported to (14.500, -60.000, 22.600)
+[23:23:45] marker: SCENE setup hit=BLOCK pos=BlockPos{x=18, y=-60, z=18} face=south loc=(18.699, -59.235, 18.401) guide=n/a
+[23:23:45] marker: READBACK setup | BlockPos{x=14, y=-60, z=20} none | BlockPos{x=14, y=-60, z=21} none
+[23:23:46] marker: TP 14.500 -60.000 22.600
+[23:23:46] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:23:46] teleported to (14.500, -60.000, 22.600)
+[23:23:49] marker: CLICK scene=place-anchor #1 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=19} face=south loc=(14.500, -59.500, 20.000) guide=null item=mekanism:basic_mechanical_pipe rawBefore=null sneak=false -> SUCCESS
+[23:23:52] marker: SCENE place-anchor hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=up loc=(14.500, -59.250, 20.580) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=up col=1 row=0 mode=PLACEMENT
+[23:23:52] marker: READBACK place-anchor | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:23:52] marker: TP 12.200 -60.000 22.200
+[23:23:53] tp Dev 12.200 -60.000 22.200 -> Teleported Dev to 12.200000, -60.000000, 22.200000
+[23:23:53] teleported to (12.200, -60.000, 22.200)
+[23:23:55] marker: SCENE anchor-readback hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=west loc=(14.250, -59.378, 20.685) guide=null
+[23:23:55] marker: READBACK anchor-readback | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:23:55] marker: ANCHOR_RESULT block=mekanism:basic_mechanical_pipe allSidesNone=true ok=true
+[23:23:56] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-placement-anchor-all-none.png (1280x720)
+[23:23:56] marker: TP 12.800 -60.000 20.500
+[23:23:56] tp Dev 12.800 -60.000 20.500 -> Teleported Dev to 12.800000, -60.000000, 20.500000
+[23:23:56] teleported to (12.800, -60.000, 20.500)
+[23:23:59] marker: SCENE guide-configurator-mode hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=west loc=(14.250, -59.733, 20.500) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=west cell=west col=1 row=1 mode=CONFIGURATOR
+[23:23:59] marker: READBACK guide-configurator-mode | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:23:59] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-guide-configurator.png (1280x720)
+[23:24:00] marker: TP 12.800 -60.000 20.500
+[23:24:00] tp Dev 12.800 -60.000 20.500 -> Teleported Dev to 12.800000, -60.000000, 20.500000
+[23:24:00] teleported to (12.800, -60.000, 20.500)
+[23:24:03] marker: SCENE guide-configurator-corner hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=19} face=south loc=(14.800, -59.747, 20.000) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=west cell=east col=0 row=0 mode=CONFIGURATOR
+[23:24:03] marker: READBACK guide-configurator-corner | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:24:03] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-guide-configurator-corner-cell.png (1280x720)
+[23:24:03] marker: TP 12.800 -60.000 20.500
+[23:24:03] tp Dev 12.800 -60.000 20.500 -> Teleported Dev to 12.800000, -60.000000, 20.500000
+[23:24:03] teleported to (12.800, -60.000, 20.500)
+[23:24:06] marker: SCENE guide-placement-mode hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=west loc=(14.250, -59.733, 20.500) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=west cell=west col=1 row=1 mode=PLACEMENT
+[23:24:06] marker: READBACK guide-placement-mode | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:24:06] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-guide-placement.png (1280x720)
+[23:24:07] marker: TP 12.800 -60.000 20.500
+[23:24:07] tp Dev 12.800 -60.000 20.500 -> Teleported Dev to 12.800000, -60.000000, 20.500000
+[23:24:07] teleported to (12.800, -60.000, 20.500)
+[23:24:10] marker: SCENE guide-placement-corner hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=19} face=south loc=(14.800, -59.747, 20.000) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=west cell=east col=0 row=0 mode=PLACEMENT
+[23:24:10] marker: READBACK guide-placement-corner | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:24:10] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-guide-placement-corner-cell.png (1280x720)
+[23:24:10] marker: TP 14.500 -60.000 22.600
+[23:24:11] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:24:11] teleported to (14.500, -60.000, 22.600)
+[23:24:13] marker: CLICK scene=place-single-side #1 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=south loc=(14.500, -59.675, 20.750) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=PLACEMENT item=mekanism:basic_mechanical_pipe rawBefore=NONE sneak=false -> SUCCESS
+[23:24:16] marker: SCENE place-single-side hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=21} face=up loc=(14.500, -59.250, 21.357) guide=pos=MutableBlockPos{x=14, y=-60, z=21} face=up cell=up col=1 row=1 mode=PLACEMENT
+[23:24:16] marker: READBACK place-single-side | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NORMAL/NORMAL west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[23:24:17] marker: TP 12.200 -60.000 22.200
+[23:24:17] tp Dev 12.200 -60.000 22.200 -> Teleported Dev to 12.200000, -60.000000, 22.200000
+[23:24:17] teleported to (12.200, -60.000, 22.200)
+[23:24:20] marker: SCENE placement-readback hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=west loc=(14.250, -59.378, 20.685) guide=null
+[23:24:20] marker: READBACK placement-readback | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NORMAL/NORMAL west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[23:24:20] marker: PLACE_RESULT block=mekanism:basic_mechanical_pipe placedNorth=NORMAL anchorSouth=NORMAL placedOnlyNorth=true ok=true
+[23:24:20] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-placement-result.png (1280x720)
+[23:24:20] marker: TP 18.500 -60.000 24.500
+[23:24:21] tp Dev 18.500 -60.000 24.500 -> Teleported Dev to 18.500000, -60.000000, 24.500000
+[23:24:21] teleported to (18.500, -60.000, 24.500)
+[23:24:23] marker: SCENE overview hit=BLOCK pos=BlockPos{x=14, y=-60, z=20} face=down loc=(14.750, -59.336, 20.750) guide=null
+[23:24:23] marker: READBACK overview | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NORMAL/NORMAL west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[23:24:24] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-test-area-overview.png (1280x720)
+[23:24:24] marker: TP 14.500 -60.000 23.400
+[23:24:24] tp Dev 14.500 -60.000 23.400 -> Teleported Dev to 14.500000, -60.000000, 23.400000
+[23:24:24] teleported to (14.500, -60.000, 23.400)
+[23:24:27] marker: CLICK scene=cycle-centre-push #1 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=21} face=south loc=(14.500, -59.700, 21.750) guide=pos=MutableBlockPos{x=14, y=-60, z=21} face=south cell=south col=1 row=1 mode=CONFIGURATOR item=mekanism:configurator rawBefore=NONE sneak=true -> SUCCESS
+[23:24:27] marker: CLICK scene=cycle-centre-push #2 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=21} face=south loc=(14.500, -59.700, 21.750) guide=pos=MutableBlockPos{x=14, y=-60, z=21} face=south cell=south col=1 row=1 mode=CONFIGURATOR item=mekanism:configurator rawBefore=NONE sneak=true -> SUCCESS
+[23:24:30] marker: SCENE cycle-centre-push hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=21} face=south loc=(14.500, -59.700, 21.750) guide=pos=MutableBlockPos{x=14, y=-60, z=21} face=south cell=south col=1 row=1 mode=CONFIGURATOR
+[23:24:30] marker: READBACK cycle-centre-push | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NORMAL/NORMAL west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=PUSH/NONE west=NONE/NONE east=NONE/NONE
+[23:24:30] marker: CYCLE_RESULT centreSouth=PUSH ok=true
+[23:24:30] marker: TP 12.800 -60.000 21.500
+[23:24:31] tp Dev 12.800 -60.000 21.500 -> Teleported Dev to 12.800000, -60.000000, 21.500000
+[23:24:31] teleported to (12.800, -60.000, 21.500)
+[23:24:33] marker: SCENE cycle-push-shot hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=21} face=west loc=(14.250, -59.733, 21.500) guide=pos=MutableBlockPos{x=14, y=-60, z=21} face=west cell=west col=1 row=1 mode=CONFIGURATOR
+[23:24:33] marker: READBACK cycle-push-shot | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NORMAL/NORMAL west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=PUSH/NONE west=NONE/NONE east=NONE/NONE
+[23:24:34] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-cycle-push.png (1280x720)
+[23:24:34] marker: TP 14.500 -60.000 23.400
+[23:24:34] tp Dev 14.500 -60.000 23.400 -> Teleported Dev to 14.500000, -60.000000, 23.400000
+[23:24:34] teleported to (14.500, -60.000, 23.400)
+[23:24:37] marker: CLICK scene=cycle-top-pull #1 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=21} face=south loc=(14.500, -59.346, 21.750) guide=pos=MutableBlockPos{x=14, y=-60, z=21} face=south cell=up col=1 row=0 mode=CONFIGURATOR item=mekanism:configurator rawBefore=PUSH sneak=true -> SUCCESS
+[23:24:37] marker: CLICK scene=cycle-top-pull #2 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=21} face=south loc=(14.500, -59.346, 21.750) guide=pos=MutableBlockPos{x=14, y=-60, z=21} face=south cell=up col=1 row=0 mode=CONFIGURATOR item=mekanism:configurator rawBefore=PUSH sneak=true -> SUCCESS
+[23:24:37] marker: CLICK scene=cycle-top-pull #3 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=21} face=south loc=(14.500, -59.346, 21.750) guide=pos=MutableBlockPos{x=14, y=-60, z=21} face=south cell=up col=1 row=0 mode=CONFIGURATOR item=mekanism:configurator rawBefore=PUSH sneak=true -> SUCCESS
+[23:24:40] marker: SCENE cycle-top-pull hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=21} face=south loc=(14.500, -59.346, 21.750) guide=pos=MutableBlockPos{x=14, y=-60, z=21} face=south cell=up col=1 row=0 mode=CONFIGURATOR
+[23:24:40] marker: READBACK cycle-top-pull | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NORMAL/NORMAL west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} down=NONE/NONE up=PULL/NONE north=NORMAL/NORMAL south=PUSH/NONE west=NONE/NONE east=NONE/NONE
+[23:24:40] marker: TP 12.800 -60.000 21.500
+[23:24:40] tp Dev 12.800 -60.000 21.500 -> Teleported Dev to 12.800000, -60.000000, 21.500000
+[23:24:40] teleported to (12.800, -60.000, 21.500)
+[23:24:43] marker: SCENE mixed-state-guide hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=21} face=west loc=(14.250, -59.733, 21.500) guide=pos=MutableBlockPos{x=14, y=-60, z=21} face=west cell=west col=1 row=1 mode=CONFIGURATOR
+[23:24:43] marker: READBACK mixed-state-guide | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NORMAL/NORMAL west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} down=NONE/NONE up=PULL/NONE north=NORMAL/NORMAL south=PUSH/NONE west=NONE/NONE east=NONE/NONE
+[23:24:43] marker: MIXED_RESULT centre(south)=PUSH top(up)=PULL corner(north)=NORMAL left(west)=NONE ok=true
+[23:24:43] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-guide-mixed.png (1280x720)
+[23:24:44] marker: SETUP type mekanism:basic_mechanical_pipe
+[23:24:44] setblock 14 -60 20 mekanism:basic_mechanical_pipe -> Could not set the block
+[23:24:44] setblock 14 -60 21 minecraft:air -> Changed the block at 14, -60, 21
+[23:24:44]   CHECK type mekanism:basic_mechanical_pipe (14, -60, 20) mekanism:basic_mechanical_pipe         PRESENT
+[23:24:46] marker: TP 14.500 -60.000 22.600
+[23:24:46] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:24:46] teleported to (14.500, -60.000, 22.600)
+[23:24:49] marker: SCENE type-mechanical-pipe-setup hit=BLOCK pos=MutableBlockPos{x=16, y=-61, z=22} face=up loc=(16.236, -60.000, 22.600) guide=null
+[23:24:49] marker: READBACK type-mechanical-pipe-setup | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=NORMAL/NONE west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:24:50] marker: TP 14.500 -60.000 22.600
+[23:24:50] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:24:50] teleported to (14.500, -60.000, 22.600)
+[23:24:53] marker: CLICK scene=type-mechanical-pipe-cycle #1 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=south loc=(14.500, -59.675, 20.750) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=CONFIGURATOR item=mekanism:configurator rawBefore=NORMAL sneak=true -> SUCCESS
+[23:24:55] marker: SCENE type-mechanical-pipe-cycle hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=south loc=(14.500, -59.675, 20.750) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=CONFIGURATOR
+[23:24:55] marker: READBACK type-mechanical-pipe-cycle | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=PUSH/NONE west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:24:56] marker: TP 12.800 -60.000 20.500
+[23:24:56] tp Dev 12.800 -60.000 20.500 -> Teleported Dev to 12.800000, -60.000000, 20.500000
+[23:24:56] teleported to (12.800, -60.000, 20.500)
+[23:24:59] marker: SCENE type-mechanical-pipe-guide hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=west loc=(14.250, -59.733, 20.500) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=west cell=west col=1 row=1 mode=CONFIGURATOR
+[23:24:59] marker: READBACK type-mechanical-pipe-guide | BlockPos{x=14, y=-60, z=20} down=NONE/NONE up=NONE/NONE north=NONE/NONE south=PUSH/NONE west=NONE/NONE east=NONE/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:24:59] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-guide-type-mechanical-pipe.png (1280x720)
+[23:25:00] marker: SETUP type mekanism:basic_universal_cable
+[23:25:00] setblock 14 -60 20 mekanism:basic_universal_cable -> Changed the block at 14, -60, 20
+[23:25:00] setblock 14 -60 21 minecraft:air -> Could not set the block
+[23:25:00]   CHECK type mekanism:basic_universal_cable (14, -60, 20) mekanism:basic_universal_cable         PRESENT
+[23:25:02] marker: TP 14.500 -60.000 22.600
+[23:25:02] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:25:02] teleported to (14.500, -60.000, 22.600)
+[23:25:05] marker: SCENE type-universal-cable-setup hit=BLOCK pos=MutableBlockPos{x=16, y=-61, z=22} face=up loc=(16.236, -60.000, 22.600) guide=null
+[23:25:05] marker: READBACK type-universal-cable-setup | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:06] marker: TP 14.500 -60.000 22.600
+[23:25:06] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:25:06] teleported to (14.500, -60.000, 22.600)
+[23:25:09] marker: CLICK scene=type-universal-cable-cycle #1 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-61, z=20} face=up loc=(14.500, -60.000, 20.286) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=CONFIGURATOR item=mekanism:configurator rawBefore=null sneak=true -> SUCCESS
+[23:25:11] marker: SCENE type-universal-cable-cycle hit=BLOCK pos=MutableBlockPos{x=14, y=-61, z=20} face=up loc=(14.500, -60.000, 20.286) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=CONFIGURATOR
+[23:25:11] marker: READBACK type-universal-cable-cycle | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=PUSH/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:12] marker: TP 12.800 -60.000 20.500
+[23:25:12] tp Dev 12.800 -60.000 20.500 -> Teleported Dev to 12.800000, -60.000000, 20.500000
+[23:25:12] teleported to (12.800, -60.000, 20.500)
+[23:25:15] marker: SCENE type-universal-cable-guide hit=BLOCK pos=MutableBlockPos{x=14, y=-61, z=20} face=up loc=(14.536, -60.000, 20.500) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=west cell=west col=1 row=1 mode=CONFIGURATOR
+[23:25:15] marker: READBACK type-universal-cable-guide | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=PUSH/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:15] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-guide-type-universal-cable.png (1280x720)
+[23:25:15] marker: SETUP type mekanism:basic_pressurized_tube
+[23:25:16] setblock 14 -60 20 mekanism:basic_pressurized_tube -> Changed the block at 14, -60, 20
+[23:25:16] setblock 14 -60 21 minecraft:air -> Could not set the block
+[23:25:16]   CHECK type mekanism:basic_pressurized_tube (14, -60, 20) mekanism:basic_pressurized_tube        PRESENT
+[23:25:18] marker: TP 14.500 -60.000 22.600
+[23:25:18] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:25:18] teleported to (14.500, -60.000, 22.600)
+[23:25:21] marker: SCENE type-pressurized-tube-setup hit=BLOCK pos=MutableBlockPos{x=16, y=-61, z=22} face=up loc=(16.236, -60.000, 22.600) guide=null
+[23:25:21] marker: READBACK type-pressurized-tube-setup | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:21] marker: TP 14.500 -60.000 22.600
+[23:25:22] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:25:22] teleported to (14.500, -60.000, 22.600)
+[23:25:24] marker: CLICK scene=type-pressurized-tube-cycle #1 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-61, z=20} face=up loc=(14.500, -60.000, 20.286) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=CONFIGURATOR item=mekanism:configurator rawBefore=null sneak=true -> SUCCESS
+[23:25:27] marker: SCENE type-pressurized-tube-cycle hit=BLOCK pos=MutableBlockPos{x=14, y=-61, z=20} face=up loc=(14.500, -60.000, 20.286) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=CONFIGURATOR
+[23:25:27] marker: READBACK type-pressurized-tube-cycle | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=PUSH/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:28] marker: TP 12.800 -60.000 20.500
+[23:25:28] tp Dev 12.800 -60.000 20.500 -> Teleported Dev to 12.800000, -60.000000, 20.500000
+[23:25:28] teleported to (12.800, -60.000, 20.500)
+[23:25:31] marker: SCENE type-pressurized-tube-guide hit=BLOCK pos=MutableBlockPos{x=14, y=-61, z=20} face=up loc=(14.536, -60.000, 20.500) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=west cell=west col=1 row=1 mode=CONFIGURATOR
+[23:25:31] marker: READBACK type-pressurized-tube-guide | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=PUSH/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:31] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-guide-type-pressurized-tube.png (1280x720)
+[23:25:31] marker: SETUP type mekanism:basic_thermodynamic_conductor
+[23:25:31] setblock 14 -60 20 mekanism:basic_thermodynamic_conductor -> Changed the block at 14, -60, 20
+[23:25:32] setblock 14 -60 21 minecraft:air -> Could not set the block
+[23:25:32]   CHECK type mekanism:basic_thermodynamic_conductor (14, -60, 20) mekanism:basic_thermodynamic_conductor PRESENT
+[23:25:34] marker: TP 14.500 -60.000 22.600
+[23:25:34] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:25:34] teleported to (14.500, -60.000, 22.600)
+[23:25:37] marker: SCENE type-thermodynamic-conductor-setup hit=BLOCK pos=MutableBlockPos{x=16, y=-61, z=22} face=up loc=(16.236, -60.000, 22.600) guide=null
+[23:25:37] marker: READBACK type-thermodynamic-conductor-setup | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:37] marker: TP 14.500 -60.000 22.600
+[23:25:37] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:25:37] teleported to (14.500, -60.000, 22.600)
+[23:25:40] marker: CLICK scene=type-thermodynamic-conductor-cycle #1 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-61, z=20} face=up loc=(14.500, -60.000, 20.286) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=CONFIGURATOR item=mekanism:configurator rawBefore=null sneak=true -> SUCCESS
+[23:25:43] marker: SCENE type-thermodynamic-conductor-cycle hit=BLOCK pos=MutableBlockPos{x=14, y=-61, z=20} face=up loc=(14.500, -60.000, 20.286) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=CONFIGURATOR
+[23:25:43] marker: READBACK type-thermodynamic-conductor-cycle | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=PUSH/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:43] marker: TP 12.800 -60.000 20.500
+[23:25:44] tp Dev 12.800 -60.000 20.500 -> Teleported Dev to 12.800000, -60.000000, 20.500000
+[23:25:44] teleported to (12.800, -60.000, 20.500)
+[23:25:46] marker: SCENE type-thermodynamic-conductor-guide hit=BLOCK pos=MutableBlockPos{x=14, y=-61, z=20} face=up loc=(14.536, -60.000, 20.500) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=west cell=west col=1 row=1 mode=CONFIGURATOR
+[23:25:46] marker: READBACK type-thermodynamic-conductor-guide | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=PUSH/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:47] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-guide-type-thermodynamic-conductor.png (1280x720)
+[23:25:47] marker: SETUP type mekanism:basic_logistical_transporter
+[23:25:47] setblock 14 -60 20 mekanism:basic_logistical_transporter -> Changed the block at 14, -60, 20
+[23:25:47] setblock 14 -60 21 minecraft:air -> Could not set the block
+[23:25:48]   CHECK type mekanism:basic_logistical_transporter (14, -60, 20) mekanism:basic_logistical_transporter  PRESENT
+[23:25:49] marker: TP 14.500 -60.000 22.600
+[23:25:49] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:25:49] teleported to (14.500, -60.000, 22.600)
+[23:25:52] marker: SCENE type-logistical-transporter-setup hit=BLOCK pos=MutableBlockPos{x=16, y=-61, z=22} face=up loc=(16.236, -60.000, 22.600) guide=null
+[23:25:52] marker: READBACK type-logistical-transporter-setup | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:53] marker: TP 14.500 -60.000 22.600
+[23:25:53] tp Dev 14.500 -60.000 22.600 -> Teleported Dev to 14.500000, -60.000000, 22.600000
+[23:25:53] teleported to (14.500, -60.000, 22.600)
+[23:25:56] marker: CLICK scene=type-logistical-transporter-cycle #1 path=RightClickBlock hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=south loc=(14.500, -59.675, 20.750) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=CONFIGURATOR item=mekanism:configurator rawBefore=NORMAL sneak=true -> SUCCESS
+[23:25:59] marker: SCENE type-logistical-transporter-cycle hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=south loc=(14.500, -59.675, 20.750) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=south cell=south col=1 row=1 mode=CONFIGURATOR
+[23:25:59] marker: READBACK type-logistical-transporter-cycle | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=PUSH/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:25:59] marker: TP 12.800 -60.000 20.500
+[23:25:59] tp Dev 12.800 -60.000 20.500 -> Teleported Dev to 12.800000, -60.000000, 20.500000
+[23:25:59] teleported to (12.800, -60.000, 20.500)
+[23:26:02] marker: SCENE type-logistical-transporter-guide hit=BLOCK pos=MutableBlockPos{x=14, y=-60, z=20} face=west loc=(14.250, -59.733, 20.500) guide=pos=MutableBlockPos{x=14, y=-60, z=20} face=west cell=west col=1 row=1 mode=CONFIGURATOR
+[23:26:02] marker: READBACK type-logistical-transporter-guide | BlockPos{x=14, y=-60, z=20} down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=PUSH/NONE west=NORMAL/NONE east=NORMAL/NONE | BlockPos{x=14, y=-60, z=21} none
+[23:26:02] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-guide-type-logistical-transporter.png (1280x720)
+[23:26:03] marker: SETUP network
+[23:26:04] fill 8 -60 8 40 -48 28 minecraft:air -> Successfully filled 2 block(s)
+[23:26:05] fill 8 -61 8 40 -61 28 minecraft:smooth_stone -> No blocks were filled
+[23:26:05] setblock 14 -60 19 minecraft:stone -> Changed the block at 14, -60, 19
+[23:26:05] setblock 14 -60 20 minecraft:air -> Could not set the block
+[23:26:05] setblock 14 -60 21 minecraft:air -> Could not set the block
+[23:26:05] setblock 25 -60 13 mekanism:metallurgic_infuser -> Changed the block at 25, -60, 13
+[23:26:05] setblock 30 -60 15 mekanism:enrichment_chamber -> Changed the block at 30, -60, 15
+[23:26:06] setblock 26 -60 13 mekanism:basic_universal_cable -> Changed the block at 26, -60, 13
+[23:26:06] setblock 27 -60 13 mekanism:basic_universal_cable -> Changed the block at 27, -60, 13
+[23:26:06] setblock 27 -60 14 mekanism:basic_universal_cable -> Changed the block at 27, -60, 14
+[23:26:06] setblock 27 -60 15 mekanism:basic_universal_cable -> Changed the block at 27, -60, 15
+[23:26:06] setblock 28 -60 15 mekanism:basic_universal_cable -> Changed the block at 28, -60, 15
+[23:26:07] setblock 29 -60 15 mekanism:basic_universal_cable -> Changed the block at 29, -60, 15
+[23:26:08]   CHECK network infuser      (25, -60, 13) mekanism:metallurgic_infuser           PRESENT
+[23:26:08]   CHECK network cable-0      (26, -60, 13) mekanism:basic_universal_cable         PRESENT
+[23:26:09]   CHECK network cable-1      (27, -60, 13) mekanism:basic_universal_cable         PRESENT
+[23:26:09]   CHECK network cable-2      (27, -60, 14) mekanism:basic_universal_cable         PRESENT
+[23:26:09]   CHECK network cable-3      (27, -60, 15) mekanism:basic_universal_cable         PRESENT
+[23:26:09]   CHECK network cable-4      (28, -60, 15) mekanism:basic_universal_cable         PRESENT
+[23:26:09]   CHECK network cable-5      (29, -60, 15) mekanism:basic_universal_cable         PRESENT
+[23:26:09]   CHECK network chamber      (30, -60, 15) mekanism:enrichment_chamber            PRESENT
+[23:26:10]   CONN  (26, -60, 13) down=0 up=0 north=0 south=0 west=0 east=0
+[23:26:10]   CONN  (27, -60, 13) down=0 up=0 north=0 south=0 west=0 east=0
+[23:26:10]   CONN  (27, -60, 14) down=0 up=0 north=0 south=0 west=0 east=0
+[23:26:10]   CONN  (27, -60, 15) down=0 up=0 north=0 south=0 west=0 east=0
+[23:26:10]   CONN  (28, -60, 15) down=0 up=0 north=0 south=0 west=0 east=0
+[23:26:11]   CONN  (29, -60, 15) down=0 up=0 north=0 south=0 west=0 east=0
+[23:26:11] marker: TP 24.500 -60.000 18.500
+[23:26:11] tp Dev 24.500 -60.000 18.500 -> Teleported Dev to 24.500000, -60.000000, 18.500000
+[23:26:11] teleported to (24.500, -60.000, 18.500)
+[23:26:11] marker: TP 24.500 -60.000 18.500
+[23:26:11] tp Dev 24.500 -60.000 18.500 -> Teleported Dev to 24.500000, -60.000000, 18.500000
+[23:26:11] teleported to (24.500, -60.000, 18.500)
+[23:26:11] marker: TP 24.500 -60.000 18.500
+[23:26:11] tp Dev 24.500 -60.000 18.500 -> Teleported Dev to 24.500000, -60.000000, 18.500000
+[23:26:11] teleported to (24.500, -60.000, 18.500)
+[23:26:11] marker: TP 24.500 -60.000 18.500
+[23:26:11] tp Dev 24.500 -60.000 18.500 -> Teleported Dev to 24.500000, -60.000000, 18.500000
+[23:26:11] teleported to (24.500, -60.000, 18.500)
+[23:26:12] marker: SCENE network hit=BLOCK pos=BlockPos{x=27, y=-60, z=14} face=down loc=(27.313, -59.524, 14.282) guide=null
+[23:26:12] marker: READBACK network | BlockPos{x=14, y=-60, z=20} none | BlockPos{x=14, y=-60, z=21} none
+[23:26:12] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-network-scene.png (1280x720)
+[23:26:12] marker: TP 24.500 -60.000 18.500
+[23:26:12] tp Dev 24.500 -60.000 18.500 -> Teleported Dev to 24.500000, -60.000000, 18.500000
+[23:26:12] teleported to (24.500, -60.000, 18.500)
+[23:26:15] marker: SCENE network-guide hit=BLOCK pos=BlockPos{x=27, y=-60, z=13} face=south loc=(27.747, -59.700, 13.630) guide=pos=MutableBlockPos{x=27, y=-60, z=14} face=west cell=south col=2 row=1 mode=CONFIGURATOR
+[23:26:15] marker: READBACK network-guide | BlockPos{x=14, y=-60, z=20} none | BlockPos{x=14, y=-60, z=21} none
+[23:26:15] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/screenshot-1201-network-scene-guide.png (1280x720)
+[23:26:15] marker: finished failure=none anchorChecked=true placementChecked=true cycleChecked=true mixedChecked=true

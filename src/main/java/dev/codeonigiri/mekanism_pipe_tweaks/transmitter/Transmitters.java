@@ -4,6 +4,7 @@ import dev.codeonigiri.mekanism_pipe_tweaks.config.MPTConfig;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import mekanism.common.block.interfaces.IHasTileEntity;
 import mekanism.common.block.transmitter.BlockTransmitter;
 import mekanism.common.content.network.transmitter.Transmitter;
 import mekanism.common.lib.transmitter.TransmissionType;
@@ -12,7 +13,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 
 /**
  * Shared access to Mekanism transmitters: locating the {@link TileEntityTransmitter} at a
@@ -90,12 +90,13 @@ public final class Transmitters {
     }
 
     private static Set<TransmissionType> typesOf(Block block) {
-        if (!(block instanceof BlockTransmitter<?> transmitterBlock)) {
+        // In Mekanism 10.4 the block-entity type is exposed by IHasTileEntity (BlockTransmitter is
+        // not generic here, unlike 10.7), and that interface can build a detached tile directly.
+        if (!(block instanceof BlockTransmitter) || !(block instanceof IHasTileEntity<?> hasTile)) {
             return Set.of();
         }
         try {
-            BlockEntityType<?> blockEntityType = transmitterBlock.getTileType().get();
-            BlockEntity blockEntity = blockEntityType.create(BlockPos.ZERO, block.defaultBlockState());
+            BlockEntity blockEntity = hasTile.createDummyBlockEntity();
             if (blockEntity instanceof TileEntityTransmitter tile && tile.getTransmitter() != null) {
                 return Set.copyOf(tile.getTransmitter().getSupportedTransmissionTypes());
             }

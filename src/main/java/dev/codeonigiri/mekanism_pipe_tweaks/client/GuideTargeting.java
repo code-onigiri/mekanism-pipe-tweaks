@@ -8,6 +8,7 @@ import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -25,8 +26,9 @@ public final class GuideTargeting {
 
     public static BlockHitResult raycast(Level level, Player player) {
         Vec3 from = player.getEyePosition(1.0F);
-        Vec3 to = from.add(player.getViewVector(1.0F).scale(player.blockInteractionRange()));
-        return level.clip(new FullCubeTransmitterContext(from, to, player));
+        Vec3 to = from.add(player.getViewVector(1.0F).scale(player.getBlockReach()));
+        BlockHitResult hit = level.clip(new FullCubeTransmitterContext(from, to, player));
+        return hit.getType() == HitResult.Type.BLOCK ? hit : null;
     }
 
     private static final class FullCubeTransmitterContext extends ClipContext {
@@ -36,7 +38,7 @@ public final class GuideTargeting {
 
         @Override
         public VoxelShape getBlockShape(BlockState state, BlockGetter level, BlockPos pos) {
-            if (state.getBlock() instanceof BlockTransmitter<?>) {
+            if (state.getBlock() instanceof BlockTransmitter) {
                 return Shapes.block();
             }
             return super.getBlockShape(state, level, pos);

@@ -41,7 +41,7 @@ public record GuideTarget(BlockPos pos, Direction face, GuideGeometry.Cell cell,
             return null;
         }
         BlockPos pos = hit.getBlockPos();
-        if (!(level.getBlockState(pos).getBlock() instanceof BlockTransmitter<?>)) {
+        if (!(level.getBlockState(pos).getBlock() instanceof BlockTransmitter)) {
             return null;
         }
         if (!(level.getBlockEntity(pos) instanceof TileEntityTransmitter tile)) {
@@ -68,7 +68,7 @@ public record GuideTarget(BlockPos pos, Direction face, GuideGeometry.Cell cell,
         if (held.getItem() instanceof ItemConfigurator) {
             return Mode.CONFIGURATOR;
         }
-        if (held.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof BlockTransmitter<?>) {
+        if (held.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof BlockTransmitter) {
             return Mode.PLACEMENT;
         }
         return null;

@@ -20,7 +20,7 @@ public final class SideCycleLogic {
         if (!(player.getMainHandItem().getItem() instanceof ItemConfigurator)) {
             return;
         }
-        if (!player.canInteractWithBlock(pos, 1.0)) {
+        if (!player.canReach(pos, 1.0)) {
             return;
         }
         ServerLevel level = player.serverLevel();

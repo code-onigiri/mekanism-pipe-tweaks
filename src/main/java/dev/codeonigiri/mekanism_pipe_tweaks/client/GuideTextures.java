@@ -18,6 +18,6 @@ public final class GuideTextures {
     }
 
     private static ResourceLocation texture(String name) {
-        return ResourceLocation.fromNamespaceAndPath(MekanismPipeTweaks.MOD_ID, "textures/gui/overlay/" + name + ".png");
+        return new ResourceLocation(MekanismPipeTweaks.MOD_ID, "textures/gui/overlay/" + name + ".png");
     }
 }

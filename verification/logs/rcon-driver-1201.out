@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/rcon_driver_1201.py", line 276, in <module>
+    main()
+  File "/home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/rcon_driver_1201.py", line 272, in main
+    Driver(log_path, driver_log_path).run_forever()
+  File "/home/hatch/workspace/mekanism-pipe-tweaks-1201/verification/rcon_driver_1201.py", line 238, in run_forever
+    self.dump(ANCHOR, "final anchor", expect="mekanism:basic_mechanical_pipe")
+    ^^^^^^^^^
+AttributeError: 'Driver' object has no attribute 'dump'

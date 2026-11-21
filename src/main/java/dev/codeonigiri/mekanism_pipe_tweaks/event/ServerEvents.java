@@ -10,10 +10,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.bus.api.EventPriority;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 /**
  * Server-side event entry points for the placement rules and the guide's connection cycling.
@@ -43,7 +43,7 @@ public final class ServerEvents {
         }
 
         Direction face = event.getFace();
-        // A successful PlaceTransmitterPayload leaves a one-shot mark. The matching vanilla
+        // A successful PlaceTransmitterMessage leaves a one-shot mark. The matching vanilla
         // use-on packet still arrives, so deny it completely before it can place a second pipe
         // and before a click record is written.
         if (TransmitterPlacementLogic.consumeGuard(player.getUUID(), event.getPos(), face, level.getGameTime())) {

@@ -95,10 +95,10 @@ public final class TransmitterPlacementLogic {
             return;
         }
         Block block = blockItem.getBlock();
-        if (!(block instanceof BlockTransmitter<?>)) {
+        if (!(block instanceof BlockTransmitter)) {
             return;
         }
-        if (!player.canInteractWithBlock(targetPos, 1.0)) {
+        if (!player.canReach(targetPos, 1.0)) {
             return;
         }
         ServerLevel level = player.serverLevel();
@@ -144,7 +144,7 @@ public final class TransmitterPlacementLogic {
         Transmitter<?, ?, ?> transmitter = placed.getTransmitter();
         BlockEntity neighbour = level.getBlockEntity(placedPos.relative(openSide));
         boolean connectClickedSide = MPTConfig.CONNECT_CLICKED_SIDE.get()
-                && (neighbour instanceof TileEntityTransmitter || transmitter.getAcceptor(openSide) != null);
+                && (neighbour instanceof TileEntityTransmitter || transmitter.getAcceptor(openSide).isPresent());
         setConnectionTypes(transmitter, connectClickedSide ? openSide : null);
 
         if (connectClickedSide && MPTConfig.OPEN_COUNTERPART_SIDE.get() && neighbour instanceof TileEntityTransmitter counterpart) {
