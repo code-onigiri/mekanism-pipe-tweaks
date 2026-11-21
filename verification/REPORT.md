@@ -308,3 +308,114 @@ were deleted, and a clean `gradle clean build` was run for this fix round.
 
 Repro helpers kept for reference: `verification/rcon_driver.py`,
 `verification/fetch_assets.py`.
+
+---
+
+## 6. Mixed-side guide capture (2026-11-21)
+
+### 6.1 Scene and method
+
+Capture-only run with the same temporary `AutoTest` harness (§2/§4), a dedicated server
+started from its generated command line, and the dev client under Xvfb `:99` at
+1280x720. No mod source behaviour was changed for the run.
+
+1. Anchor **A** at `(14,4,14)` was placed with `/setblock`.
+2. The player placed pipe **C** at `(14,4,15)` through the normal gameplay path: the
+   harness selected the pipe item, aimed at A's south core face and called
+   `gameMode.useItemOn`. Logged hit:
+   `anchor=(14,4,14) face=south location=(14.500, 4.500, 14.750)`,
+   `placement useItemOn -> SUCCESS`.
+3. C's client-tile connection types read back before any cycling:
+
+```
+C (14,4,15) raw: down=NONE up=NONE north=NORMAL south=NONE west=NONE east=NONE
+```
+
+   So C has exactly one configured connection, `north` (toward A), and the side pointing
+   away from A is `south` (all NONE). The player then viewed C's **south** face
+   (view face = `south`, eye at `(14.5, 4.62, 18.0)`, crosshair through
+   `(14.5, 4.5, 16.0)`) while holding the Configurator.
+
+The viewed face maps to the guide cells through `GuideGeometry.sideFor(SOUTH, col, row)`:
+centre = south, top/bottom edges = up/down, left/right edges = west/east, and all four
+corners = north (the opposite face).
+
+### 6.2 Screenshot 5 — mixed NONE / NORMAL guide
+
+[![screenshot-5-mixed-guide.png](screenshot-5-mixed-guide.png)](screenshot-5-mixed-guide.png)
+
+Guide target at capture:
+`vanillaHit=BLOCK pos=(14,4,15) face=south location=(14.500, 4.485, 15.750)`,
+`expanded=cell=south col=1 row=1 face=south mode=CONFIGURATOR`.
+
+Observed: the centre and the four edge cells show the **block/disconnected icon**
+(joined pipe + red radiation); the four corner cells show the **connect icon**
+(split pipe + green radiation). The centre cell is drawn at full opacity because it is
+the hovered cell.
+
+### 6.3 Cycling through the real sneak + right-click path
+
+With the same south face in view, the harness cycled C's sides using real
+`PRESS_SHIFT_KEY`/`RELEASE_SHIFT_KEY` packets, `player.input.shiftKeyDown = true`, and
+`gameMode.useItemOn` (the §3-C path), then read C's raw types again:
+
+* Centre cell (side `south`), two cycles: `NONE -> NORMAL -> PUSH`
+  (logged raw before each click: `NONE`, then `NORMAL`).
+* Top cell (side `up`), three cycles: `NONE -> NORMAL -> PUSH -> PULL`
+  (logged raw before each click: `NONE`, `NORMAL`, `PUSH`).
+
+Client-tile readback after:
+
+```
+C (14,4,15) raw: down=NONE up=PULL north=NORMAL south=PUSH west=NONE east=NONE
+```
+
+Cross-checks:
+
+* Full raw/effective line from the client tile:
+  `down=NONE/NONE up=PULL/NONE north=NORMAL/NORMAL south=PUSH/NONE west=NONE/NONE east=NONE/NONE`.
+  The guide deliberately shows the **configured/raw** value (§5.2-6); `PUSH` and `PULL`
+  have effective `NONE` here because those faces have no neighbour.
+* Server-side block NBT (RCON `data get block 14 4 15`) agreed at every check:
+  after the centre cycles `connection:[I; 3,3,0,1,3,3]`, and after the top cycles /
+  final `connection:[I; 3,2,0,1,3,3]` (Direction order
+  down,up,north,south,west,east with NORMAL=0, PUSH=1, PULL=2, NONE=3).
+* Screenshot 6 shows the Configurator's own action bar message
+  “Connection type changed to: Pull”, confirming the click went through the real path.
+
+### 6.4 Screenshot 6 — all four icon kinds on one face
+
+[![screenshot-6-all-types.png](screenshot-6-all-types.png)](screenshot-6-all-types.png)
+
+Same viewpoint as screenshot 5. Now the centre shows **PUSH** (connect icon with blue
+radiation marks and the white direction triangle), the top edge shows **PULL** (connect
+icon with yellow radiation marks and the white triangle), the four corners remain
+**NORMAL** (connect icon, green radiation), and the left/right/bottom edges remain
+**NONE** (block icon, red radiation).
+
+### 6.5 Cell-by-cell result for the viewed (`south`) face
+
+| Cell (row,col) | Kind | Mapped side | Raw before | Icon seen before | Raw after | Icon seen after |
+|----------------|------|-------------|------------|------------------|-----------|-----------------|
+| (0,0) | corner (top-left) | north | NORMAL | connect (green) | NORMAL | connect (green) |
+| (0,1) | edge (top) | up | NONE | block (red) | PULL | pull (connect + yellow + triangle) |
+| (0,2) | corner (top-right) | north | NORMAL | connect (green) | NORMAL | connect (green) |
+| (1,0) | edge (left) | west | NONE | block (red) | NONE | block (red) |
+| (1,1) | centre | south | NONE | block (red) | PUSH | push (connect + blue + triangle) |
+| (1,2) | edge (right) | east | NONE | block (red) | NONE | block (red) |
+| (2,0) | corner (bottom-left) | north | NORMAL | connect (green) | NORMAL | connect (green) |
+| (2,1) | edge (bottom) | down | NONE | block (red) | NONE | block (red) |
+| (2,2) | corner (bottom-right) | north | NORMAL | connect (green) | NORMAL | connect (green) |
+
+### 6.6 Result
+
+**The icons matched the configured states exactly.** On a pipe with mixed raw types the
+guide renders four distinct icon outcomes simultaneously on one face: `NONE` (block),
+`NORMAL` (connect), `PUSH` (connect + blue radiation + white triangle) and `PULL`
+(connect + yellow radiation + white triangle), each in the cell whose mapped side carries
+that configured connection type. No contradiction with the intended icon behaviour was
+found.
+
+Artifacts: `screenshot-5-mixed-guide.png`, `screenshot-6-all-types.png`,
+`logs/client-s6.log`, `logs/server-s6.log`, `logs/rcon-driver-s6.log`, driver
+`rcon_driver_s6.py`.

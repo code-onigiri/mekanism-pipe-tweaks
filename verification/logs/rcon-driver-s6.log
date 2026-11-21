@@ -1,0 +1,75 @@
+[13:08:08] watching run-test-client/logs/latest.log
+[13:09:11] marker: world_ready player=Dev pos=(1.500, -60.000, 8.500) level=minecraft:overworld fov=70
+[13:09:12] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[13:09:12] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[13:09:12] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[13:09:12] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[13:09:12] difficulty peaceful -> The difficulty has been set to Peaceful
+[13:09:13] time set noon -> Set the time to 6000
+[13:09:13] weather clear -> Set the weather to clear
+[13:09:13] fill 8 3 8 18 8 24 minecraft:air -> No blocks were filled
+[13:09:13] fill 8 2 8 18 2 24 minecraft:stone -> Successfully filled 187 block(s)
+[13:09:14] setblock 14 4 15 minecraft:air -> Could not set the block
+[13:09:14] setblock 14 4 14 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 14
+[13:09:14] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 
+[13:09:14]   SERVER setup C(14, 4, 15): no pipe
+[13:09:14] clear Dev -> No items were found on player Dev
+[13:09:15] gamemode creative Dev -> 
+[13:09:15] op Dev -> Made Dev a server operator
+[13:09:15] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[13:09:15] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[13:09:15] marker: setup_done pipeSlot=1 configuratorSlot=0 emptySlot=2
+[13:09:15] marker: TP place 14.500 3.000 16.800
+[13:09:16] tp Dev 14.500 3.000 16.800 -> Teleported Dev to 14.500000, 3.000000, 16.800000
+[13:09:16] teleported for place
+[13:09:16] marker: placement click anchor=MutableBlockPos{x=14, y=4, z=14} face=south item=mekanism:basic_mechanical_pipe hit=BLOCK pos=MutableBlockPos{x=14, y=4, z=14} location=(14.500, 4.500, 14.750) lookAt=(14.500, 4.500, 14.750)
+[13:09:16] marker: placement useItemOn -> SUCCESS
+[13:09:17] marker: placed block at BlockPos{x=14, y=4, z=15}: mekanism:basic_mechanical_pipe
+[13:09:17] marker: connections anchor at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[13:09:17] marker: connections placed at BlockPos{x=14, y=4, z=15}: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[13:09:17] marker: raw C-before: CBlockPos{x=14, y=4, z=15} raw down=NONE up=NONE north=NORMAL south=NONE west=NONE east=NONE
+[13:09:17] marker: TP guide 14.500 3.000 18.000
+[13:09:17] tp Dev 14.500 3.000 18.000 -> Teleported Dev to 14.500000, 3.000000, 18.000000
+[13:09:17] teleported for guide
+[13:09:18] marker: guide view holding=mekanism:configurator vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=15} face=south location=(14.500, 4.485, 15.750) expanded=cell=south col=1 row=1 face=south mode=CONFIGURATOR
+[13:09:18] marker: cell before row=0 col=0 side=north raw=NORMAL icon=connect
+[13:09:18] marker: cell before row=0 col=1 side=up raw=NONE icon=block
+[13:09:18] marker: cell before row=0 col=2 side=north raw=NORMAL icon=connect
+[13:09:18] marker: cell before row=1 col=0 side=west raw=NONE icon=block
+[13:09:18] marker: cell before row=1 col=1 side=south raw=NONE icon=block
+[13:09:18] marker: cell before row=1 col=2 side=east raw=NONE icon=block
+[13:09:18] marker: cell before row=2 col=0 side=north raw=NORMAL icon=connect
+[13:09:18] marker: cell before row=2 col=1 side=down raw=NONE icon=block
+[13:09:18] marker: cell before row=2 col=2 side=north raw=NORMAL icon=connect
+[13:09:19] marker: screenshot saved ./../verification/screenshot-5-mixed-guide.png (1280x720)
+[13:09:19] marker: cycle centre prep cell=cell=south col=1 row=1 face=south mode=CONFIGURATOR
+[13:09:19] marker: cycle centre #1 side=south raw before=NONE useItemOn -> SUCCESS
+[13:09:19] marker: cycle centre #2 side=south raw before=NORMAL useItemOn -> SUCCESS
+[13:09:20] marker: raw C-after-centre: CBlockPos{x=14, y=4, z=15} raw down=NONE up=NONE north=NORMAL south=PUSH west=NONE east=NONE
+[13:09:20] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 1, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[13:09:20]   SERVER raw C-after-centre C(14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 1, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[13:09:20] marker: cycle top prep cell=cell=up col=1 row=0 face=south mode=CONFIGURATOR
+[13:09:20] marker: cycle top #1 side=up raw before=NONE useItemOn -> SUCCESS
+[13:09:20] marker: cycle top #2 side=up raw before=NORMAL useItemOn -> SUCCESS
+[13:09:21] marker: cycle top #3 side=up raw before=PUSH useItemOn -> SUCCESS
+[13:09:22] marker: raw C-after-top: CBlockPos{x=14, y=4, z=15} raw down=NONE up=PULL north=NORMAL south=PUSH west=NONE east=NONE
+[13:09:22] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 2, 0, 1, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[13:09:22]   SERVER raw C-after-top C(14, 4, 15): {x: 14, y: 4, connection: [I; 3, 2, 0, 1, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[13:09:23] marker: raw C-after: CBlockPos{x=14, y=4, z=15} raw down=NONE up=PULL north=NORMAL south=PUSH west=NONE east=NONE
+[13:09:23] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 2, 0, 1, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[13:09:23]   SERVER raw C-after C(14, 4, 15): {x: 14, y: 4, connection: [I; 3, 2, 0, 1, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[13:09:23] marker: connections placed-after at BlockPos{x=14, y=4, z=15}: down=NONE/NONE up=PULL/NONE north=NORMAL/NORMAL south=PUSH/NONE west=NONE/NONE east=NONE/NONE
+[13:09:23] marker: cell after row=0 col=0 side=north raw=NORMAL icon=connect
+[13:09:23] marker: cell after row=0 col=1 side=up raw=PULL icon=pull(connect+yellow radiation+triangle)
+[13:09:23] marker: cell after row=0 col=2 side=north raw=NORMAL icon=connect
+[13:09:23] marker: cell after row=1 col=0 side=west raw=NONE icon=block
+[13:09:23] marker: cell after row=1 col=1 side=south raw=PUSH icon=push(connect+blue radiation+triangle)
+[13:09:23] marker: cell after row=1 col=2 side=east raw=NONE icon=block
+[13:09:23] marker: cell after row=2 col=0 side=north raw=NORMAL icon=connect
+[13:09:23] marker: cell after row=2 col=1 side=down raw=NONE icon=block
+[13:09:23] marker: cell after row=2 col=2 side=north raw=NORMAL icon=connect
+[13:09:24] marker: screenshot saved ./../verification/screenshot-6-all-types.png (1280x720)
+[13:09:24] marker: finished failure=none
+[13:09:24] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 2, 0, 1, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[13:09:24]   SERVER final C(14, 4, 15): {x: 14, y: 4, connection: [I; 3, 2, 0, 1, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[13:09:24] client finished; exiting driver
