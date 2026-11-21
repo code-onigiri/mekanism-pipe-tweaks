@@ -1,0 +1,293 @@
+[11:54:10] connected to rcon
+[11:54:10] watching run-test-client/logs/latest.log
+[11:55:30] marker: world_ready player=Dev pos=(12.6, 4.0, 50.5) level=minecraft:overworld fov=70
+[11:55:31] tp Dev 14.5 3.0 14.5 -> Teleported Dev to 14.500000, 3.000000, 14.500000
+[11:55:31] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[11:55:31] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[11:55:31] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[11:55:31] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[11:55:32] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[11:55:32] time set noon -> Set the time to 6000
+[11:55:32] weather clear -> Set the weather to clear
+[11:55:32] fill 8 3 8 18 8 50 minecraft:air -> Successfully filled 16 block(s)
+[11:55:33] fill 8 2 8 18 2 50 minecraft:stone -> No blocks were filled
+[11:55:33] setblock 14 4 14 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 14
+[11:55:33] setblock 14 4 16 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 16
+[11:55:33] setblock 14 4 50 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 50
+[11:55:33] setblock 12 3 50 minecraft:stone -> Changed the block at 12, 3, 50
+[11:55:33] setblock 14 4 20 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 20
+[11:55:34] setblock 14 4 26 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 26
+[11:55:34] setblock 14 4 32 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 32
+[11:55:34] setblock 14 4 38 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 38
+[11:55:34] setblock 14 4 44 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 44
+[11:55:34] clear Dev -> Removed 129 item(s) from player Dev
+[11:55:35] gamemode creative Dev -> 
+[11:55:35] op Dev -> Nothing changed. The player already is an operator
+[11:55:35] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[11:55:35] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[11:55:35] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[11:55:35] marker: phase -> SETUP
+[11:55:40] marker: setup_done pipeSlot=1 configuratorSlot=0 emptySlot=3
+[11:55:40] marker: phase -> PLACE_TP
+[11:55:40] marker: TP place 15.5 3.0 16.8
+[11:55:40] tp Dev 15.5 3.0 16.8 -> Teleported Dev to 15.500000, 3.000000, 16.800000
+[11:55:40] teleported for place
+[11:55:40] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:55:40] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:55:40]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:41] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 
+[11:55:41] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:55:41]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:41] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[11:55:41] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:55:41] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 
+[11:55:42] marker: phase -> PLACE_AIM
+[11:55:42] marker: placement click anchor=(14,4,14) face=SOUTH item=mekanism:basic_mechanical_pipe selected=1 hit=BLOCK pos=MutableBlockPos{x=14, y=4, z=14} face=south location=(14.361, 4.426, 14.750) lookAt=(14.5, 4.45, 15.0)
+[11:55:42] marker: placement useItemOn -> SUCCESS
+[11:55:42] marker: phase -> PLACE_SETTLE
+[11:55:43] marker: placed block at (14,4,15): mekanism:basic_mechanical_pipe
+[11:55:43] marker: connections anchor at (14,4,14): down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[11:55:43] marker: connections placed at (14,4,15): down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[11:55:43] marker: connections extra at (14,4,16): down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE
+[11:55:43] marker: phase -> PLACE_VIEW_TP
+[11:55:43] marker: TP place_view 11.8 3.0 15.3
+[11:55:43] tp Dev 11.8 3.0 15.3 -> Teleported Dev to 11.800000, 3.000000, 15.300000
+[11:55:43] teleported for place_view
+[11:55:43] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:55:43] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[11:55:43]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:44] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[11:55:44]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:44] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:55:44]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:44] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[11:55:44] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:55:44] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 
+[11:55:45] marker: phase -> PLACE_VIEW
+[11:55:46] marker: screenshot saved ./../verification/screenshot-2-placement.png (1280x720)
+[11:55:46] marker: phase -> GUIDE_TP
+[11:55:46] marker: TP guide 13.3 3.0 14.5
+[11:55:46] tp Dev 13.3 3.0 14.5 -> Teleported Dev to 13.300000, 3.000000, 14.500000
+[11:55:46] teleported for guide
+[11:55:46] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:55:46] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[11:55:46]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:47] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[11:55:47]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:47] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:55:47]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:47] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[11:55:47] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:55:47] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 
+[11:55:47] marker: phase -> GUIDE
+[11:55:48] marker: guide position (13.3, 3.0, 14.5) holding mekanism:configurator
+[11:55:48] marker: guide vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=14} face=west location=(14.250, 4.457, 14.500) expanded=cell=west col=1 row=1 face=west mode=CONFIGURATOR
+[11:55:48] marker: screenshot saved ./../verification/screenshot-1-guide.png (1280x720)
+[11:55:48] marker: cycle raw before=NORMAL
+[11:55:48] marker: phase -> CYCLE
+[11:55:48] marker: cycle: sneak+use configurator on anchor west face (sneaking=true)
+[11:55:48] marker: cycle useItemOn -> SUCCESS
+[11:55:48] marker: phase -> CYCLE_SETTLE
+[11:55:50] marker: cycle result: anchor west raw=PUSH
+[11:55:50] marker: connections anchor-after-cycle at (14,4,14): down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NONE east=NORMAL/NONE
+[11:55:50] marker: screenshot saved ./../verification/screenshot-3-cycle.png (1280x720)
+[11:55:50] marker: phase -> CELL_TP
+[11:55:50] marker: TP cell 12.6 3.0 14.5
+[11:55:50] tp Dev 12.6 3.0 14.5 -> Teleported Dev to 12.600000, 3.000000, 14.500000
+[11:55:50] teleported for cell
+[11:55:50] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:55:50] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[11:55:50]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:50] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[11:55:50]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:51] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:55:51]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:51] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[11:55:51] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:55:51] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 
+[11:55:51] marker: phase -> CELL_AIM
+[11:55:51] marker: cell aim (real crosshair): lookAt=(14.0, 4.875, 14.5) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[11:55:51] marker: cell placement (RightClickItem) -> SUCCESS
+[11:55:51] marker: phase -> CELL_SETTLE
+[11:55:53] marker: cell placed at (14,5,14): mekanism:basic_mechanical_pipe
+[11:55:53] marker: connections anchor-after-cell at (14,4,14): down=NORMAL/NONE up=NORMAL/NORMAL north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NONE east=NORMAL/NONE
+[11:55:53] marker: connections cell-placed at (14,5,14): down=NORMAL/NORMAL up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[11:55:53] marker: CHECK_CELL screenshot 14 4 14
+[11:55:53] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 10b}
+[11:55:53]   CHECK screenshot anchor at (14,4,14): PIPE {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pip
+[11:55:53] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:55:53]   CHECK screenshot cell at (14,5,14): PIPE {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pip
+[11:55:53] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:55:53]   CHECK screenshot duplicate at (13,4,14): air
+[11:55:53] marker: phase -> CELL_VIEW_TP
+[11:55:53] marker: TP cell_view 11.8 3.0 15.3
+[11:55:53] tp Dev 11.8 3.0 15.3 -> Teleported Dev to 11.800000, 3.000000, 15.300000
+[11:55:53] teleported for cell_view
+[11:55:54] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:55:54] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 10b}
+[11:55:54]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:54] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[11:55:54]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:54] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:55:54]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:54] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:55:54]   pipe at (14, 5, 14): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:55] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:55:55] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 
+[11:55:55] marker: phase -> CELL_VIEW
+[11:55:55] marker: cell-view vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=14} face=west location=(14.250, 4.904, 14.409) expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[11:55:56] marker: screenshot saved ./../verification/screenshot-4-cell-place.png (1280x720)
+[11:55:56] marker: phase -> REPEAT_TP
+[11:55:56] marker: TP repeat0 12.6 3.0 20.5
+[11:55:56] tp Dev 12.6 3.0 20.5 -> Teleported Dev to 12.600000, 3.000000, 20.500000
+[11:55:56] teleported for repeat0
+[11:55:56] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:55:56] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 10b}
+[11:55:56]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:56] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[11:55:56]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:57] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:55:57]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:57] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:55:57]   pipe at (14, 5, 14): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:55:57] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:55:57] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 
+[11:55:57] marker: phase -> REPEAT_AIM
+[11:55:57] marker: repeat[0] aim anchor=(14,4,20) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[11:55:57] marker: repeat[0] cell placement (RightClickItem) -> SUCCESS
+[11:55:57] marker: phase -> REPEAT_SETTLE
+[11:55:58] marker: CHECK_CELL repeat0 14 4 20
+[11:55:59] execute if block 14 4 20 mekanism:basic_mechanical_pipe run data get block 14 4 20 -> 14, 4, 20 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 20, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 2b}
+[11:55:59]   CHECK repeat0 anchor at (14,4,20): PIPE {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 20, id: "mekanism:basic_mechanical_pip
+[11:55:59] execute if block 14 5 20 mekanism:basic_mechanical_pipe run data get block 14 5 20 -> 14, 5, 20 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 20, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:55:59]   CHECK repeat0 cell at (14,5,20): PIPE {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 20, id: "mekanism:basic_mechanical_pip
+[11:55:59] execute if block 13 4 20 mekanism:basic_mechanical_pipe run data get block 13 4 20 -> 
+[11:55:59]   CHECK repeat0 duplicate at (13,4,20): air
+[11:55:59] marker: repeat[0] local cell(14,5,20)=mekanism:basic_mechanical_pipe duplicate(13,4,20)=minecraft:air
+[11:55:59] marker: TP repeat1 12.6 3.0 26.5
+[11:55:59] tp Dev 12.6 3.0 26.5 -> Teleported Dev to 12.600000, 3.000000, 26.500000
+[11:55:59] teleported for repeat1
+[11:55:59] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:56:00] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 10b}
+[11:56:00]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:00] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[11:56:00]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:00] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:56:00]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:00] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:00]   pipe at (14, 5, 14): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:00] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:56:01] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 
+[11:56:01] marker: repeat[1] aim anchor=(14,4,26) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[11:56:01] marker: repeat[1] cell placement (RightClickItem) -> SUCCESS
+[11:56:01] marker: CHECK_CELL repeat1 14 4 26
+[11:56:01] execute if block 14 4 26 mekanism:basic_mechanical_pipe run data get block 14 4 26 -> 14, 4, 26 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 26, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 2b}
+[11:56:01]   CHECK repeat1 anchor at (14,4,26): PIPE {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 26, id: "mekanism:basic_mechanical_pip
+[11:56:02] execute if block 14 5 26 mekanism:basic_mechanical_pipe run data get block 14 5 26 -> 14, 5, 26 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 26, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:02]   CHECK repeat1 cell at (14,5,26): PIPE {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 26, id: "mekanism:basic_mechanical_pip
+[11:56:02] execute if block 13 4 26 mekanism:basic_mechanical_pipe run data get block 13 4 26 -> 
+[11:56:02]   CHECK repeat1 duplicate at (13,4,26): air
+[11:56:02] marker: repeat[1] local cell(14,5,26)=mekanism:basic_mechanical_pipe duplicate(13,4,26)=minecraft:air
+[11:56:02] marker: TP repeat2 12.6 3.0 32.5
+[11:56:02] tp Dev 12.6 3.0 32.5 -> Teleported Dev to 12.600000, 3.000000, 32.500000
+[11:56:02] teleported for repeat2
+[11:56:02] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:56:02] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 10b}
+[11:56:02]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:03] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[11:56:03]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:03] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:56:03]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:03] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:03]   pipe at (14, 5, 14): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:03] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:56:03] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 
+[11:56:04] marker: repeat[2] aim anchor=(14,4,32) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[11:56:04] marker: repeat[2] cell placement (RightClickItem) -> SUCCESS
+[11:56:04] marker: CHECK_CELL repeat2 14 4 32
+[11:56:04] execute if block 14 4 32 mekanism:basic_mechanical_pipe run data get block 14 4 32 -> 14, 4, 32 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 32, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 2b}
+[11:56:04]   CHECK repeat2 anchor at (14,4,32): PIPE {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 32, id: "mekanism:basic_mechanical_pip
+[11:56:05] execute if block 14 5 32 mekanism:basic_mechanical_pipe run data get block 14 5 32 -> 14, 5, 32 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 32, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:05]   CHECK repeat2 cell at (14,5,32): PIPE {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 32, id: "mekanism:basic_mechanical_pip
+[11:56:05] execute if block 13 4 32 mekanism:basic_mechanical_pipe run data get block 13 4 32 -> 
+[11:56:05]   CHECK repeat2 duplicate at (13,4,32): air
+[11:56:05] marker: repeat[2] local cell(14,5,32)=mekanism:basic_mechanical_pipe duplicate(13,4,32)=minecraft:air
+[11:56:05] marker: TP repeat3 12.6 3.0 38.5
+[11:56:05] tp Dev 12.6 3.0 38.5 -> Teleported Dev to 12.600000, 3.000000, 38.500000
+[11:56:05] teleported for repeat3
+[11:56:05] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:56:05] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 10b}
+[11:56:05]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:06] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[11:56:06]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:06] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:56:06]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:06] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:06]   pipe at (14, 5, 14): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:06] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:56:06] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 
+[11:56:06] marker: repeat[3] aim anchor=(14,4,38) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[11:56:06] marker: repeat[3] cell placement (RightClickItem) -> SUCCESS
+[11:56:07] marker: CHECK_CELL repeat3 14 4 38
+[11:56:07] execute if block 14 4 38 mekanism:basic_mechanical_pipe run data get block 14 4 38 -> 14, 4, 38 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 38, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 2b}
+[11:56:07]   CHECK repeat3 anchor at (14,4,38): PIPE {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 38, id: "mekanism:basic_mechanical_pip
+[11:56:07] execute if block 14 5 38 mekanism:basic_mechanical_pipe run data get block 14 5 38 -> 14, 5, 38 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 38, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:07]   CHECK repeat3 cell at (14,5,38): PIPE {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 38, id: "mekanism:basic_mechanical_pip
+[11:56:08] execute if block 13 4 38 mekanism:basic_mechanical_pipe run data get block 13 4 38 -> 
+[11:56:08]   CHECK repeat3 duplicate at (13,4,38): air
+[11:56:08] marker: repeat[3] local cell(14,5,38)=mekanism:basic_mechanical_pipe duplicate(13,4,38)=minecraft:air
+[11:56:08] marker: TP repeat4 12.6 3.0 44.5
+[11:56:08] tp Dev 12.6 3.0 44.5 -> Teleported Dev to 12.600000, 3.000000, 44.500000
+[11:56:08] teleported for repeat4
+[11:56:08] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:56:08] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 10b}
+[11:56:08]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:08] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[11:56:08]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:09] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:56:09]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:09] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:09]   pipe at (14, 5, 14): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:09] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:56:09] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 
+[11:56:09] marker: repeat[4] aim anchor=(14,4,44) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[11:56:09] marker: repeat[4] cell placement (RightClickItem) -> SUCCESS
+[11:56:10] marker: CHECK_CELL repeat4 14 4 44
+[11:56:10] execute if block 14 4 44 mekanism:basic_mechanical_pipe run data get block 14 4 44 -> 14, 4, 44 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 44, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 2b}
+[11:56:10]   CHECK repeat4 anchor at (14,4,44): PIPE {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 44, id: "mekanism:basic_mechanical_pip
+[11:56:10] execute if block 14 5 44 mekanism:basic_mechanical_pipe run data get block 14 5 44 -> 14, 5, 44 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 44, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:10]   CHECK repeat4 cell at (14,5,44): PIPE {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 44, id: "mekanism:basic_mechanical_pip
+[11:56:11] execute if block 13 4 44 mekanism:basic_mechanical_pipe run data get block 13 4 44 -> 
+[11:56:11]   CHECK repeat4 duplicate at (13,4,44): air
+[11:56:11] marker: repeat[4] local cell(14,5,44)=mekanism:basic_mechanical_pipe duplicate(13,4,44)=minecraft:air
+[11:56:11] marker: phase -> GUARD_TP
+[11:56:11] marker: TP guard 12.6 4.0 50.5
+[11:56:11] tp Dev 12.6 4.0 50.5 -> Teleported Dev to 12.600000, 4.000000, 50.500000
+[11:56:11] teleported for guard
+[11:56:11] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[11:56:11] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 10b}
+[11:56:11]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:11] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[11:56:11]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:12] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[11:56:12]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:12] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:12]   pipe at (14, 5, 14): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:12] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[11:56:12] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 14, 5, 50 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 50, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:12]   pipe at (14, 5, 50): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 50, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[11:56:12] marker: phase -> GUARD_AIM
+[11:56:12] marker: guard aim anchor=(14,4,50) vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=50} face=west location=(14.250, 4.607, 50.500) expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[11:56:12] marker: guard cell placement (RightClickBlock) -> SUCCESS
+[11:56:12] marker: phase -> GUARD_SETTLE
+[11:56:13] marker: CHECK_CELL guard 14 4 50
+[11:56:13] execute if block 14 4 50 mekanism:basic_mechanical_pipe run data get block 14 4 50 -> 14, 4, 50 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 50, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 2b}
+[11:56:13]   CHECK guard anchor at (14,4,50): PIPE {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 50, id: "mekanism:basic_mechanical_pip
+[11:56:13] execute if block 14 5 50 mekanism:basic_mechanical_pipe run data get block 14 5 50 -> 14, 5, 50 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 50, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[11:56:13]   CHECK guard cell at (14,5,50): PIPE {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 50, id: "mekanism:basic_mechanical_pip
+[11:56:14] execute if block 13 4 50 mekanism:basic_mechanical_pipe run data get block 13 4 50 -> 
+[11:56:14]   CHECK guard duplicate at (13,4,50): air
+[11:56:14] marker: guard local cell(14,5,50)=mekanism:basic_mechanical_pipe duplicate(13,4,50)=minecraft:air
+[11:56:14] marker: phase -> DONE
+[11:56:14] marker: finished failure=none cycleChanged=true cellPlaced=true repeats=5
+[11:56:14] client finished; exiting driver

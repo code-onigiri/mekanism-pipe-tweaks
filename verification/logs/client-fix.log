@@ -1,0 +1,202 @@
+[21Nov2026 11:54:21.488] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientdev, --version, 21.1.264, --assetIndex, 17, --assetsDir, /home/hatch/workspace/gradle-test/ghrun/caches/neoformruntime/assets, --gameDir, ., --fml.fmlVersion, 4.0.45, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.264, --fml.neoFormVersion, 20240808.144430, --quickPlayMultiplayer, 127.0.0.1:25565, --width, 1280, --height, 720]
+[21Nov2026 11:54:21.493] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.13+9-LTS
+[21Nov2026 11:54:21.495] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.13 by Eclipse Adoptium; OS Linux arch amd64 version 7.0.0-44-generic
+[21Nov2026 11:54:21.820] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[21Nov2026 11:54:22.289] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[21Nov2026 11:54:22.674] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.5
+[21Nov2026 11:54:22.798] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.5 got version 4.5
+[21Nov2026 11:54:23.097] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/home/hatch/workspace/gradle-test/ghrun/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.4+mixin.0.8.7/26d01f0567ab46e9ca0d2ed89d0ecc11aadbd433/sponge-mixin-0.16.4+mixin.0.8.7.jar%23126!/ Service=ModLauncher Env=CLIENT
+[21Nov2026 11:54:23.828] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: llvmpipe (LLVM 20.1.2, 256 bits) GL version 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4, Mesa
+[21Nov2026 11:54:24.503] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[21Nov2026 11:54:24.506] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Mekanism 10.7.19 (mekanism)
+		Mekanism Pipe Tweaks 0.1.0 (mekanism_pipe_tweaks)
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.264 (neoforge)
+[21Nov2026 11:54:28.908] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientdev' with arguments [--version, 21.1.264, --gameDir, ., --assetsDir, /home/hatch/workspace/gradle-test/ghrun/caches/neoformruntime/assets, --assetIndex, 17, --quickPlayMultiplayer, 127.0.0.1:25565, --width, 1280, --height, 720]
+[21Nov2026 11:54:36.616] [pool-7-thread-1/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[21Nov2026 11:54:36.998] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 229 Datafixer optimizations took 1589 milliseconds
+[21Nov2026 11:54:54.422] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21Nov2026 11:54:54.425] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21Nov2026 11:54:54.430] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[21Nov2026 11:54:54.433] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[21Nov2026 11:54:54.437] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21Nov2026 11:54:54.810] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/hatch/workspace/mekanism-pipe-tweaks/build/moddev/artifacts/neoforge-21.1.264.jar%23177!/assets/.mcassetsroot' uses unexpected schema
+[21Nov2026 11:54:54.811] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/hatch/workspace/mekanism-pipe-tweaks/build/moddev/artifacts/neoforge-21.1.264.jar%23177!/data/.mcassetsroot' uses unexpected schema
+[21Nov2026 11:54:54.892] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[21Nov2026 11:54:54.906] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[21Nov2026 11:54:55.192] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.3+5
+[21Nov2026 11:54:56.333] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.264, for MC 1.21.1
+[21Nov2026 11:55:02.207] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: []
+[21Nov2026 11:55:03.195] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources, mod/mekanism, mod/mekanism_pipe_tweaks, mod/neoforge
+[21Nov2026 11:55:03.219] [Worker-Main-1/INFO] [mekanism.common.Mekanism/]: Version 10.7.19 initializing...
+[21Nov2026 11:55:03.291] [Worker-Main-1/INFO] [mekanism.common.Mekanism/]: Initialized HolidayManager.
+[21Nov2026 11:55:03.311] [Worker-Main-1/INFO] [mekanism.common.Mekanism/]: Fake player readout: UUID = 46e82cd0-d480-3d48-800a-77431ede078e, name = [Mekanism]
+[21Nov2026 11:55:03.313] [Worker-Main-1/INFO] [mekanism.common.Mekanism/]: Mod loaded.
+[21Nov2026 11:55:04.036] [Worker-Main-1/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.05.hex, loading
+[21Nov2026 11:55:05.499] [Worker-Main-1/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_jp_patch-15.1.05.hex, loading
+[21Nov2026 11:55:13.606] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[21Nov2026 11:55:13.616] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[21Nov2026 11:55:13.685] [Render thread/ERROR] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Error starting SoundSystem. Turning off sounds & music
+java.lang.IllegalStateException: Failed to open OpenAL device
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.audio.Library.openDeviceOrFallback(Library.java:207) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.audio.Library.init(Library.java:74) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundEngine.loadLibrary(SoundEngine.java:107) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundEngine.reload(SoundEngine.java:99) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundManager.apply(SoundManager.java:130) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundManager.apply(SoundManager.java:44) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[neoforge-21.1.264.jar%23177!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:86) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:148) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:122) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:111) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1155) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:807) ~[neoforge-21.1.264.jar%23177!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[neoforge-21.1.264.jar%23177!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.45.jar%23134!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.45.jar%23134!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.loading.targets.NeoForgeClientDevLaunchHandler.runService(NeoForgeClientDevLaunchHandler.java:23) ~[loader-4.0.45.jar%23134!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.45.jar%23134!/:4.0]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%23114!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%23114!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%23114!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%23114!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%23114!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%23114!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%23114!/:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?]
+[21Nov2026 11:55:14.004] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[21Nov2026 11:55:14.090] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[21Nov2026 11:55:14.093] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[21Nov2026 11:55:14.096] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[21Nov2026 11:55:14.098] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[21Nov2026 11:55:14.111] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[21Nov2026 11:55:14.113] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[21Nov2026 11:55:14.113] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[21Nov2026 11:55:14.115] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[21Nov2026 11:55:14.404] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[21Nov2026 11:55:14.407] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[21Nov2026 11:55:14.409] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[21Nov2026 11:55:14.409] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[21Nov2026 11:55:14.410] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[21Nov2026 11:55:14.560] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[21Nov2026 11:55:14.932] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 mekanism:textures/atlas/robit.png-atlas
+[21Nov2026 11:55:14.951] [Render thread/INFO] [net.neoforged.neoforge.client.entity.animation.json.AnimationLoader/]: Loaded 0 entity animations
+[21Nov2026 11:55:15.103] [Render thread/INFO] [net.minecraft.client.gui.screens.ConnectScreen/]: Connecting to 127.0.0.1, 25565
+[21Nov2026 11:55:29.724] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 11 advancements
+[21Nov2026 11:55:30.809] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST world_ready player=Dev pos=(12.6, 4.0, 50.5) level=minecraft:overworld fov=70
+[21Nov2026 11:55:30.813] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> SETUP
+[21Nov2026 11:55:40.289] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST setup_done pipeSlot=1 configuratorSlot=0 emptySlot=3
+[21Nov2026 11:55:40.290] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> PLACE_TP
+[21Nov2026 11:55:40.290] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP place 15.5 3.0 16.8
+[21Nov2026 11:55:41.519] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> PLACE_AIM
+[21Nov2026 11:55:42.026] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST placement click anchor=(14,4,14) face=SOUTH item=mekanism:basic_mechanical_pipe selected=1 hit=BLOCK pos=MutableBlockPos{x=14, y=4, z=14} face=south location=(14.361, 4.426, 14.750) lookAt=(14.5, 4.45, 15.0)
+[21Nov2026 11:55:42.116] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST placement useItemOn -> SUCCESS
+[21Nov2026 11:55:42.116] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> PLACE_SETTLE
+[21Nov2026 11:55:43.329] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST placed block at (14,4,15): mekanism:basic_mechanical_pipe
+[21Nov2026 11:55:43.330] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST connections anchor at (14,4,14): down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[21Nov2026 11:55:43.330] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST connections placed at (14,4,15): down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[21Nov2026 11:55:43.330] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST connections extra at (14,4,16): down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE
+[21Nov2026 11:55:43.331] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> PLACE_VIEW_TP
+[21Nov2026 11:55:43.331] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP place_view 11.8 3.0 15.3
+[21Nov2026 11:55:44.710] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> PLACE_VIEW
+[21Nov2026 11:55:46.244] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST screenshot saved ./../verification/screenshot-2-placement.png (1280x720)
+[21Nov2026 11:55:46.245] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> GUIDE_TP
+[21Nov2026 11:55:46.245] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP guide 13.3 3.0 14.5
+[21Nov2026 11:55:47.206] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> GUIDE
+[21Nov2026 11:55:48.506] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST guide position (13.3, 3.0, 14.5) holding mekanism:configurator
+[21Nov2026 11:55:48.510] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST guide vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=14} face=west location=(14.250, 4.457, 14.500) expanded=cell=west col=1 row=1 face=west mode=CONFIGURATOR
+[21Nov2026 11:55:48.668] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST screenshot saved ./../verification/screenshot-1-guide.png (1280x720)
+[21Nov2026 11:55:48.669] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST cycle raw before=NORMAL
+[21Nov2026 11:55:48.669] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> CYCLE
+[21Nov2026 11:55:48.797] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST cycle: sneak+use configurator on anchor west face (sneaking=true)
+[21Nov2026 11:55:48.803] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST cycle useItemOn -> SUCCESS
+[21Nov2026 11:55:48.804] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> CYCLE_SETTLE
+[21Nov2026 11:55:50.104] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST cycle result: anchor west raw=PUSH
+[21Nov2026 11:55:50.104] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST connections anchor-after-cycle at (14,4,14): down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NONE east=NORMAL/NONE
+[21Nov2026 11:55:50.204] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST screenshot saved ./../verification/screenshot-3-cycle.png (1280x720)
+[21Nov2026 11:55:50.205] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> CELL_TP
+[21Nov2026 11:55:50.205] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP cell 12.6 3.0 14.5
+[21Nov2026 11:55:51.409] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> CELL_AIM
+[21Nov2026 11:55:51.702] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST cell aim (real crosshair): lookAt=(14.0, 4.875, 14.5) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[21Nov2026 11:55:51.703] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST cell placement (RightClickItem) -> SUCCESS
+[21Nov2026 11:55:51.703] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> CELL_SETTLE
+[21Nov2026 11:55:51.807] [Render thread/WARN] [mekanism.common.Mekanism/]: Update tile packet received for position: BlockPos{x=14, y=5, z=14} in world: minecraft:overworld, but no valid tile was found.
+[21Nov2026 11:55:53.242] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST cell placed at (14,5,14): mekanism:basic_mechanical_pipe
+[21Nov2026 11:55:53.243] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST connections anchor-after-cell at (14,4,14): down=NORMAL/NONE up=NORMAL/NORMAL north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NONE east=NORMAL/NONE
+[21Nov2026 11:55:53.243] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST connections cell-placed at (14,5,14): down=NORMAL/NORMAL up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[21Nov2026 11:55:53.243] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST CHECK_CELL screenshot 14 4 14
+[21Nov2026 11:55:53.243] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> CELL_VIEW_TP
+[21Nov2026 11:55:53.243] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP cell_view 11.8 3.0 15.3
+[21Nov2026 11:55:54.605] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> CELL_VIEW
+[21Nov2026 11:55:55.833] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST cell-view vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=14} face=west location=(14.250, 4.904, 14.409) expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[21Nov2026 11:55:56.009] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST screenshot saved ./../verification/screenshot-4-cell-place.png (1280x720)
+[21Nov2026 11:55:56.010] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_TP
+[21Nov2026 11:55:56.011] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP repeat0 12.6 3.0 20.5
+[21Nov2026 11:55:57.209] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_AIM
+[21Nov2026 11:55:57.589] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[0] aim anchor=(14,4,20) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[21Nov2026 11:55:57.596] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[0] cell placement (RightClickItem) -> SUCCESS
+[21Nov2026 11:55:57.598] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_SETTLE
+[21Nov2026 11:55:57.716] [Render thread/WARN] [mekanism.common.Mekanism/]: Update tile packet received for position: BlockPos{x=14, y=5, z=20} in world: minecraft:overworld, but no valid tile was found.
+[21Nov2026 11:55:58.795] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST CHECK_CELL repeat0 14 4 20
+[21Nov2026 11:55:58.803] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[0] local cell(14,5,20)=mekanism:basic_mechanical_pipe duplicate(13,4,20)=minecraft:air
+[21Nov2026 11:55:58.803] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_TP
+[21Nov2026 11:55:58.803] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP repeat1 12.6 3.0 26.5
+[21Nov2026 11:56:00.121] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_AIM
+[21Nov2026 11:56:00.393] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[1] aim anchor=(14,4,26) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[21Nov2026 11:56:00.394] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[1] cell placement (RightClickItem) -> SUCCESS
+[21Nov2026 11:56:00.394] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_SETTLE
+[21Nov2026 11:56:00.431] [Render thread/WARN] [mekanism.common.Mekanism/]: Update tile packet received for position: BlockPos{x=14, y=5, z=26} in world: minecraft:overworld, but no valid tile was found.
+[21Nov2026 11:56:01.694] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST CHECK_CELL repeat1 14 4 26
+[21Nov2026 11:56:01.694] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[1] local cell(14,5,26)=mekanism:basic_mechanical_pipe duplicate(13,4,26)=minecraft:air
+[21Nov2026 11:56:01.695] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_TP
+[21Nov2026 11:56:01.695] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP repeat2 12.6 3.0 32.5
+[21Nov2026 11:56:03.210] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_AIM
+[21Nov2026 11:56:03.406] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[2] aim anchor=(14,4,32) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[21Nov2026 11:56:03.411] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[2] cell placement (RightClickItem) -> SUCCESS
+[21Nov2026 11:56:03.411] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_SETTLE
+[21Nov2026 11:56:03.623] [Render thread/WARN] [mekanism.common.Mekanism/]: Update tile packet received for position: BlockPos{x=14, y=5, z=32} in world: minecraft:overworld, but no valid tile was found.
+[21Nov2026 11:56:04.602] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST CHECK_CELL repeat2 14 4 32
+[21Nov2026 11:56:04.604] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[2] local cell(14,5,32)=mekanism:basic_mechanical_pipe duplicate(13,4,32)=minecraft:air
+[21Nov2026 11:56:04.604] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_TP
+[21Nov2026 11:56:04.605] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP repeat3 12.6 3.0 38.5
+[21Nov2026 11:56:05.833] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_AIM
+[21Nov2026 11:56:06.202] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[3] aim anchor=(14,4,38) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[21Nov2026 11:56:06.203] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[3] cell placement (RightClickItem) -> SUCCESS
+[21Nov2026 11:56:06.203] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_SETTLE
+[21Nov2026 11:56:06.287] [Render thread/WARN] [mekanism.common.Mekanism/]: Update tile packet received for position: BlockPos{x=14, y=5, z=38} in world: minecraft:overworld, but no valid tile was found.
+[21Nov2026 11:56:07.522] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST CHECK_CELL repeat3 14 4 38
+[21Nov2026 11:56:07.523] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[3] local cell(14,5,38)=mekanism:basic_mechanical_pipe duplicate(13,4,38)=minecraft:air
+[21Nov2026 11:56:07.523] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_TP
+[21Nov2026 11:56:07.523] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP repeat4 12.6 3.0 44.5
+[21Nov2026 11:56:08.735] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_AIM
+[21Nov2026 11:56:09.116] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[4] aim anchor=(14,4,44) vanillaHit=MISS expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[21Nov2026 11:56:09.117] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[4] cell placement (RightClickItem) -> SUCCESS
+[21Nov2026 11:56:09.117] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> REPEAT_SETTLE
+[21Nov2026 11:56:09.215] [Render thread/WARN] [mekanism.common.Mekanism/]: Update tile packet received for position: BlockPos{x=14, y=5, z=44} in world: minecraft:overworld, but no valid tile was found.
+[21Nov2026 11:56:10.421] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST CHECK_CELL repeat4 14 4 44
+[21Nov2026 11:56:10.422] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST repeat[4] local cell(14,5,44)=mekanism:basic_mechanical_pipe duplicate(13,4,44)=minecraft:air
+[21Nov2026 11:56:10.422] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> GUARD_TP
+[21Nov2026 11:56:10.423] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST TP guard 12.6 4.0 50.5
+[21Nov2026 11:56:11.720] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> GUARD_AIM
+[21Nov2026 11:56:12.006] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST guard aim anchor=(14,4,50) vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=50} face=west location=(14.250, 4.607, 50.500) expanded=cell=up col=1 row=0 face=west mode=PLACEMENT
+[21Nov2026 11:56:12.008] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST guard cell placement (RightClickBlock) -> SUCCESS
+[21Nov2026 11:56:12.008] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> GUARD_SETTLE
+[21Nov2026 11:56:12.125] [Render thread/WARN] [mekanism.common.Mekanism/]: Update tile packet received for position: BlockPos{x=14, y=5, z=50} in world: minecraft:overworld, but no valid tile was found.
+[21Nov2026 11:56:13.301] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST CHECK_CELL guard 14 4 50
+[21Nov2026 11:56:13.301] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST guard local cell(14,5,50)=mekanism:basic_mechanical_pipe duplicate(13,4,50)=minecraft:air
+[21Nov2026 11:56:13.301] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST phase -> DONE
+[21Nov2026 11:56:13.304] [Render thread/INFO] [MPT-AutoTest/]: MPT_AUTOTEST finished failure=none cycleChanged=true cellPlaced=true repeats=5
+[21Nov2026 11:56:14.088] [Render thread/WARN] [net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl/]: Client disconnected with reason: mpt autotest complete

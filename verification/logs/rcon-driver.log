@@ -1,0 +1,602 @@
+[09:29:34] connected to rcon
+[09:29:34] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:29:34] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:29:35] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:29:35] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:29:35] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:29:35] time set noon -> Set the time to 6000
+[09:29:35] weather clear -> Set the weather to clear
+[09:29:35] fill 10 4 10 18 6 18 minecraft:air -> No blocks were filled
+[09:29:36] fill 10 3 10 18 3 18 minecraft:stone -> Successfully filled 81 block(s)
+[09:29:36] setblock 14 4 14 mekanism:mechanical_pipe -> Unknown block type 'mekanism:mechanical_pipe' | ...k 14 4 14 mekanism:mechanical_pipe<--[HERE]
+[09:29:36] setblock 15 4 15 mekanism:mechanical_pipe -> Unknown block type 'mekanism:mechanical_pipe' | ...k 15 4 15 mekanism:mechanical_pipe<--[HERE]
+[09:29:36] watching run-test-client/logs/latest.log
+[09:32:42] connected to rcon
+[09:32:42] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:32:42] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:32:43] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:32:43] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:32:43] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:32:43] time set noon -> Set the time to 6000
+[09:32:43] weather clear -> Set the weather to clear
+[09:32:43] fill 10 4 10 18 6 18 minecraft:air -> No blocks were filled
+[09:32:43] fill 10 3 10 18 3 18 minecraft:stone -> No blocks were filled
+[09:32:44] setblock 14 4 14 mekanism:mechanical_pipe -> Unknown block type 'mekanism:mechanical_pipe' | ...k 14 4 14 mekanism:mechanical_pipe<--[HERE]
+[09:32:44] setblock 15 4 15 mekanism:mechanical_pipe -> Unknown block type 'mekanism:mechanical_pipe' | ...k 15 4 15 mekanism:mechanical_pipe<--[HERE]
+[09:32:44] watching run-test-client/logs/latest.log
+[09:33:42] connected to rcon
+[09:33:42] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:33:42] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:33:43] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:33:43] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:33:43] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:33:43] time set noon -> Set the time to 6000
+[09:33:43] weather clear -> Set the weather to clear
+[09:33:43] fill 10 4 10 18 6 18 minecraft:air -> No blocks were filled
+[09:33:44] fill 10 3 10 18 3 18 minecraft:stone -> No blocks were filled
+[09:33:44] setblock 14 4 14 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 14
+[09:33:44] setblock 15 4 15 mekanism:basic_mechanical_pipe -> Changed the block at 15, 4, 15
+[09:33:44] watching run-test-client/logs/latest.log
+[09:34:56] marker: harness enabled (mpt.autotest=true)
+[09:35:58] marker: world_ready player=Dev pos=(-4.5, -60.0, -7.5) level=minecraft:overworld
+[09:35:58] clear Dev -> No items were found on player Dev
+[09:35:58] gamemode creative Dev -> 
+[09:35:59] op Dev -> Made Dev a server operator
+[09:35:59] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[09:35:59] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[09:35:59] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[09:35:59] marker: phase -> SETUP
+[09:36:04] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=20
+[09:36:06] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=40
+[09:36:07] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=60
+[09:36:08] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=80
+[09:36:09] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=100
+[09:36:10] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=120
+[09:36:11] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=140
+[09:36:12] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=160
+[09:36:13] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=180
+[09:36:13] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=200
+[09:36:14] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=220
+[09:36:16] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=240
+[09:36:16] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=260
+[09:36:17] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=280
+[09:36:19] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=300
+[09:36:19] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=320
+[09:36:20] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=340
+[09:36:21] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=360
+[09:36:22] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=380
+[09:36:23] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=400
+[09:36:23] marker: setup timeout: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipeSlot=-1 configuratorSlot=-1
+[09:36:23] marker: finished failure=setup timeout (anchor/items never appeared) cycleChanged=false cellPlaced=false finalPos=(-4.5, -60.0, -7.5)
+[09:36:23] client finished; exiting driver
+[09:37:52] connected to rcon
+[09:37:52] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:37:52] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:37:52] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:37:52] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:37:52] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:37:52] time set noon -> Set the time to 6000
+[09:37:53] weather clear -> Set the weather to clear
+[09:37:53] fill 10 4 10 18 6 18 minecraft:air -> Successfully filled 2 block(s)
+[09:37:53] fill 10 3 10 18 3 18 minecraft:stone -> No blocks were filled
+[09:37:53] setblock 14 4 14 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 14
+[09:37:53] setblock 15 4 15 mekanism:basic_mechanical_pipe -> Changed the block at 15, 4, 15
+[09:37:53] watching run-test-client/logs/latest.log
+[09:37:53] marker: harness enabled (mpt.autotest=true)
+[09:37:53] marker: world_ready player=Dev pos=(-4.5, -60.0, -7.5) level=minecraft:overworld
+[09:37:53] clear Dev -> No player was found
+[09:37:54] gamemode creative Dev -> No player was found
+[09:37:54] op Dev -> Nothing changed. The player already is an operator
+[09:37:54] give Dev mekanism:configurator -> No player was found
+[09:37:54] give Dev mekanism:basic_mechanical_pipe 64 -> No player was found
+[09:37:54] give Dev mekanism:basic_universal_cable 64 -> No player was found
+[09:37:54] marker: phase -> SETUP
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=20
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=40
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=60
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=80
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=100
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=120
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=140
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=160
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=180
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=200
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=220
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=240
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=260
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=280
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=300
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=320
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=340
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=360
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=380
+[09:37:54] marker: setup waiting: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipes=-1 configurators=-1 wait=400
+[09:37:54] marker: setup timeout: anchor=Block{mekanism:basic_mechanical_pipe} transmitter pipeSlot=-1 configuratorSlot=-1
+[09:37:54] marker: finished failure=setup timeout (anchor/items never appeared) cycleChanged=false cellPlaced=false finalPos=(-4.5, -60.0, -7.5)
+[09:37:54] client finished; exiting driver
+[09:38:02] connected to rcon
+[09:38:02] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:38:02] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:38:02] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:38:03] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:38:03] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:38:03] time set noon -> Set the time to 6000
+[09:38:03] weather clear -> Set the weather to clear
+[09:38:03] fill 10 4 10 18 6 18 minecraft:air -> Successfully filled 2 block(s)
+[09:38:03] fill 10 3 10 18 3 18 minecraft:stone -> No blocks were filled
+[09:38:03] setblock 14 4 14 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 14
+[09:38:04] setblock 15 4 15 mekanism:basic_mechanical_pipe -> Changed the block at 15, 4, 15
+[09:38:04] watching run-test-client/logs/latest.log
+[09:39:08] marker: harness enabled (mpt.autotest=true)
+[09:39:43] marker: world_ready player=Dev pos=(-4.5, -60.0, -7.5) level=minecraft:overworld
+[09:39:43] clear Dev -> Removed 129 item(s) from player Dev
+[09:39:43] gamemode creative Dev -> 
+[09:39:43] op Dev -> Nothing changed. The player already is an operator
+[09:39:43] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[09:39:43] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[09:39:44] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[09:39:44] marker: phase -> SETUP
+[09:39:44] marker: setup_done pipeSlot=1 configuratorSlot=0 emptySlot=3 anchor=Block{mekanism:basic_mechanical_pipe} transmitter extra=Block{mekanism:basic_mechanical_pipe} transmitter
+[09:39:44] marker: phase -> PLACE_TP
+[09:39:44] marker: TP place 14.5 4.0 16.8
+[09:39:44] tp Dev 14.5 4.0 16.8 -> Teleported Dev to 14.500000, 4.000000, 16.800000
+[09:39:44] teleported for place
+[09:39:44] marker: arrived at placement position (14.5, 4.0, 16.8)
+[09:39:44] marker: phase -> PLACE_AIM
+[09:39:44] marker: placement click anchor=BlockPos{x=14, y=4, z=14} face=SOUTH item=mekanism:basic_mechanical_pipe selected=1 hit=net.minecraft.world.phys.BlockHitResult@12d49ede lookAt=(14.5, 4.5, 15.0)
+[09:39:44] marker: placement useItemOn -> SUCCESS
+[09:39:44] marker: phase -> PLACE_SETTLE
+[09:39:47] marker: placed block at BlockPos{x=14, y=4, z=15}: Block{mekanism:basic_mechanical_pipe} transmitter
+[09:39:47] marker: connections anchor at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[09:39:47] marker: connections placed at BlockPos{x=14, y=4, z=15}: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[09:39:47] marker: connections extra at BlockPos{x=15, y=4, z=15}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE
+[09:39:47] marker: phase -> PLACE_VIEW_TP
+[09:39:48] marker: TP place_view 12.5 4.0 17.2
+[09:39:48] tp Dev 12.5 4.0 17.2 -> Teleported Dev to 12.500000, 4.000000, 17.200000
+[09:39:48] teleported for place_view
+[09:39:48] marker: placement view at (12.5, 4.0, 17.2) looking at (14.6, 4.45, 14.7)
+[09:39:48] marker: phase -> PLACE_VIEW
+[09:39:49] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-2-placement.png (1280x720)
+[09:39:49] marker: phase -> GUIDE_TP
+[09:39:49] marker: TP guide 12.5 4.0 14.5
+[09:39:49] tp Dev 12.5 4.0 14.5 -> Teleported Dev to 12.500000, 4.000000, 14.500000
+[09:39:49] teleported for guide
+[09:39:49] marker: guide position (12.5, 4.0, 14.5) holding mekanism:configurator
+[09:39:49] marker: phase -> GUIDE
+[09:39:50] marker: guide hitResult pos=MutableBlockPos{x=14, y=4, z=14} face=west location=(14.25, 4.500035997717541, 14.5) target=cell=west col=1 row=1 mode=CONFIGURATOR
+[09:39:50] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-1-guide.png (1280x720)
+[09:39:50] marker: phase -> CYCLE
+[09:39:50] marker: cycle: sneak+use configurator on anchor west face (raw before=NORMAL)
+[09:39:50] marker: cycle useItemOn -> PASS
+[09:39:50] marker: phase -> CYCLE_SETTLE
+[09:39:51] marker: cycle result: anchor west raw=NORMAL
+[09:39:51] marker: client-side click path did not cycle the side; sending CycleSidePayload directly
+[09:39:52] marker: cycle result: anchor west raw=PUSH
+[09:39:52] marker: connections anchor-after-cycle at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NONE east=NORMAL/NONE
+[09:39:52] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-3-cycle.png (1280x720)
+[09:39:52] marker: phase -> CELL
+[09:39:52] marker: cell placement: synthetic hover (14.25, 4.875, 14.5) on anchor west face -> cell side=up col=1 row=0
+[09:39:52] marker: cell placement useItemOn -> SUCCESS
+[09:39:52] marker: phase -> CELL_SETTLE
+[09:39:53] marker: cell placed at BlockPos{x=14, y=5, z=14}: Block{mekanism:basic_mechanical_pipe} transmitter
+[09:39:53] marker: connections anchor-after-cell at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NORMAL north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NORMAL east=NORMAL/NONE
+[09:39:53] marker: connections cell-placed at BlockPos{x=14, y=5, z=14}: down=NORMAL/NORMAL up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[09:39:53] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-4-cell-place.png (1280x720)
+[09:39:53] marker: phase -> DONE
+[09:39:53] marker: finished failure=none cycleChanged=true cellPlaced=true finalPos=(12.5, 4.0, 14.5)
+[09:39:53] client finished; exiting driver
+[09:42:54] connected to rcon
+[09:42:54] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:42:54] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:42:54] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:42:55] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:42:55] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:42:55] time set noon -> Set the time to 6000
+[09:42:55] weather clear -> Set the weather to clear
+[09:42:55] fill 10 4 10 18 6 18 minecraft:air -> Successfully filled 5 block(s)
+[09:42:55] fill 10 3 10 18 3 18 minecraft:stone -> No blocks were filled
+[09:42:55] setblock 14 4 14 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 14
+[09:42:56] setblock 14 4 16 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 16
+[09:42:56] watching run-test-client/logs/latest.log
+[09:44:03] marker: harness enabled (mpt.autotest=true)
+[09:44:35] marker: world_ready player=Dev pos=(12.5, 4.0, 14.5) level=minecraft:overworld
+[09:44:35] clear Dev -> Removed 129 item(s) from player Dev
+[09:44:35] gamemode creative Dev -> 
+[09:44:36] op Dev -> Nothing changed. The player already is an operator
+[09:44:36] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[09:44:36] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[09:44:36] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[09:44:36] marker: phase -> SETUP
+[09:44:36] marker: setup_done pipeSlot=1 configuratorSlot=0 emptySlot=3 anchor=Block{mekanism:basic_mechanical_pipe} transmitter extra=Block{mekanism:basic_mechanical_pipe} transmitter
+[09:44:36] marker: phase -> PLACE_TP
+[09:44:36] marker: TP place 15.5 4.0 16.8
+[09:44:36] tp Dev 15.5 4.0 16.8 -> Teleported Dev to 15.500000, 4.000000, 16.800000
+[09:44:36] teleported for place
+[09:44:37] marker: arrived at placement position (15.5, 4.0, 16.8)
+[09:44:37] marker: phase -> PLACE_AIM
+[09:44:37] marker: placement click anchor=BlockPos{x=14, y=4, z=14} face=SOUTH item=mekanism:basic_mechanical_pipe selected=1 hit=net.minecraft.world.phys.BlockHitResult@6d921d6b lookAt=(14.5, 4.5, 15.0)
+[09:44:37] marker: placement useItemOn -> SUCCESS
+[09:44:37] marker: phase -> PLACE_SETTLE
+[09:44:38] marker: placed block at BlockPos{x=14, y=4, z=15}: Block{mekanism:basic_mechanical_pipe} transmitter
+[09:44:38] marker: connections anchor at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[09:44:38] marker: connections placed at BlockPos{x=14, y=4, z=15}: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[09:44:38] marker: connections extra at BlockPos{x=14, y=4, z=16}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE
+[09:44:38] marker: phase -> PLACE_VIEW_TP
+[09:44:38] marker: TP place_view 11.3 4.0 15.3
+[09:44:38] tp Dev 11.3 4.0 15.3 -> Teleported Dev to 11.300000, 4.000000, 15.300000
+[09:44:38] teleported for place_view
+[09:44:38] marker: placement view at (11.3, 4.0, 15.3) looking at (14.5, 4.45, 15.0)
+[09:44:38] marker: phase -> PLACE_VIEW
+[09:44:39] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-2-placement.png (1280x720)
+[09:44:39] marker: phase -> GUIDE_TP
+[09:44:39] marker: TP guide 12.8 4.0 14.5
+[09:44:40] tp Dev 12.8 4.0 14.5 -> Teleported Dev to 12.800000, 4.000000, 14.500000
+[09:44:40] teleported for guide
+[09:44:40] marker: guide position (12.8, 4.0, 14.5) holding mekanism:configurator
+[09:44:40] marker: phase -> GUIDE
+[09:44:40] marker: guide hitResult pos=MutableBlockPos{x=14, y=4, z=14} face=west location=(14.25, 4.500217349511798, 14.5) target=cell=west col=1 row=1 mode=CONFIGURATOR
+[09:44:40] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-1-guide.png (1280x720)
+[09:44:40] marker: phase -> CYCLE
+[09:44:40] marker: cycle: sneak+use configurator on anchor west face (raw before=NORMAL)
+[09:44:40] marker: cycle useItemOn -> PASS sneaking=false
+[09:44:40] marker: phase -> CYCLE_SETTLE
+[09:44:41] marker: cycle result: anchor west raw=NORMAL
+[09:44:41] marker: client-side click path did not cycle the side; sending CycleSidePayload directly
+[09:44:42] marker: cycle result: anchor west raw=PUSH
+[09:44:42] marker: connections anchor-after-cycle at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NONE east=NORMAL/NONE
+[09:44:42] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-3-cycle.png (1280x720)
+[09:44:42] marker: phase -> CELL
+[09:44:42] marker: cell placement: synthetic hover (14.25, 4.875, 14.5) on anchor west face -> cell side=up col=1 row=0
+[09:44:42] marker: cell placement useItemOn -> SUCCESS
+[09:44:42] marker: phase -> CELL_SETTLE
+[09:44:43] marker: cell placed at BlockPos{x=14, y=5, z=14}: Block{mekanism:basic_mechanical_pipe} transmitter
+[09:44:43] marker: connections anchor-after-cell at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NORMAL north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NORMAL east=NORMAL/NONE
+[09:44:43] marker: connections cell-placed at BlockPos{x=14, y=5, z=14}: down=NORMAL/NORMAL up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[09:44:43] marker: phase -> CELL_VIEW_TP
+[09:44:43] marker: TP cell_view 11.8 4.0 16.2
+[09:44:43] tp Dev 11.8 4.0 16.2 -> Teleported Dev to 11.800000, 4.000000, 16.200000
+[09:44:43] teleported for cell_view
+[09:44:43] marker: phase -> CELL_VIEW
+[09:44:44] marker: cell-view hitResult pos=MutableBlockPos{x=14, y=4, z=14} face=south location=(14.102967812727302, 4.664760332681733, 14.75) target=cell=west col=0 row=1 mode=PLACEMENT
+[09:44:44] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-4-cell-place.png (1280x720)
+[09:44:44] marker: phase -> DONE
+[09:44:44] marker: finished failure=none cycleChanged=true cellPlaced=true finalPos=(11.8, 4.0, 16.2)
+[09:44:44] client finished; exiting driver
+[09:49:25] connected to rcon
+[09:49:26] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:49:26] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:49:26] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:49:26] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:49:26] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:49:26] time set noon -> Set the time to 6000
+[09:49:27] weather clear -> Set the weather to clear
+[09:49:27] fill 10 4 10 18 6 18 minecraft:air -> Successfully filled 5 block(s)
+[09:49:27] fill 10 3 10 18 3 18 minecraft:stone -> No blocks were filled
+[09:49:27] setblock 14 4 14 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 14
+[09:49:27] setblock 14 4 16 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 16
+[09:49:27] watching run-test-client/logs/latest.log
+[09:50:34] marker: harness enabled (mpt.autotest=true)
+[09:51:03] marker: world_ready player=Dev pos=(11.8, 4.0, 16.2) level=minecraft:overworld
+[09:51:03] clear Dev -> Removed 129 item(s) from player Dev
+[09:51:03] gamemode creative Dev -> 
+[09:51:03] op Dev -> Nothing changed. The player already is an operator
+[09:51:03] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[09:51:04] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[09:51:04] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[09:51:04] marker: phase -> SETUP
+[09:51:04] marker: setup_done pipeSlot=1 configuratorSlot=0 emptySlot=3 anchor=Block{mekanism:basic_mechanical_pipe} transmitter extra=Block{mekanism:basic_mechanical_pipe} transmitter
+[09:51:04] marker: phase -> PLACE_TP
+[09:51:04] marker: TP place 15.5 4.0 16.8
+[09:51:04] tp Dev 15.5 4.0 16.8 -> Teleported Dev to 15.500000, 4.000000, 16.800000
+[09:51:04] teleported for place
+[09:51:04] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[09:51:04] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:51:04]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:05] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:51:05]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:05] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:51:05]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:05] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[09:51:05] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:51:05] marker: arrived at placement position (15.5, 4.0, 16.8)
+[09:51:05] marker: phase -> PLACE_AIM
+[09:51:05] marker: placement click anchor=BlockPos{x=14, y=4, z=14} face=SOUTH item=mekanism:basic_mechanical_pipe selected=1 hit=net.minecraft.world.phys.BlockHitResult@4d542218 lookAt=(14.5, 4.5, 15.0)
+[09:51:05] marker: placement useItemOn -> SUCCESS
+[09:51:05] marker: phase -> PLACE_SETTLE
+[09:51:05] marker: placed block at BlockPos{x=14, y=4, z=15}: Block{mekanism:basic_mechanical_pipe} transmitter
+[09:51:05] marker: connections anchor at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[09:51:05] marker: connections placed at BlockPos{x=14, y=4, z=15}: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[09:51:05] marker: connections extra at BlockPos{x=14, y=4, z=16}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE
+[09:51:05] marker: phase -> PLACE_VIEW_TP
+[09:51:05] marker: TP place_view 11.3 4.0 15.3
+[09:51:06] tp Dev 11.3 4.0 15.3 -> Teleported Dev to 11.300000, 4.000000, 15.300000
+[09:51:06] teleported for place_view
+[09:51:06] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[09:51:06] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[09:51:06]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:06] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:51:06]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:06] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:51:06]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:06] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[09:51:07] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:51:07] marker: placement view at (11.3, 4.0, 15.3) looking at (14.5, 4.45, 15.0)
+[09:51:07] marker: phase -> PLACE_VIEW
+[09:51:07] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-2-placement.png (1280x720)
+[09:51:07] marker: phase -> GUIDE_TP
+[09:51:07] marker: TP guide 12.8 4.0 14.5
+[09:51:07] tp Dev 12.8 4.0 14.5 -> Teleported Dev to 12.800000, 4.000000, 14.500000
+[09:51:07] teleported for guide
+[09:51:07] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[09:51:07] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[09:51:07]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:08] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:51:08]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:08] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:51:08]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:08] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[09:51:08] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:51:08] marker: guide position (12.8, 4.0, 14.5) holding mekanism:configurator
+[09:51:08] marker: phase -> GUIDE
+[09:51:08] marker: guide hitResult pos=MutableBlockPos{x=14, y=4, z=14} face=west location=(14.25, 4.500217349511798, 14.5) target=cell=west col=1 row=1 mode=CONFIGURATOR
+[09:51:08] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-1-guide.png (1280x720)
+[09:51:08] marker: phase -> CYCLE
+[09:51:08] marker: cycle: sneak+use configurator on anchor west face (raw before=NORMAL, sneaking=true)
+[09:51:08] marker: cycle useItemOn -> SUCCESS sneaking=false
+[09:51:08] marker: phase -> CYCLE_SETTLE
+[09:51:09] marker: cycle result: anchor west raw=PUSH
+[09:51:09] marker: connections anchor-after-cycle at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NONE east=NORMAL/NONE
+[09:51:09] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-3-cycle.png (1280x720)
+[09:51:09] marker: phase -> CELL
+[09:51:09] marker: cell placement: synthetic hover (14.25, 4.875, 14.5) on anchor west face -> cell side=up col=1 row=0
+[09:51:09] marker: cell placement useItemOn -> SUCCESS
+[09:51:09] marker: phase -> CELL_SETTLE
+[09:51:10] marker: cell placed at BlockPos{x=14, y=5, z=14}: Block{mekanism:basic_mechanical_pipe} transmitter
+[09:51:10] marker: connections anchor-after-cell at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NORMAL north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NORMAL east=NORMAL/NONE
+[09:51:10] marker: connections cell-placed at BlockPos{x=14, y=5, z=14}: down=NORMAL/NORMAL up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[09:51:10] marker: phase -> CELL_VIEW_TP
+[09:51:10] marker: TP cell_view 11.8 4.0 16.2
+[09:51:10] tp Dev 11.8 4.0 16.2 -> Teleported Dev to 11.800000, 4.000000, 16.200000
+[09:51:10] teleported for cell_view
+[09:51:10] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 13, 4, 14 has the following block data: {x: 13, y: 4, connection: [I; 3, 3, 3, 3, 3, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 32b}
+[09:51:10]   pipe at (13, 4, 14): {x: 13, y: 4, connection: [I; 3, 3, 3, 3, 3, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:10] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 1b, connections: 26b}
+[09:51:10]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 1
+[09:51:10] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:51:10]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:11] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:51:11]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:11] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[09:51:11]   pipe at (14, 5, 14): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:51:11] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:51:11] marker: phase -> CELL_VIEW
+[09:51:11] marker: cell-view hitResult pos=MutableBlockPos{x=14, y=4, z=14} face=south location=(14.102967812727302, 4.664760332681733, 14.75) target=cell=west col=0 row=1 mode=PLACEMENT
+[09:51:11] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-4-cell-place.png (1280x720)
+[09:51:11] marker: phase -> DONE
+[09:51:11] marker: finished failure=none cycleChanged=true cellPlaced=true finalPos=(11.8, 4.0, 16.2)
+[09:51:11] client finished; exiting driver
+[09:54:05] connected to rcon
+[09:54:05] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:54:05] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:54:05] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:54:05] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:54:06] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:54:06] time set noon -> Set the time to 6000
+[09:54:06] weather clear -> Set the weather to clear
+[09:54:06] fill 10 3 10 18 6 18 minecraft:air -> Successfully filled 85 block(s)
+[09:54:06] fill 10 2 10 18 2 18 minecraft:stone -> Successfully filled 81 block(s)
+[09:54:06] setblock 14 4 14 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 14
+[09:54:06] setblock 14 4 16 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 16
+[09:54:06] watching run-test-client/logs/latest.log
+[09:55:12] marker: harness enabled (mpt.autotest=true)
+[09:55:46] marker: world_ready player=Dev pos=(11.8, 4.0, 16.2) level=minecraft:overworld fov=90
+[09:55:46] clear Dev -> Removed 129 item(s) from player Dev
+[09:55:46] gamemode creative Dev -> 
+[09:55:47] op Dev -> Nothing changed. The player already is an operator
+[09:55:47] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[09:55:47] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[09:55:47] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[09:55:47] marker: phase -> SETUP
+[09:55:47] marker: setup_done pipeSlot=1 configuratorSlot=0 emptySlot=3 anchor=Block{mekanism:basic_mechanical_pipe} transmitter extra=Block{mekanism:basic_mechanical_pipe} transmitter
+[09:55:47] marker: phase -> PLACE_TP
+[09:55:47] marker: TP place 15.5 3.0 16.8
+[09:55:47] tp Dev 15.5 3.0 16.8 -> Teleported Dev to 15.500000, 3.000000, 16.800000
+[09:55:47] teleported for place
+[09:55:47] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[09:55:48] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[09:55:48]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:48] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:55:48]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:48] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:55:48]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:48] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[09:55:48] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:55:49] marker: arrived at placement position (15.5, 3.0, 16.8)
+[09:55:49] marker: phase -> PLACE_AIM
+[09:55:49] marker: placement click anchor=BlockPos{x=14, y=4, z=14} face=SOUTH item=mekanism:basic_mechanical_pipe selected=1 hit=net.minecraft.world.phys.BlockHitResult@e870441 lookAt=(14.5, 4.5, 15.0)
+[09:55:49] marker: placement useItemOn -> SUCCESS
+[09:55:49] marker: phase -> PLACE_SETTLE
+[09:55:49] marker: placed block at BlockPos{x=14, y=4, z=15}: Block{mekanism:basic_mechanical_pipe} transmitter
+[09:55:49] marker: connections anchor at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[09:55:49] marker: connections placed at BlockPos{x=14, y=4, z=15}: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[09:55:49] marker: connections extra at BlockPos{x=14, y=4, z=16}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE
+[09:55:49] marker: phase -> PLACE_VIEW_TP
+[09:55:49] marker: TP place_view 11.8 3.0 15.3
+[09:55:49] tp Dev 11.8 3.0 15.3 -> Teleported Dev to 11.800000, 3.000000, 15.300000
+[09:55:49] teleported for place_view
+[09:55:49] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[09:55:49] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[09:55:49]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:49] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:55:49]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:50] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:55:50]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:50] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[09:55:50] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:55:50] marker: placement view at (11.8, 3.0, 15.3) looking at (14.5, 4.45, 15.0)
+[09:55:50] marker: phase -> PLACE_VIEW
+[09:55:50] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-2-placement.png (1280x720)
+[09:55:50] marker: phase -> GUIDE_TP
+[09:55:50] marker: TP guide 12.8 3.0 14.5
+[09:55:50] tp Dev 12.8 3.0 14.5 -> Teleported Dev to 12.800000, 3.000000, 14.500000
+[09:55:50] teleported for guide
+[09:55:50] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[09:55:51] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[09:55:51]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:51] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:55:51]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:51] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:55:51]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:51] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[09:55:51] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:55:51] marker: guide position (12.8, 3.0, 14.5) holding mekanism:configurator
+[09:55:51] marker: phase -> GUIDE
+[09:55:51] marker: guide hitResult pos=MutableBlockPos{x=14, y=4, z=14} face=west location=(14.25, 4.50003375444122, 14.5) target=cell=west col=1 row=1 mode=CONFIGURATOR
+[09:55:51] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-1-guide.png (1280x720)
+[09:55:51] marker: phase -> CYCLE
+[09:55:51] marker: cycle: sneak+use configurator on anchor west face (raw before=NORMAL, sneaking=true)
+[09:55:51] marker: cycle useItemOn -> SUCCESS sneaking=false
+[09:55:51] marker: phase -> CYCLE_SETTLE
+[09:55:51] marker: cycle result: anchor west raw=PUSH
+[09:55:51] marker: connections anchor-after-cycle at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NONE east=NORMAL/NONE
+[09:55:52] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-3-cycle.png (1280x720)
+[09:55:52] marker: phase -> CELL
+[09:55:52] marker: cell placement: synthetic hover (14.25, 4.875, 14.5) on anchor west face -> cell side=up col=1 row=0
+[09:55:52] marker: cell placement useItemOn -> SUCCESS
+[09:55:52] marker: phase -> CELL_SETTLE
+[09:55:53] marker: cell placed at BlockPos{x=14, y=5, z=14}: Block{mekanism:basic_mechanical_pipe} transmitter
+[09:55:53] marker: connections anchor-after-cell at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NORMAL north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NORMAL east=NORMAL/NONE
+[09:55:53] marker: connections cell-placed at BlockPos{x=14, y=5, z=14}: down=NORMAL/NORMAL up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[09:55:53] marker: phase -> CELL_VIEW_TP
+[09:55:53] marker: TP cell_view 11.8 3.0 16.2
+[09:55:53] tp Dev 11.8 3.0 16.2 -> Teleported Dev to 11.800000, 3.000000, 16.200000
+[09:55:53] teleported for cell_view
+[09:55:53] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 13, 4, 14 has the following block data: {x: 13, y: 4, connection: [I; 3, 3, 3, 3, 3, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 32b}
+[09:55:53]   pipe at (13, 4, 14): {x: 13, y: 4, connection: [I; 3, 3, 3, 3, 3, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:53] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 1b, connections: 26b}
+[09:55:53]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 1
+[09:55:53] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:55:53]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:54] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:55:54]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:54] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[09:55:54]   pipe at (14, 5, 14): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:55:54] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:55:54] marker: phase -> CELL_VIEW
+[09:55:54] marker: cell-view hitResult pos=MutableBlockPos{x=14, y=4, z=14} face=south location=(14.102967931329445, 4.517673738124117, 14.75) target=cell=west col=0 row=1 mode=PLACEMENT
+[09:55:54] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-4-cell-place.png (1280x720)
+[09:55:54] marker: phase -> DONE
+[09:55:54] marker: finished failure=none cycleChanged=true cellPlaced=true finalPos=(11.8, 3.0, 16.2)
+[09:55:54] client finished; exiting driver
+[09:57:35] connected to rcon
+[09:57:36] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:57:36] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:57:36] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:57:36] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:57:36] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:57:36] time set noon -> Set the time to 6000
+[09:57:37] weather clear -> Set the weather to clear
+[09:57:37] fill 10 3 10 18 6 18 minecraft:air -> Successfully filled 5 block(s)
+[09:57:37] fill 10 2 10 18 2 18 minecraft:stone -> No blocks were filled
+[09:57:37] setblock 14 4 14 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 14
+[09:57:37] setblock 14 4 16 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 16
+[09:57:37] watching run-test-client/logs/latest.log
+[09:58:46] marker: harness enabled (mpt.autotest=true)
+[09:59:20] marker: world_ready player=Dev pos=(11.8, 3.0, 16.2) level=minecraft:overworld fov=70
+[09:59:20] clear Dev -> Removed 129 item(s) from player Dev
+[09:59:20] gamemode creative Dev -> 
+[09:59:21] op Dev -> Nothing changed. The player already is an operator
+[09:59:21] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[09:59:21] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[09:59:21] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[09:59:21] marker: phase -> SETUP
+[09:59:21] marker: setup_done pipeSlot=1 configuratorSlot=0 emptySlot=3 anchor=Block{mekanism:basic_mechanical_pipe} transmitter extra=Block{mekanism:basic_mechanical_pipe} transmitter
+[09:59:21] marker: phase -> PLACE_TP
+[09:59:21] marker: TP place 15.5 3.0 16.8
+[09:59:21] tp Dev 15.5 3.0 16.8 -> Teleported Dev to 15.500000, 3.000000, 16.800000
+[09:59:21] teleported for place
+[09:59:21] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[09:59:22] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[09:59:22]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:22] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:59:22]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:22] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:59:22]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:22] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[09:59:22] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:59:22] marker: arrived at placement position (15.5, 3.0, 16.8)
+[09:59:22] marker: phase -> PLACE_AIM
+[09:59:22] marker: placement click anchor=BlockPos{x=14, y=4, z=14} face=SOUTH item=mekanism:basic_mechanical_pipe selected=1 hit=net.minecraft.world.phys.BlockHitResult@1c724957 lookAt=(14.5, 4.5, 15.0)
+[09:59:22] marker: placement useItemOn -> SUCCESS
+[09:59:22] marker: phase -> PLACE_SETTLE
+[09:59:22] marker: placed block at BlockPos{x=14, y=4, z=15}: Block{mekanism:basic_mechanical_pipe} transmitter
+[09:59:22] marker: connections anchor at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[09:59:22] marker: connections placed at BlockPos{x=14, y=4, z=15}: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[09:59:22] marker: connections extra at BlockPos{x=14, y=4, z=16}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NONE west=NORMAL/NONE east=NORMAL/NONE
+[09:59:22] marker: phase -> PLACE_VIEW_TP
+[09:59:22] marker: TP place_view 11.8 3.0 15.3
+[09:59:23] tp Dev 11.8 3.0 15.3 -> Teleported Dev to 11.800000, 3.000000, 15.300000
+[09:59:23] teleported for place_view
+[09:59:23] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[09:59:23] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[09:59:23]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:23] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:59:23]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:23] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:59:23]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:24] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[09:59:24] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:59:24] marker: placement view at (11.8, 3.0, 15.3) looking at (14.5, 4.45, 15.0)
+[09:59:24] marker: phase -> PLACE_VIEW
+[09:59:24] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-2-placement.png (1280x720)
+[09:59:24] marker: phase -> GUIDE_TP
+[09:59:24] marker: TP guide 13.3 3.0 14.5
+[09:59:24] tp Dev 13.3 3.0 14.5 -> Teleported Dev to 13.300000, 3.000000, 14.500000
+[09:59:24] teleported for guide
+[09:59:24] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[09:59:24] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 8b}
+[09:59:24]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:25] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:59:25]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:25] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:59:25]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:25] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 
+[09:59:25] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:59:25] marker: guide position (13.3, 3.0, 14.5) holding mekanism:configurator
+[09:59:25] marker: phase -> GUIDE
+[09:59:25] marker: guide hitResult pos=MutableBlockPos{x=14, y=4, z=14} face=west location=(14.25, 4.500053720229312, 14.5) target=cell=west col=1 row=1 mode=CONFIGURATOR
+[09:59:25] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-1-guide.png (1280x720)
+[09:59:25] marker: phase -> CYCLE
+[09:59:25] marker: cycle: sneak+use configurator on anchor west face (raw before=NORMAL, sneaking=true)
+[09:59:25] marker: cycle useItemOn -> SUCCESS sneaking=false
+[09:59:25] marker: phase -> CYCLE_SETTLE
+[09:59:26] marker: cycle result: anchor west raw=PUSH
+[09:59:26] marker: connections anchor-after-cycle at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NONE east=NORMAL/NONE
+[09:59:26] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-3-cycle.png (1280x720)
+[09:59:26] marker: phase -> CELL
+[09:59:26] marker: cell placement: synthetic hover (14.25, 4.875, 14.5) on anchor west face -> cell side=up col=1 row=0
+[09:59:26] marker: cell placement useItemOn -> SUCCESS
+[09:59:26] marker: phase -> CELL_SETTLE
+[09:59:27] marker: cell placed at BlockPos{x=14, y=5, z=14}: Block{mekanism:basic_mechanical_pipe} transmitter
+[09:59:27] marker: connections anchor-after-cell at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NORMAL north=NORMAL/NONE south=NORMAL/NORMAL west=PUSH/NONE east=NORMAL/NONE
+[09:59:27] marker: connections cell-placed at BlockPos{x=14, y=5, z=14}: down=NORMAL/NORMAL up=NONE/NONE north=NONE/NONE south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[09:59:27] marker: phase -> CELL_VIEW_TP
+[09:59:27] marker: TP cell_view 11.8 3.0 16.2
+[09:59:27] tp Dev 11.8 3.0 16.2 -> Teleported Dev to 11.800000, 3.000000, 16.200000
+[09:59:27] teleported for cell_view
+[09:59:27] execute if block 13 4 14 mekanism:basic_mechanical_pipe run data get block 13 4 14 -> 
+[09:59:27] execute if block 14 4 14 mekanism:basic_mechanical_pipe run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 10b}
+[09:59:27]   pipe at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 1, 0], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:28] execute if block 14 4 15 mekanism:basic_mechanical_pipe run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:59:28]   pipe at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:28] execute if block 14 4 16 mekanism:basic_mechanical_pipe run data get block 14 4 16 -> 14, 4, 16 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:59:28]   pipe at (14, 4, 16): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 16, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:28] execute if block 14 5 14 mekanism:basic_mechanical_pipe run data get block 14 5 14 -> 14, 5, 14 has the following block data: {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 1b}
+[09:59:28]   pipe at (14, 5, 14): {x: 14, y: 5, connection: [I; 0, 3, 3, 3, 3, 3], z: 14, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0
+[09:59:28] execute if block 15 4 15 mekanism:basic_mechanical_pipe run data get block 15 4 15 -> 
+[09:59:28] marker: phase -> CELL_VIEW
+[09:59:28] marker: cell-view hitResult pos=MutableBlockPos{x=14, y=4, z=14} face=west location=(14.25, 4.511140758459327, 14.657425328563203) target=cell=west col=1 row=1 mode=PLACEMENT
+[09:59:28] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/../verification/screenshot-4-cell-place.png (1280x720)
+[09:59:28] marker: phase -> DONE
+[09:59:28] marker: finished failure=none cycleChanged=true cellPlaced=true finalPos=(11.8, 3.0, 16.2)
+[09:59:28] client finished; exiting driver
