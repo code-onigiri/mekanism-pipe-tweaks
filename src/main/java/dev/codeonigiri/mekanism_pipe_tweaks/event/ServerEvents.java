@@ -1,8 +1,7 @@
 package dev.codeonigiri.mekanism_pipe_tweaks.event;
 
 import dev.codeonigiri.mekanism_pipe_tweaks.placement.TransmitterPlacementLogic;
-import dev.codeonigiri.mekanism_pipe_tweaks.util.TransmitterSupport;
-import mekanism.common.block.transmitter.BlockTransmitter;
+import dev.codeonigiri.mekanism_pipe_tweaks.transmitter.Transmitters;
 import mekanism.common.content.network.transmitter.Transmitter;
 import mekanism.common.item.ItemConfigurator;
 import mekanism.common.tile.transmitter.TileEntityTransmitter;
@@ -16,9 +15,12 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
-public class NeoForgeEventHandler {
+/**
+ * Server-side event entry points for the placement rules and the guide's connection cycling.
+ */
+public final class ServerEvents {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public void onGuideCycleRightClick(PlayerInteractEvent.RightClickBlock event) {
+    public void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         if (!(event.getLevel() instanceof ServerLevel level)) {
             return;
         }
@@ -26,33 +28,21 @@ public class NeoForgeEventHandler {
             return;
         }
         Player player = event.getEntity();
-        if (!player.isShiftKeyDown() || !(player.getMainHandItem().getItem() instanceof ItemConfigurator)) {
-            return;
-        }
-        if (!(level.getBlockState(event.getPos()).getBlock() instanceof BlockTransmitter<?>)) {
-            return;
-        }
-        if (!(level.getBlockEntity(event.getPos()) instanceof TileEntityTransmitter tile)) {
-            return;
-        }
-        Transmitter<?, ?, ?> transmitter = tile.getTransmitter();
-        if (transmitter == null || !TransmitterSupport.isEnabled(transmitter)) {
-            return;
-        }
-        event.setCanceled(true);
-        event.setCancellationResult(InteractionResult.SUCCESS);
-    }
 
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-        if (!(event.getLevel() instanceof ServerLevel level)) {
-            return;
+        // Shift + configurator on a governed transmitter cycles the hovered cell's connection type.
+        // Cancelling here also skips the guard and click recording below, so a cycle click is never
+        // mistaken for a placement click.
+        if (player.isShiftKeyDown() && player.getMainHandItem().getItem() instanceof ItemConfigurator) {
+            TileEntityTransmitter tile = Transmitters.tileAt(level, event.getPos());
+            Transmitter<?, ?, ?> transmitter = tile == null ? null : tile.getTransmitter();
+            if (transmitter != null && Transmitters.isEnabled(transmitter)) {
+                event.setCanceled(true);
+                event.setCancellationResult(InteractionResult.SUCCESS);
+                return;
+            }
         }
+
         Direction face = event.getFace();
-        if (face == null) {
-            return;
-        }
-        Player player = event.getEntity();
         // A successful PlaceTransmitterPayload leaves a one-shot mark. The matching vanilla
         // use-on packet still arrives, so deny it completely before it can place a second pipe
         // and before a click record is written.

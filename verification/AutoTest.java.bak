@@ -1,0 +1,393 @@
+package dev.codeonigiri.mekanism_pipe_tweaks.autotest;
+
+import com.mojang.blaze3d.platform.NativeImage;
+import dev.codeonigiri.mekanism_pipe_tweaks.client.GuideGeometry;
+import dev.codeonigiri.mekanism_pipe_tweaks.client.GuideTarget;
+import mekanism.common.content.network.transmitter.Transmitter;
+import mekanism.common.item.ItemConfigurator;
+import mekanism.common.lib.transmitter.ConnectionType;
+import mekanism.common.tile.transmitter.TileEntityTransmitter;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.Screenshot;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+
+/**
+ * TEMPORARY verification harness. Drives ordinary player actions against a transmitter that comes
+ * from a separate addon mod, and reports the results on the client log as MPT_AUTOTEST markers.
+ */
+public final class AutoTest {
+    private static final Logger LOG = LoggerFactory.getLogger("MPT-AutoTest");
+    private static final BlockPos ANCHOR = new BlockPos(14, 4, 14);
+    private static final BlockPos PLACED = new BlockPos(14, 4, 15);
+    private static final Vec3 ANCHOR_SOUTH_CENTRE = new Vec3(14.5, 4.5, 14.75);
+    private static final Vec3 PLACED_SOUTH_CENTRE = new Vec3(14.5, 4.5, 15.75);
+    private static final File SCREENSHOT =
+            new File("/home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-7-addon-guide.png");
+
+    private enum Phase {
+        WAIT_WORLD,
+        WAIT_SETUP,
+        PLACE_TP,
+        PLACE_AIM,
+        PLACE_SETTLE,
+        GUIDE_TP,
+        GUIDE_AIM,
+        CYCLE1,
+        CYCLE1_WAIT,
+        CYCLE2,
+        CYCLE2_WAIT,
+        SHOT,
+        DONE
+    }
+
+    private Phase phase = Phase.WAIT_WORLD;
+    private int wait;
+    private int pipeSlot = -1;
+    private int configuratorSlot = -1;
+    private int setupAttempts;
+    private boolean failure;
+
+    @SubscribeEvent
+    public void onClientTick(ClientTickEvent.Post event) {
+        Minecraft minecraft = Minecraft.getInstance();
+        LocalPlayer player = minecraft.player;
+        if (phase == Phase.WAIT_WORLD) {
+            if (player != null && minecraft.level != null && minecraft.screen == null) {
+                LOG.info("MPT_AUTOTEST world_ready player={} pos=({}, {}, {}) level={} fov={}",
+                        player.getGameProfile().getName(), format(player.getX()), format(player.getY()),
+                        format(player.getZ()), minecraft.level.dimension().location(),
+                        (int) (double) minecraft.options.fov().get());
+                phase = Phase.WAIT_SETUP;
+                wait = 60;
+            }
+            return;
+        }
+        if (player == null || minecraft.level == null) {
+            return;
+        }
+        if (wait > 0) {
+            wait--;
+            return;
+        }
+
+        switch (phase) {
+            case WAIT_SETUP -> setup(minecraft, player);
+            case PLACE_TP -> {
+                player.getInventory().selected = pipeSlot;
+                marker("TP place 14.500 3.000 16.800");
+                phase = Phase.PLACE_AIM;
+                wait = 40;
+            }
+            case PLACE_AIM -> placementAim(minecraft, player);
+            case PLACE_SETTLE -> placementReadback(minecraft);
+            case GUIDE_TP -> {
+                player.getInventory().selected = configuratorSlot;
+                marker("TP guide 14.500 3.000 18.000");
+                phase = Phase.GUIDE_AIM;
+                wait = 40;
+            }
+            case GUIDE_AIM -> guideAim(minecraft, player);
+            case CYCLE1 -> cycle(minecraft, player, 1);
+            case CYCLE1_WAIT -> {
+                logRaw("after cycle #1", minecraft);
+                releaseSneak(player);
+                phase = Phase.CYCLE2;
+                wait = 10;
+            }
+            case CYCLE2 -> cycle(minecraft, player, 2);
+            case CYCLE2_WAIT -> {
+                ConnectionType raw = rawType(minecraft, PLACED, Direction.SOUTH);
+                marker("raw after cycle #2 side=south=" + raw);
+                releaseSneak(player);
+                if (raw != ConnectionType.PUSH) {
+                    failure = true;
+                }
+                phase = Phase.SHOT;
+                wait = 10;
+            }
+            case SHOT -> capture(minecraft, player);
+            case DONE -> {
+            }
+        }
+    }
+
+    private void setup(Minecraft minecraft, LocalPlayer player) {
+        int empty = 0;
+        pipeSlot = -1;
+        configuratorSlot = -1;
+        for (int slot = 0; slot < 9; slot++) {
+            ItemStack stack = player.getInventory().getItem(slot);
+            if (stack.isEmpty()) {
+                empty = slot;
+                continue;
+            }
+            String id = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
+            if (id.equals("mpt_fake_addon:fake_cable")) {
+                pipeSlot = slot;
+            } else if (stack.getItem() instanceof ItemConfigurator) {
+                configuratorSlot = slot;
+            }
+        }
+        if (pipeSlot < 0 || configuratorSlot < 0) {
+            // The driver's /give commands run after the world_ready marker; retry until they land.
+            setupAttempts++;
+            if (setupAttempts < 30) {
+                wait = 20;
+                return;
+            }
+            marker("setup_done pipeSlot=" + pipeSlot + " configuratorSlot=" + configuratorSlot
+                    + " emptySlot=" + empty);
+            failure = true;
+            phase = Phase.DONE;
+            return;
+        }
+        marker("setup_done pipeSlot=" + pipeSlot + " configuratorSlot=" + configuratorSlot + " emptySlot=" + empty);
+        phase = Phase.PLACE_TP;
+        wait = 1;
+    }
+
+    private void placementAim(Minecraft minecraft, LocalPlayer player) {
+        aim(player, ANCHOR_SOUTH_CENTRE);
+        minecraft.gameRenderer.pick(1.0F);
+        HitResult hit = minecraft.hitResult;
+        if (hit instanceof BlockHitResult blockHit && blockHit.getBlockPos().equals(ANCHOR)
+                && blockHit.getDirection() == Direction.SOUTH) {
+            marker("placement click anchor=" + ANCHOR + " face=SOUTH item="
+                    + BuiltInRegistries.ITEM.getKey(player.getMainHandItem().getItem())
+                    + " selected=" + player.getInventory().selected + " hit=BLOCK location=("
+                    + format(blockHit.getLocation().x) + ", " + format(blockHit.getLocation().y) + ", "
+                    + format(blockHit.getLocation().z) + ")");
+            InteractionResult result = minecraft.gameMode.useItemOn(player, InteractionHand.MAIN_HAND, blockHit);
+            marker("placement useItemOn -> " + result);
+            phase = Phase.PLACE_SETTLE;
+            wait = 50;
+            return;
+        }
+        wait = 1;
+    }
+
+    private void placementReadback(Minecraft minecraft) {
+        BlockState state = minecraft.level.getBlockState(PLACED);
+        String id = BuiltInRegistries.BLOCK.getKey(state.getBlock()).toString();
+        marker("placed block at " + PLACED + ": " + id);
+        marker("connections anchor at " + ANCHOR + ": " + connections(minecraft, ANCHOR));
+        marker("connections placed at " + PLACED + ": " + connections(minecraft, PLACED));
+        logRaw("placed", minecraft);
+        boolean ok = id.equals("mpt_fake_addon:fake_cable")
+                && rawType(minecraft, PLACED, Direction.NORTH) == ConnectionType.NORMAL
+                && allNoneExcept(minecraft, PLACED, Direction.NORTH);
+        marker("PLACE_RESULT ok=" + ok + " north=" + rawType(minecraft, PLACED, Direction.NORTH));
+        if (!ok) {
+            failure = true;
+        }
+        phase = Phase.GUIDE_TP;
+        wait = 1;
+    }
+
+    private void guideAim(Minecraft minecraft, LocalPlayer player) {
+        aim(player, PLACED_SOUTH_CENTRE);
+        minecraft.gameRenderer.pick(1.0F);
+        HitResult hit = minecraft.hitResult;
+        GuideTarget target = GuideTarget.resolve(minecraft.level, player);
+        marker("guide view holding=" + BuiltInRegistries.ITEM.getKey(player.getMainHandItem().getItem())
+                + " vanillaHit=" + describe(hit) + " expanded=" + describe(target));
+        logRaw("before cycle", minecraft);
+        logCells(target, "before");
+        if (target == null) {
+            failure = true;
+            phase = Phase.DONE;
+            return;
+        }
+        phase = Phase.CYCLE1;
+        wait = 1;
+    }
+
+    private void cycle(Minecraft minecraft, LocalPlayer player, int number) {
+        aim(player, PLACED_SOUTH_CENTRE);
+        minecraft.gameRenderer.pick(1.0F);
+        startSneak(player);
+        HitResult hit = minecraft.hitResult;
+        if (!(hit instanceof BlockHitResult blockHit) || !blockHit.getBlockPos().equals(PLACED)) {
+            marker("cycle #" + number + " aim miss: " + describe(hit));
+            failure = true;
+            releaseSneak(player);
+            phase = Phase.DONE;
+            return;
+        }
+        ConnectionType before = rawType(minecraft, PLACED, Direction.SOUTH);
+        InteractionResult result = minecraft.gameMode.useItemOn(player, InteractionHand.MAIN_HAND, blockHit);
+        marker("cycle side=south #" + number + " raw before=" + before + " useItemOn -> " + result);
+        phase = number == 1 ? Phase.CYCLE1_WAIT : Phase.CYCLE2_WAIT;
+        wait = 20;
+    }
+
+    private void capture(Minecraft minecraft, LocalPlayer player) {
+        aim(player, PLACED_SOUTH_CENTRE);
+        minecraft.gameRenderer.pick(1.0F);
+        GuideTarget target = GuideTarget.resolve(minecraft.level, player);
+        marker("guide view after holding=" + BuiltInRegistries.ITEM.getKey(player.getMainHandItem().getItem())
+                + " vanillaHit=" + describe(minecraft.hitResult) + " expanded=" + describe(target));
+        logRaw("after cycles", minecraft);
+        logCells(target, "after");
+        ConnectionType south = rawType(minecraft, PLACED, Direction.SOUTH);
+        marker("GUIDE_RESULT south=" + south + " icon=" + iconName(south));
+        if (south != ConnectionType.PUSH) {
+            failure = true;
+        }
+        try {
+            NativeImage image = Screenshot.takeScreenshot(minecraft.getMainRenderTarget());
+            image.writeToFile(SCREENSHOT);
+            int width = image.getWidth();
+            int height = image.getHeight();
+            image.close();
+            marker("screenshot saved " + SCREENSHOT + " (" + width + "x" + height + ")");
+        } catch (IOException | RuntimeException exception) {
+            marker("screenshot FAILED " + exception);
+            failure = true;
+        }
+        marker("finished failure=" + (failure ? "yes" : "none") + " side=" + south);
+        phase = Phase.DONE;
+    }
+
+    private static void aim(LocalPlayer player, Vec3 target) {
+        Vec3 eye = player.getEyePosition(1.0F);
+        Vec3 delta = target.subtract(eye);
+        double horizontal = Math.sqrt(delta.x * delta.x + delta.z * delta.z);
+        float yaw = (float) (Math.toDegrees(Math.atan2(-delta.x, delta.z)));
+        float pitch = (float) (Math.toDegrees(Math.atan2(-delta.y, horizontal)));
+        player.setYRot(yaw);
+        player.setXRot(pitch);
+        player.yRotO = yaw;
+        player.xRotO = pitch;
+        player.setYHeadRot(yaw);
+    }
+
+    private static void startSneak(LocalPlayer player) {
+        player.input.shiftKeyDown = true;
+        player.setShiftKeyDown(true);
+        player.connection.send(new ServerboundPlayerCommandPacket(player,
+                ServerboundPlayerCommandPacket.Action.PRESS_SHIFT_KEY));
+    }
+
+    private static void releaseSneak(LocalPlayer player) {
+        player.input.shiftKeyDown = false;
+        player.setShiftKeyDown(false);
+        player.connection.send(new ServerboundPlayerCommandPacket(player,
+                ServerboundPlayerCommandPacket.Action.RELEASE_SHIFT_KEY));
+    }
+
+    private static void logRaw(String label, Minecraft minecraft) {
+        marker("raw " + label + ": " + connections(minecraft, PLACED));
+    }
+
+    private static void logCells(GuideTarget target, String label) {
+        if (target == null) {
+            marker("cells " + label + ": no target");
+            return;
+        }
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                Direction side = GuideGeometry.sideFor(target.face(), col, row);
+                ConnectionType raw = configured(target.transmitter(), side);
+                marker("cell " + label + " row=" + row + " col=" + col + " side=" + side.getName()
+                        + " raw=" + raw + " icon=" + iconName(raw));
+            }
+        }
+    }
+
+    private static String connections(Minecraft minecraft, BlockPos pos) {
+        if (!(minecraft.level.getBlockEntity(pos) instanceof TileEntityTransmitter tile)
+                || tile.getTransmitter() == null) {
+            return "none";
+        }
+        Transmitter<?, ?, ?> transmitter = tile.getTransmitter();
+        StringBuilder builder = new StringBuilder();
+        for (Direction direction : Direction.values()) {
+            if (!builder.isEmpty()) {
+                builder.append(' ');
+            }
+            builder.append(direction.getName()).append('=')
+                    .append(configured(transmitter, direction)).append('/')
+                    .append(transmitter.getConnectionType(direction));
+        }
+        return builder.toString();
+    }
+
+    private static ConnectionType rawType(Minecraft minecraft, BlockPos pos, Direction side) {
+        if (!(minecraft.level.getBlockEntity(pos) instanceof TileEntityTransmitter tile)
+                || tile.getTransmitter() == null) {
+            return null;
+        }
+        return configured(tile.getTransmitter(), side);
+    }
+
+    private static boolean allNoneExcept(Minecraft minecraft, BlockPos pos, Direction except) {
+        for (Direction direction : Direction.values()) {
+            if (direction != except && rawType(minecraft, pos, direction) != ConnectionType.NONE) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static ConnectionType configured(Transmitter<?, ?, ?> transmitter, Direction side) {
+        ConnectionType type = transmitter.getConnectionTypeRaw(side);
+        return type == null ? ConnectionType.NONE : type;
+    }
+
+    private static String iconName(ConnectionType type) {
+        if (type == null) {
+            return "block";
+        }
+        return switch (type) {
+            case NONE -> "block";
+            case NORMAL -> "connect";
+            case PUSH -> "push";
+            case PULL -> "pull";
+        };
+    }
+
+    private static String describe(HitResult hit) {
+        if (hit instanceof BlockHitResult blockHit) {
+            return "BLOCK pos=" + blockHit.getBlockPos() + " face=" + blockHit.getDirection()
+                    .getName() + " location=(" + format(blockHit.getLocation().x) + ", "
+                    + format(blockHit.getLocation().y) + ", " + format(blockHit.getLocation().z) + ")";
+        }
+        return hit == null ? "null" : hit.getType().name();
+    }
+
+    private static String describe(GuideTarget target) {
+        if (target == null) {
+            return "null";
+        }
+        return "cell=" + target.cell().side().getName() + " col=" + target.cell().col()
+                + " row=" + target.cell().row() + " face=" + target.face().getName()
+                + " mode=" + target.mode();
+    }
+
+    private static String format(double value) {
+        return String.format(java.util.Locale.ROOT, "%.3f", value);
+    }
+
+    private static void marker(String message) {
+        LOG.info("MPT_AUTOTEST {}", message);
+    }
+}

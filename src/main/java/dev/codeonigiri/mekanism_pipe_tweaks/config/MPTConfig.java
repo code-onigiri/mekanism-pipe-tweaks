@@ -45,6 +45,17 @@ public final class MPTConfig {
     private MPTConfig() {
     }
 
+    /**
+     * Per-transmission-type gate.
+     *
+     * <p>Any transmitter - vanilla or from another Mekanism addon - exposes the standard
+     * {@link TransmissionType} values through
+     * {@link mekanism.common.content.network.transmitter.Transmitter#getSupportedTransmissionTypes()},
+     * so this switch covers every transmitter that can exist. A transmitter is governed by this mod
+     * when any of the types it supports is enabled here; only a transmitter whose supported types
+     * are <em>all</em> disabled is left untouched. That multi-type rule lives in
+     * {@code Transmitters}; this method is intentionally the single type-to-flag mapping.
+     */
     public static boolean isEnabled(TransmissionType type) {
         return switch (type) {
             case ENERGY -> ENABLE_ENERGY.get();

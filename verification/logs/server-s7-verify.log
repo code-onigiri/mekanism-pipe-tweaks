@@ -1,0 +1,58 @@
+Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true -Djavax.net.ssl.trustStore=/home/hatch/workspace/gradle-test/ghrun/cacerts -Djavax.net.ssl.trustStorePassword=changeit
+WARN StatusConsoleListener Advanced terminal features are not available in this environment
+[16:13:11] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserverdev, --gameDir, ., --fml.fmlVersion, 4.0.45, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.264, --fml.neoFormVersion, 20240808.144430, --nogui]
+[16:13:11] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.13+9-LTS
+[16:13:11] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.13 by Eclipse Adoptium; OS Linux arch amd64 version 7.0.0-44-generic
+[16:13:11] [main/INFO] [ne.ne.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserverdev
+[16:13:11] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/root/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.4+mixin.0.8.7/26d01f0567ab46e9ca0d2ed89d0ecc11aadbd433/sponge-mixin-0.16.4+mixin.0.8.7.jar%2394!/ Service=ModLauncher Env=SERVER
+[16:13:12] [main/INFO] [ne.ne.fm.lo.mo.lo.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[16:13:12] [main/INFO] [ne.ne.fm.lo.mo.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Mekanism 10.7.19 (mekanism)
+		Mekanism Pipe Tweaks 0.1.1 (mekanism_pipe_tweaks)
+		Minecraft 1.21.1 (minecraft)
+		MPT Fake Addon 1.0.0 (mpt_fake_addon)
+		NeoForge 21.1.264 (neoforge)
+[16:13:19] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserverdev' with arguments [--gameDir, ., --nogui]
+[16:13:22] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[16:13:40] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[16:13:40] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[16:13:40] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[16:13:40] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[16:13:40] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[16:13:40] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.264, for MC 1.21.1
+[16:13:47] [modloading-worker-0/INFO] [me.co.Mekanism/]: Version 10.7.19 initializing...
+[16:13:48] [modloading-worker-0/INFO] [me.co.Mekanism/]: Initialized HolidayManager.
+[16:13:48] [modloading-worker-0/INFO] [me.co.Mekanism/]: Fake player readout: UUID = 46e82cd0-d480-3d48-800a-77431ede078e, name = [Mekanism]
+[16:13:48] [modloading-worker-0/INFO] [me.co.Mekanism/]: Mod loaded.
+[16:13:49] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[16:13:49] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/home/hatch/workspace/mekanism-pipe-tweaks/build/moddev/artifacts/neoforge-21.1.264.jar%23124!/assets/.mcassetsroot' uses unexpected schema
+[16:13:49] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/home/hatch/workspace/mekanism-pipe-tweaks/build/moddev/artifacts/neoforge-21.1.264.jar%23124!/data/.mcassetsroot' uses unexpected schema
+[16:13:56] [main/INFO] [minecraft/RecipeManager]: Loaded 2868 recipes
+[16:13:57] [main/INFO] [minecraft/AdvancementTree]: Loaded 1496 advancements
+[16:13:59] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 1.21.1
+[16:13:59] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[16:13:59] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: CREATIVE
+[16:13:59] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[16:13:59] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on *:25565
+[16:14:00] [Server thread/INFO] [minecraft/ServerConnectionListener]: Using epoll channel type
+[16:14:00] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[16:14:00] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[16:14:00] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[16:14:00] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[16:14:00] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+[16:14:01] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[16:14:02] [worldgen/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[16:14:02] [worldgen/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[16:14:02] [worldgen/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[16:14:03] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 1331 ms
+[16:14:03] [Server thread/INFO] [minecraft/DedicatedServer]: Done (2.513s)! For help, type "help"
+[16:14:03] [Server thread/INFO] [minecraft/DedicatedServer]: Starting remote control listener
+[16:14:03] [Server thread/INFO] [minecraft/GenericThread]: Thread RCON Listener started
+[16:14:03] [Server thread/INFO] [minecraft/RconThread]: RCON running on 0.0.0.0:25575
+[16:14:03] [LanServerPinger #1/WARN] [minecraft/LanServerPinger]: LanServerPinger: Operation not permitted
+[16:14:03] [Server thread/INFO] [ne.ne.ne.ga.GameTestHooks/]: Enabled Gametest Namespaces: []
+[16:14:03] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[16:16:25] [RCON Listener #1/INFO] [minecraft/GenericThread]: Thread RCON Client /127.0.0.1 started

@@ -1,7 +1,7 @@
 package dev.codeonigiri.mekanism_pipe_tweaks.placement;
 
 import dev.codeonigiri.mekanism_pipe_tweaks.config.MPTConfig;
-import dev.codeonigiri.mekanism_pipe_tweaks.util.TransmitterSupport;
+import dev.codeonigiri.mekanism_pipe_tweaks.transmitter.Transmitters;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -68,10 +68,8 @@ public final class TransmitterPlacementLogic {
     }
 
     public static void onBlockPlaced(ServerLevel level, BlockPos placedPos, Entity placer, BlockState placedAgainst) {
-        if (!(level.getBlockState(placedPos).getBlock() instanceof BlockTransmitter)) {
-            return;
-        }
-        if (!(level.getBlockEntity(placedPos) instanceof TileEntityTransmitter placed)) {
+        TileEntityTransmitter placed = Transmitters.tileAt(level, placedPos);
+        if (placed == null) {
             return;
         }
         Transmitter<?, ?, ?> transmitter = placed.getTransmitter();
@@ -79,7 +77,7 @@ public final class TransmitterPlacementLogic {
             return;
         }
         ClickRecord click = placer instanceof Player player ? takeMatchingClick(player.getUUID(), level, placedPos) : null;
-        if (!TransmitterSupport.isEnabled(transmitter)) {
+        if (!Transmitters.isEnabled(transmitter)) {
             return;
         }
 
@@ -97,17 +95,17 @@ public final class TransmitterPlacementLogic {
             return;
         }
         Block block = blockItem.getBlock();
-        if (!(block instanceof BlockTransmitter)) {
+        if (!(block instanceof BlockTransmitter<?>)) {
             return;
         }
         if (!player.canInteractWithBlock(targetPos, 1.0)) {
             return;
         }
         ServerLevel level = player.serverLevel();
-        if (!(level.getBlockEntity(targetPos) instanceof TileEntityTransmitter)) {
+        if (Transmitters.tileAt(level, targetPos) == null) {
             return;
         }
-        if (!TransmitterSupport.isEnabled(block)) {
+        if (!Transmitters.isEnabled(block)) {
             return;
         }
 
@@ -130,15 +128,11 @@ public final class TransmitterPlacementLogic {
         switch (MPTConfig.NON_PLAYER_PLACEMENT.get()) {
             case VANILLA -> {
             }
-            case NONE -> {
-                setConnectionTypes(placed.getTransmitter(), null);
-                refresh(placed);
-            }
+            case NONE -> disconnectAllSides(placed);
             case CLICKED -> {
                 Direction openSide = MPTConfig.CONNECT_CLICKED_SIDE.get() ? openSideOf(level, placedPos, placedAgainst) : null;
                 if (openSide == null) {
-                    setConnectionTypes(placed.getTransmitter(), null);
-                    refresh(placed);
+                    disconnectAllSides(placed);
                 } else {
                     applyOpen(level, placedPos, placed, openSide);
                 }
@@ -156,13 +150,18 @@ public final class TransmitterPlacementLogic {
         if (connectClickedSide && MPTConfig.OPEN_COUNTERPART_SIDE.get() && neighbour instanceof TileEntityTransmitter counterpart) {
             Transmitter<?, ?, ?> counterpartTransmitter = counterpart.getTransmitter();
             Direction counterpartSide = openSide.getOpposite();
-            if (counterpartTransmitter != null && TransmitterSupport.isEnabled(counterpartTransmitter)
+            if (counterpartTransmitter != null && Transmitters.isEnabled(counterpartTransmitter)
                     && counterpartTransmitter.getConnectionTypeRaw(counterpartSide) == ConnectionType.NONE) {
                 counterpartTransmitter.setConnectionTypeRaw(counterpartSide, ConnectionType.NORMAL);
-                refresh(counterpart);
+                Transmitters.refresh(counterpart);
             }
         }
-        refresh(placed);
+        Transmitters.refresh(placed);
+    }
+
+    private static void disconnectAllSides(TileEntityTransmitter placed) {
+        setConnectionTypes(placed.getTransmitter(), null);
+        Transmitters.refresh(placed);
     }
 
     private static void setConnectionTypes(Transmitter<?, ?, ?> transmitter, Direction openSide) {
@@ -197,12 +196,6 @@ public final class TransmitterPlacementLogic {
         }
         CLICKS.remove(playerId);
         return click;
-    }
-
-    private static void refresh(TileEntityTransmitter tile) {
-        tile.getTransmitter().refreshConnections();
-        tile.getTransmitter().notifyTileChange();
-        tile.sendUpdatePacket();
     }
 
     private record ClickRecord(ResourceKey<Level> dimension, BlockPos pos, Direction face, long gameTime) {

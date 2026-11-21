@@ -1,0 +1,109 @@
+[21Nov2026 15:26:53.991] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserverdev, --gameDir, ., --fml.fmlVersion, 4.0.45, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.264, --fml.neoFormVersion, 20240808.144430, --nogui]
+[21Nov2026 15:26:54.000] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.13+9-LTS
+[21Nov2026 15:26:54.003] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.13 by Eclipse Adoptium; OS Linux arch amd64 version 7.0.0-44-generic
+[21Nov2026 15:26:54.402] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserverdev
+[21Nov2026 15:26:54.598] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/root/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.4+mixin.0.8.7/26d01f0567ab46e9ca0d2ed89d0ecc11aadbd433/sponge-mixin-0.16.4+mixin.0.8.7.jar%2394!/ Service=ModLauncher Env=SERVER
+[21Nov2026 15:26:55.606] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[21Nov2026 15:26:55.609] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Mekanism 10.7.19 (mekanism)
+		Mekanism Pipe Tweaks 0.1.1 (mekanism_pipe_tweaks)
+		Minecraft 1.21.1 (minecraft)
+		MPT Fake Addon 1.0.0 (mpt_fake_addon)
+		NeoForge 21.1.264 (neoforge)
+[21Nov2026 15:27:02.068] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserverdev' with arguments [--gameDir, ., --nogui]
+[21Nov2026 15:27:03.700] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[21Nov2026 15:27:17.240] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21Nov2026 15:27:17.245] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21Nov2026 15:27:17.270] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[21Nov2026 15:27:17.275] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[21Nov2026 15:27:17.279] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21Nov2026 15:27:17.509] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.264, for MC 1.21.1
+[21Nov2026 15:27:22.008] [modloading-worker-0/INFO] [mekanism.common.Mekanism/]: Version 10.7.19 initializing...
+[21Nov2026 15:27:22.031] [modloading-worker-0/INFO] [mekanism.common.Mekanism/]: Initialized HolidayManager.
+[21Nov2026 15:27:22.081] [modloading-worker-0/INFO] [mekanism.common.Mekanism/]: Fake player readout: UUID = 46e82cd0-d480-3d48-800a-77431ede078e, name = [Mekanism]
+[21Nov2026 15:27:22.082] [modloading-worker-0/INFO] [mekanism.common.Mekanism/]: Mod loaded.
+[21Nov2026 15:27:22.890] [main/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[21Nov2026 15:27:23.202] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/hatch/workspace/mekanism-pipe-tweaks/build/moddev/artifacts/neoforge-21.1.264.jar%23125!/assets/.mcassetsroot' uses unexpected schema
+[21Nov2026 15:27:23.203] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/hatch/workspace/mekanism-pipe-tweaks/build/moddev/artifacts/neoforge-21.1.264.jar%23125!/data/.mcassetsroot' uses unexpected schema
+[21Nov2026 15:27:25.102] [main/INFO] [net.minecraft.server.Main/]: No existing world data, creating new world
+[21Nov2026 15:27:25.111] [main/ERROR] [net.minecraft.server.dedicated.DedicatedServerProperties/]: No key layers in MapLike[{}]
+[21Nov2026 15:27:27.001] [main/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 2868 recipes
+[21Nov2026 15:27:27.604] [main/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1496 advancements
+[21Nov2026 15:27:28.522] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting minecraft server version 1.21.1
+[21Nov2026 15:27:28.523] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Loading properties
+[21Nov2026 15:27:28.523] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Default game type: CREATIVE
+[21Nov2026 15:27:28.524] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[21Nov2026 15:27:28.771] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting Minecraft server on *:25565
+[21Nov2026 15:27:28.882] [Server thread/INFO] [net.minecraft.server.network.ServerConnectionListener/]: Using epoll channel type
+[21Nov2026 15:27:28.945] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[21Nov2026 15:27:28.945] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: The server will make no attempt to authenticate usernames. Beware.
+[21Nov2026 15:27:28.946] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[21Nov2026 15:27:28.946] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: To change this, set "online-mode" to "true" in the server.properties file.
+[21Nov2026 15:27:29.090] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Preparing level "world"
+[21Nov2026 15:27:30.608] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[21Nov2026 15:27:30.701] [worldgen/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 2%
+[21Nov2026 15:27:31.110] [worldgen/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 18%
+[21Nov2026 15:27:31.589] [Server thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 980 ms
+[21Nov2026 15:27:31.590] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (2.601s)! For help, type "help"
+[21Nov2026 15:27:31.590] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting remote control listener
+[21Nov2026 15:27:31.596] [Server thread/INFO] [net.minecraft.server.rcon.thread.GenericThread/]: Thread RCON Listener started
+[21Nov2026 15:27:31.596] [Server thread/INFO] [net.minecraft.server.rcon.thread.RconThread/]: RCON running on 0.0.0.0:25575
+[21Nov2026 15:27:31.616] [LanServerPinger #1/WARN] [net.minecraft.client.server.LanServerPinger/]: LanServerPinger: Operation not permitted
+[21Nov2026 15:27:31.708] [Server thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: []
+[21Nov2026 15:27:31.716] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[21Nov2026 15:27:38.423] [RCON Listener #1/INFO] [net.minecraft.server.rcon.thread.GenericThread/]: Thread RCON Client /127.0.0.1 started
+[21Nov2026 15:28:53.178] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[/127.0.0.1:46426] logged in with entity id 1 at (7.5, -60.0, 1.5)
+[21Nov2026 15:28:53.804] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[21Nov2026 15:28:53.988] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 2095ms or 41 ticks behind
+[21Nov2026 15:29:05.276] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule doDaylightCycle is now set to: false]
+[21Nov2026 15:29:05.474] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule doWeatherCycle is now set to: false]
+[21Nov2026 15:29:05.672] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule doMobSpawning is now set to: false]
+[21Nov2026 15:29:05.874] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule sendCommandFeedback is now set to: false]
+[21Nov2026 15:29:06.271] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Set the time to 6000]
+[21Nov2026 15:29:06.477] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Set the weather to clear]
+[21Nov2026 15:29:07.202] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Successfully filled 221 block(s)]
+[21Nov2026 15:29:07.700] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Changed the block at 14, 4, 14]
+[21Nov2026 15:29:08.505] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gave 64 [Fake Universal Cable] to Dev]
+[21Nov2026 15:29:08.801] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev has made the advancement [Configure Everything]
+[21Nov2026 15:29:08.806] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gave 1 [Configurator] to Dev]
+[21Nov2026 15:35:09.792] [RCON Client /127.0.0.1 #2/INFO] [net.minecraft.server.rcon.thread.RconClient/]: Thread RCON Client /127.0.0.1 shutting down
+[21Nov2026 15:35:10.645] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[21Nov2026 15:35:10.646] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[21Nov2026 15:35:52.993] [RCON Listener #1/INFO] [net.minecraft.server.rcon.thread.GenericThread/]: Thread RCON Client /127.0.0.1 started
+[21Nov2026 15:35:52.995] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule doDaylightCycle is now set to: false]
+[21Nov2026 15:35:53.147] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule doWeatherCycle is now set to: false]
+[21Nov2026 15:35:53.299] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule doMobSpawning is now set to: false]
+[21Nov2026 15:35:53.451] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule sendCommandFeedback is now set to: false]
+[21Nov2026 15:35:53.754] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Set the time to 6000]
+[21Nov2026 15:35:53.906] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Set the weather to clear]
+[21Nov2026 15:35:54.067] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Successfully filled 1 block(s)]
+[21Nov2026 15:35:54.524] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Changed the block at 14, 4, 14]
+[21Nov2026 15:37:16.282] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[/127.0.0.1:53686] logged in with entity id 4 at (7.5, -60.0, 1.5)
+[21Nov2026 15:37:16.378] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[21Nov2026 15:37:25.483] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Teleported Dev to 14.500000, 3.000000, 16.800000]
+[21Nov2026 15:37:30.676] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Teleported Dev to 14.500000, 3.000000, 18.000000]
+[21Nov2026 15:37:35.970] [RCON Client /127.0.0.1 #3/INFO] [net.minecraft.server.rcon.thread.RconClient/]: Thread RCON Client /127.0.0.1 shutting down
+[21Nov2026 15:38:01.409] [Netty Epoll Server IO #2/ERROR] [net.minecraft.network.Connection/]: Exception caught in connection
+io.netty.channel.unix.Errors$NativeIoException: recvAddress(..) failed: Connection reset by peer
+[21Nov2026 15:38:01.445] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[21Nov2026 15:38:./build/moddev/runServer.sh: line 1: 15341 Killed                  ( cd '/home/hatch/workspace/mekanism-pipe-tweaks/run-test-server'; exec '/home/hatch/workspace/minecraft-dev/tools/jdk-21.0.13+9/bin/java' '@/home/hatch/workspace/mekanism-pipe-tweaks/build/moddev/serverRunClasspath.txt' '@/home/hatch/workspace/mekanism-pipe-tweaks/build/moddev/serverRunVmArgs.txt' '-Dfml.modFolders=mekanism_pipe_tweaks%%/home/hatch/workspace/mekanism-pipe-tweaks/build/classes/java/main:mekanism_pipe_tweaks%%/home/hatch/workspace/mekanism-pipe-tweaks/build/resources/main' 'net.neoforged.devlaunch.Main' '@/home/hatch/workspace/mekanism-pipe-tweaks/build/moddev/serverRunProgramArgs.txt' )
+] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule doWeatherCycle is now set to: false]
+[21Nov2026 15:39:29.671] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule doMobSpawning is now set to: false]
+[21Nov2026 15:39:29.822] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gamerule sendCommandFeedback is now set to: false]
+[21Nov2026 15:39:30.171] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Set the time to 6000]
+[21Nov2026 15:39:30.377] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Set the weather to clear]
+[21Nov2026 15:39:30.597] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Successfully filled 2 block(s)]
+[21Nov2026 15:39:31.175] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Changed the block at 14, 4, 14]
+[21Nov2026 15:39:31.380] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Removed 65 item(s) from player Dev]
+[21Nov2026 15:39:31.977] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gave 64 [Fake Universal Cable] to Dev]
+[21Nov2026 15:39:32.182] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Gave 1 [Configurator] to Dev]
+[21Nov2026 15:39:33.190] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Teleported Dev to 14.500000, 3.000000, 16.800000]
+[21Nov2026 15:39:38.326] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Rcon: Teleported Dev to 14.500000, 3.000000, 18.000000]
+[21Nov2026 15:39:43.870] [RCON Client /127.0.0.1 #4/INFO] [net.minecraft.server.rcon.thread.RconClient/]: Thread RCON Client /127.0.0.1 shutting down
+[21Nov2026 15:40:00.396] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[21Nov2026 15:40:00.397] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[21Nov2026 15:40:00.477] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[21Nov2026 15:40:01.090] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld

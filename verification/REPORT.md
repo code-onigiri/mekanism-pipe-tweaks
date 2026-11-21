@@ -419,3 +419,144 @@ found.
 Artifacts: `screenshot-5-mixed-guide.png`, `screenshot-6-all-types.png`,
 `logs/client-s6.log`, `logs/server-s6.log`, `logs/rcon-driver-s6.log`, driver
 `rcon_driver_s6.py`.
+
+---
+
+## 7. Addon-transmitter generalisation and fake-addon proof (2026-11-21, mod 0.1.1)
+
+### 7.1 Audit: every transmitter decision uses only Mekanism base classes and public API
+
+All 16 source files in `src/main/java` were re-read after the interrupted edit round. The
+completed audit leaves no registry-id checks, no list of vanilla block ids and no
+reference to a concrete per-type Mekanism tile/transmitter class. The decisions are:
+
+| Decision | API used |
+|----------|----------|
+| "Is this block a transmitter?" | `BlockTransmitter<?>` |
+| "Is this its tile / get its transmitter?" | `TileEntityTransmitter#getTransmitter()` |
+| "Which transmission types does it support?" | `Transmitter#getSupportedTransmissionTypes()` |
+| "Is this the Configurator (tool or guide mode)?" | `ItemConfigurator` |
+| "What connection does a side currently have?" | `Transmitter#getConnectionTypeRaw(Direction)` / `#getConnectionType(Direction)` |
+
+`TransmitterSupport` is the only place that maps a transmitter to the config flags.
+`typesOf(Block)` builds a detached tile through `BlockTransmitter#getTileType()` and reads
+the transmitter's supported types, so a block is classified by its own tile, not by its
+name. `isEnabled(Transmitter)` does the same from a live transmitter. A transmitter that
+supports several types is governed when **any** supported type is enabled and is left
+alone only when **all** are disabled; an unknown/empty type set is treated permissively
+so addon transmitters are never silently ignored. A detached tile that cannot be created
+falls back to the same permissive empty set instead of throwing. No change was needed in
+`MPTConfig` beyond its existing per-`TransmissionType` mapping, and `TransmitterPlacementLogic`
+had already been switched to `BlockTransmitter<?>`.
+
+`README.md` now states that transmitters added by other Mekanism addons are supported
+automatically. The mod version was bumped to 0.1.1 and the description expanded to name
+addon transmitters.
+
+### 7.2 The fake addon
+
+A separate project was created at `~/workspace/mpt-fake-addon/` with its own modid
+`mpt_fake_addon` and **no dependency on `mekanism_pipe_tweaks`**:
+
+* `MptFakeAddon` registers one block (`mpt_fake_addon:fake_cable`) as a
+  `BlockSmallTransmitter` (a `BlockTransmitter` subclass), its own block-entity type, and a
+  `BlockTypeTile` with an `AttributeTier(CableTier.BASIC)` so Mekanism's tier lookup works.
+* `TileEntityFakeCable extends TileEntityTransmitter` **directly** (not a concrete
+  per-type tile), implements `createTransmitter` and `getTransmitterType`.
+* `TransmitterFakeCable extends UniversalCable`, i.e. the ordinary energy-cable
+  implementation. The block model is a small cube using Mekanism's basic cable texture.
+
+It only uses Mekanism's public registration and transmitter API, exactly as a real addon
+would. It was built into `mpt_fake_addon-1.0.0.jar` and loaded into the main project's dev
+runtime through a temporary `runtimeOnly files(...)` dependency (removed after the run).
+
+### 7.3 Run and evidence
+
+Method was the established one (§2/§4): dedicated server started from its generated launch
+script, dev client under Xvfb `:99` at 1280x720, stdlib Python RCON driver, and a temporary
+client `AutoTest` harness gated by `-Dmpt.autotest`. Both logs show the expected mod list:
+
+```
+Mekanism 10.7.19 (mekanism)
+Mekanism Pipe Tweaks 0.1.1 (mekanism_pipe_tweaks)
+MPT Fake Addon 1.0.0 (mpt_fake_addon)
+NeoForge 21.1.264 (neoforge)
+```
+
+**(a) Real placement against an anchor.** The anchor was a
+`mekanism:basic_universal_cable` at `(14,4,14)`, placed with `/setblock`. Holding
+`mpt_fake_addon:fake_cable`, the harness aimed at the anchor's south face and used the
+normal game-mode path:
+
+```
+placement click anchor=(14,4,14) face=SOUTH item=mpt_fake_addon:fake_cable
+                hit=BLOCK location=(14.500, 4.497, 14.688)
+placement useItemOn -> SUCCESS
+placed block at (14,4,15): mpt_fake_addon:fake_cable
+connections placed  (14,4,15): down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL
+                               south=NONE/NONE west=NONE/NONE east=NONE/NONE
+connections anchor  (14,4,14): ... south=NORMAL/NORMAL ...
+PLACE_RESULT ok=true north=NORMAL
+```
+
+Server-side NBT agreed (`Direction` order down,up,north,south,west,east;
+`NORMAL=0`, `PUSH=1`, `PULL=2`, `NONE=3`):
+
+```
+placed (14,4,15): connection: [I; 3, 3, 0, 3, 3, 3]
+anchor (14,4,14): connection: [I; 0, 0, 0, 0, 0, 0], connections: 8b
+```
+
+So the addon transmitter was placed with exactly one configured connection, the clicked
+side (`north`, toward the anchor), every other side `NONE`, and the anchor's counterpart
+side was opened. The mod applied its rules to an unknown addon block.
+
+**(b) Guide grid on the addon transmitter.** Holding the Configurator and looking at the
+placed addon block:
+
+```
+guide view holding=mekanism:configurator vanillaHit=BLOCK pos=(14,4,15) face=south
+           expanded=cell=south col=1 row=1 face=south mode=CONFIGURATOR
+```
+
+The 3x3 grid and icons rendered on the addon block; the hotbar shows the fake cable and the
+Configurator in the screenshot.
+
+**(c) Sneak + right-click cycle and icon follow.** On the viewed `south` face:
+
+```
+cycle side=south #1 raw before=NONE   useItemOn -> SUCCESS
+raw after cycle #1: ... south=NORMAL/NONE ...
+cycle side=south #2 raw before=NORMAL useItemOn -> SUCCESS
+raw after cycle #2 side=south=PUSH
+```
+
+The guide's centre cell followed: before the cycles `row=1 col=1 side=south raw=NONE
+icon=block`; after them `row=1 col=1 side=south raw=PUSH icon=push` (corners stayed
+`NORMAL`/connect, other edges `NONE`/block). The action bar showed the mod's own message
+“Connection type changed to: Push”. Server NBT moved `[I; 3,3,0,3,3,3]` →
+`[I; 3,3,0,0,3,3]` after the first cycle and → `[I; 3,3,0,1,3,3]` after the second, matching
+the client readback. The captured screenshot is the PUSH state.
+
+[![screenshot-7-addon-guide.png](screenshot-7-addon-guide.png)](screenshot-7-addon-guide.png)
+
+Artifacts: `screenshot-7-addon-guide.png`, `logs/client-s7.log`, `logs/server-s7.log`,
+`logs/rcon-driver-s7.log`, driver `rcon_driver_s7.py`. The fake addon project remains at
+`~/workspace/mpt-fake-addon/` for reproduction; it is not part of the release.
+
+### 7.4 Cleanup and release jar
+
+The temporary `AutoTest` class, its registration, the `run-test-*` directories and the
+runtime file dependency were removed. `gradle clean build` succeeded. The release jar
+`build/libs/mekanism_pipe_tweaks-0.1.1.jar` has 53 entries and contains **no
+`autotest`/`mpt_fake_addon` classes and no fake-addon dependency** (checked with
+`unzip -l | grep -i 'autotest|mptfake|mpt_fake'` → empty). No git commit was made.
+
+### 7.5 Verdict
+
+**Pass.** The mod contains no knowledge of Mekanism's concrete transmitter types or block
+ids. A completely separate addon transmitter — a different block, its own block entity,
+a tile extending `TileEntityTransmitter` directly and an energy transmitter — was governed
+correctly with no code or configuration change: placement opened only the clicked side,
+the Configurator guide rendered on it, and sneak-cycling changed the configured type with
+the guide icon and server state following. The audit and the in-game proof agree.

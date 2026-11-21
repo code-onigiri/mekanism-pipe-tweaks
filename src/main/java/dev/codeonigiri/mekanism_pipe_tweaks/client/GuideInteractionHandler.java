@@ -32,14 +32,13 @@ public final class GuideInteractionHandler {
             PacketDistributor.sendToServer(new CycleSidePayload(target.pos(), target.cell().side()));
             return;
         }
-        GuideGeometry.Cell cell = target.cell();
-        if (cell == null || cell.side() == target.face()) {
+        PlaceTransmitterPayload payload = placementPayload(target, event.getHand());
+        if (payload == null) {
             return;
         }
         event.setCanceled(true);
         event.setCancellationResult(InteractionResult.SUCCESS);
-        PacketDistributor.sendToServer(new PlaceTransmitterPayload(
-                target.pos(), cell.side(), target.face(), event.getHand()));
+        PacketDistributor.sendToServer(payload);
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -47,20 +46,34 @@ public final class GuideInteractionHandler {
         if (!event.getLevel().isClientSide() || event.getHand() != InteractionHand.MAIN_HAND) {
             return;
         }
-        Player player = event.getEntity();
-        GuideTarget target = GuideTarget.resolve(event.getLevel(), player);
-        if (target == null || target.mode() != GuideTarget.Mode.PLACEMENT) {
+        GuideTarget target = GuideTarget.resolve(event.getLevel(), event.getEntity());
+        if (target == null) {
             return;
         }
-        GuideGeometry.Cell cell = target.cell();
         // The vanilla ray can be a plain item use (air / entity) while the expanded ray still
         // points at a transmitter; intercept the placement in that case too.
-        if (cell == null || cell.side() == target.face()) {
+        PlaceTransmitterPayload payload = placementPayload(target, event.getHand());
+        if (payload == null) {
             return;
         }
         event.setCanceled(true);
         event.setCancellationResult(InteractionResult.SUCCESS);
-        PacketDistributor.sendToServer(new PlaceTransmitterPayload(
-                target.pos(), cell.side(), target.face(), event.getHand()));
+        PacketDistributor.sendToServer(payload);
+    }
+
+    /**
+     * The cell-select placement to send for a click on {@code target}, or {@code null} when the
+     * click must fall through to vanilla. The centre cell is the clicked face itself, so it is
+     * left to the vanilla placement path.
+     */
+    private static PlaceTransmitterPayload placementPayload(GuideTarget target, InteractionHand hand) {
+        if (target.mode() != GuideTarget.Mode.PLACEMENT) {
+            return null;
+        }
+        GuideGeometry.Cell cell = target.cell();
+        if (cell.side() == target.face()) {
+            return null;
+        }
+        return new PlaceTransmitterPayload(target.pos(), cell.side(), target.face(), hand);
     }
 }

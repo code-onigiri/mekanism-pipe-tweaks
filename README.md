@@ -1,7 +1,8 @@
 # Mekanism Pipe Tweaks
 
 GregTech-style placement and connection behaviour for Mekanism transmitters
-(cables, pipes, tubes, conductors, transporters):
+(cables, pipes, tubes, conductors, transporters), including transmitters added by
+other Mekanism addons, which are supported automatically:
 
 - Transmitters are placed with all sides disconnected, except the side facing
   the block you clicked, which starts connected.

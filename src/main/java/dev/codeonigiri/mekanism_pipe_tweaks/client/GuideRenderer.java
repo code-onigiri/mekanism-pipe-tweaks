@@ -2,6 +2,8 @@ package dev.codeonigiri.mekanism_pipe_tweaks.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import java.util.ArrayList;
+import java.util.List;
 import mekanism.common.content.network.transmitter.Transmitter;
 import mekanism.common.lib.transmitter.ConnectionType;
 import net.minecraft.Util;
@@ -86,10 +88,9 @@ public final class GuideRenderer {
 
     private static void flush(MultiBufferSource.BufferSource buffers) {
         buffers.endBatch(RenderType.guiOverlay());
-        buffers.endBatch(RenderType.textSeeThrough(GuideTextures.CONNECT));
-        buffers.endBatch(RenderType.textSeeThrough(GuideTextures.BLOCK));
-        buffers.endBatch(RenderType.textSeeThrough(GuideTextures.PUSH));
-        buffers.endBatch(RenderType.textSeeThrough(GuideTextures.PULL));
+        for (ResourceLocation icon : GuideTextures.ICONS) {
+            buffers.endBatch(RenderType.textSeeThrough(icon));
+        }
         buffers.endBatch(RenderType.textSeeThrough(GuideTextures.TRIANGLE));
     }
 
@@ -104,38 +105,48 @@ public final class GuideRenderer {
         }
     }
 
+    /**
+     * Draw data for one cell of the 3x3 face grid, computed once so the icon pass and the
+     * direction-arrow pass iterate the same cells in the same order.
+     */
+    private record CellVisual(GuideGeometry.Cell cell, ConnectionType type, int alpha, Vec3 centre) {
+    }
+
     private static void drawCellIcons(MultiBufferSource buffers, PoseStack.Pose pose, GuideTarget target,
                                       Vec3 iconCentre, Vec3 right, Vec3 up, Vec3 normal) {
-        Direction face = target.face();
-        GuideGeometry.Cell hovered = target.cell();
+        List<CellVisual> cells = cellVisuals(target, iconCentre, right, up);
 
-        for (int row = 0; row < 3; row++) {
-            for (int col = 0; col < 3; col++) {
-                Direction side = GuideGeometry.sideFor(face, col, row);
-                ConnectionType configured = configuredType(target.transmitter(), side);
-                int alpha = col == hovered.col() && row == hovered.row() ? HOVERED_ALPHA : NON_HOVERED_ALPHA;
-                Vec3 centre = cellCentre(iconCentre, right, up, col, row);
-                VertexConsumer consumer = buffers.getBuffer(RenderType.textSeeThrough(iconFor(configured)));
-                addTexturedQuad(consumer, pose, centre, right, up, ICON_HALF, ICON_HALF, 0, 0, 1, 1,
-                        (alpha << 24) | 0xFFFFFF);
-            }
+        for (CellVisual cell : cells) {
+            VertexConsumer consumer = buffers.getBuffer(RenderType.textSeeThrough(iconFor(cell.type())));
+            addTexturedQuad(consumer, pose, cell.centre(), right, up, ICON_HALF, ICON_HALF, 0, 0, 1, 1,
+                    (cell.alpha() << 24) | 0xFFFFFF);
         }
 
         VertexConsumer overlay = buffers.getBuffer(RenderType.textSeeThrough(GuideTextures.TRIANGLE));
+        for (CellVisual cell : cells) {
+            if (cell.type() != ConnectionType.PUSH && cell.type() != ConnectionType.PULL) {
+                continue;
+            }
+            Vec3 direction = arrowDirection(cell.cell().col(), cell.cell().row(), right, up, cell.type());
+            addTexturedQuad(overlay, pose, cell.centre(), direction, normal.cross(direction).normalize(),
+                    ICON_HALF, ICON_HALF, 0, 0, 1, 1, (cell.alpha() << 24) | 0xFFFFFF);
+        }
+    }
+
+    private static List<CellVisual> cellVisuals(GuideTarget target, Vec3 iconCentre, Vec3 right, Vec3 up) {
+        Direction face = target.face();
+        GuideGeometry.Cell hovered = target.cell();
+        List<CellVisual> cells = new ArrayList<>(9);
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
                 Direction side = GuideGeometry.sideFor(face, col, row);
                 ConnectionType configured = configuredType(target.transmitter(), side);
-                if (configured != ConnectionType.PUSH && configured != ConnectionType.PULL) {
-                    continue;
-                }
                 int alpha = col == hovered.col() && row == hovered.row() ? HOVERED_ALPHA : NON_HOVERED_ALPHA;
-                Vec3 centre = cellCentre(iconCentre, right, up, col, row);
-                Vec3 direction = arrowDirection(col, row, right, up, configured);
-                addTexturedQuad(overlay, pose, centre, direction, normal.cross(direction).normalize(),
-                        ICON_HALF, ICON_HALF, 0, 0, 1, 1, (alpha << 24) | 0xFFFFFF);
+                cells.add(new CellVisual(new GuideGeometry.Cell(side, col, row), configured, alpha,
+                        cellCentre(iconCentre, right, up, col, row)));
             }
         }
+        return cells;
     }
 
     private static Vec3 cellCentre(Vec3 faceCentre, Vec3 right, Vec3 up, int col, int row) {
@@ -144,21 +155,19 @@ public final class GuideRenderer {
 
     private static Vec3 arrowDirection(int col, int row, Vec3 right, Vec3 up, ConnectionType type) {
         Vec3 direction;
-        if (col == 1 && row == 1) {
-            // The looked-at face points at the viewer, so an in-plane arrow cannot show
-            // toward/away from the viewer. PUSH is drawn pointing up and PULL pointing down.
-            direction = up;
-        } else if (col != 1 && row != 1) {
-            // Corner cells are the opposite face, which has the same degenerate normal case.
-            direction = up;
-        } else if (row == 0) {
+        if (row == 0) {
             direction = up;
         } else if (row == 2) {
             direction = up.scale(-1);
         } else if (col == 0) {
             direction = right.scale(-1);
-        } else {
+        } else if (col == 2) {
             direction = right;
+        } else {
+            // The centre cell (looked-at face) and corner cells (opposite face) are degenerate:
+            // an in-plane arrow cannot show toward/away from the viewer, so PUSH is drawn pointing
+            // up and PULL pointing down.
+            direction = up;
         }
         return type == ConnectionType.PULL ? direction.scale(-1) : direction;
     }

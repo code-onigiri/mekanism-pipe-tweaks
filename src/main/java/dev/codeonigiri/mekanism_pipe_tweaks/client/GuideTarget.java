@@ -1,6 +1,7 @@
 package dev.codeonigiri.mekanism_pipe_tweaks.client;
 
-import dev.codeonigiri.mekanism_pipe_tweaks.util.TransmitterSupport;
+import dev.codeonigiri.mekanism_pipe_tweaks.transmitter.Transmitters;
+import java.util.Objects;
 import mekanism.common.block.transmitter.BlockTransmitter;
 import mekanism.common.content.network.transmitter.Transmitter;
 import mekanism.common.item.ItemConfigurator;
@@ -19,6 +20,11 @@ public record GuideTarget(BlockPos pos, Direction face, GuideGeometry.Cell cell,
     public enum Mode {
         CONFIGURATOR,
         PLACEMENT
+    }
+
+    public GuideTarget {
+        Objects.requireNonNull(cell);
+        Objects.requireNonNull(transmitter);
     }
 
     public static GuideTarget resolve(Level level, Player player) {
@@ -46,10 +52,10 @@ public record GuideTarget(BlockPos pos, Direction face, GuideGeometry.Cell cell,
             return null;
         }
         if (mode == Mode.CONFIGURATOR) {
-            if (!TransmitterSupport.isEnabled(transmitter)) {
+            if (!Transmitters.isEnabled(transmitter)) {
                 return null;
             }
-        } else if (!(held.getItem() instanceof BlockItem blockItem) || !TransmitterSupport.isEnabled(blockItem.getBlock())) {
+        } else if (!(held.getItem() instanceof BlockItem blockItem) || !Transmitters.isEnabled(blockItem.getBlock())) {
             return null;
         }
         // The expanded ray lands on the full block face, so |u| and |v| can reach 0.5 and all
