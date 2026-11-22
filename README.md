@@ -4,13 +4,15 @@ GregTech-style placement and connection behaviour for Mekanism transmitters
 (cables, pipes, tubes, conductors, transporters), including transmitters added by
 other Mekanism addons, which are supported automatically:
 
-- Transmitters are placed with all sides disconnected, except the side facing
-  the block you clicked, which starts connected.
-- Placing against an existing transmitter also opens that transmitter's
-  facing side, so the pair actually connects.
-- A GregTech-style sided grid guide is shown while holding the Configurator,
-  and grid cells can be used to choose the placement side.
-- No dedicated items; the Mekanism Configurator remains the only tool.
+- Transmitters are placed with all sides disconnected.
+- If you place one while sneaking, the side facing the block you clicked
+  starts connected; placing against an existing transmitter also opens that
+  transmitter's facing side, so the pair actually connects.
+- A GregTech-style sided grid guide is shown only while holding the
+  Configurator and looking at a transmitter. Holding a transmitter item does
+  not show it.
+- No dedicated items; the Mekanism Configurator remains the only tool, and
+  placement itself is ordinary vanilla placement.
 
 ## Configuration
 
@@ -23,7 +25,7 @@ The common config file (`config/mekanism_pipe_tweaks-common.toml`) has these key
 | `enableChemical` | `true` | Apply the rules to Pressurized Tubes. |
 | `enableHeat` | `true` | Apply the rules to Thermodynamic Conductors. |
 | `enableItem` | `true` | Apply the rules to Logistical Transporters. |
-| `connectClickedSide` | `true` | Open the side facing the clicked block. `false` leaves every side disconnected on placement. |
+| `connectClickedSide` | `true` | Enable the sneak-placement connection: while sneaking, open the side facing the clicked block. `false` leaves every side disconnected even when sneaking. |
 | `openCounterpartSide` | `true` | Also open the facing side of the transmitter that was placed against. |
 | `nonPlayerPlacement` | `"VANILLA"` | Dispensers/structures/other non-player placements: `VANILLA` keeps Mekanism's all-sides-connected default, `NONE` disconnects every side, `CLICKED` opens the side facing the block that was placed against. |
 

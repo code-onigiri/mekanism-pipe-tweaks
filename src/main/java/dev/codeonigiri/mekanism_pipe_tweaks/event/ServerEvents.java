@@ -30,8 +30,8 @@ public final class ServerEvents {
         Player player = event.getEntity();
 
         // Shift + configurator on a governed transmitter cycles the hovered cell's connection type.
-        // Cancelling here also skips the guard and click recording below, so a cycle click is never
-        // mistaken for a placement click.
+        // Cancelling here also skips recording below, so a cycle click is never mistaken for a
+        // placement click.
         if (player.isShiftKeyDown() && player.getMainHandItem().getItem() instanceof ItemConfigurator) {
             TileEntityTransmitter tile = Transmitters.tileAt(level, event.getPos());
             Transmitter<?, ?, ?> transmitter = tile == null ? null : tile.getTransmitter();
@@ -43,14 +43,6 @@ public final class ServerEvents {
         }
 
         Direction face = event.getFace();
-        // A successful PlaceTransmitterMessage leaves a one-shot mark. The matching vanilla
-        // use-on packet still arrives, so deny it completely before it can place a second pipe
-        // and before a click record is written.
-        if (TransmitterPlacementLogic.consumeGuard(player.getUUID(), event.getPos(), face, level.getGameTime())) {
-            event.setCanceled(true);
-            event.setCancellationResult(InteractionResult.SUCCESS);
-            return;
-        }
         TransmitterPlacementLogic.recordClick(player.getUUID(), level.dimension(), event.getPos(), face, level.getGameTime());
     }
 

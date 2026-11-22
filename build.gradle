@@ -47,7 +47,6 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run-test-client')
-            jvmArg '-Dmpt.autotest=true'
             args '--quickPlayMultiplayer', '127.0.0.1:25566', '--width', '1280', '--height', '720'
             mods {
                 "${mod_id}" {

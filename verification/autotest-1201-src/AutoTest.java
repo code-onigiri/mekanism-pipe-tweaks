@@ -31,13 +31,14 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * TEMPORARY verification harness for the 1.20.1 port. Drives ordinary player actions and reports
- * results on the client log as MPT_AUTOTEST markers. Enabled only with -Dmpt.autotest=true.
+ * TEMPORARY verification harness for the 1.20.1 port (v0.2.0 spec). Drives ordinary player
+ * actions and reports results on the client log as MPT_AUTOTEST markers. Enabled only with
+ * -Dmpt.autotest=true.
  *
- * <p>Every click goes through {@code MultiPlayerGameMode#useItemOn}, the same path a real player's
- * right-click takes (it fires Forge's RightClickBlock event first); nothing in the mod is called
- * directly. Screenshots read the main render target, so they contain the guide overlay exactly as
- * the normal renderer draws it.
+ * <p>Every click goes through {@code MultiPlayerGameMode#useItemOn}, the same path a real
+ * player's right-click takes (it fires Forge's RightClickBlock event first); nothing in the mod
+ * is called directly. Screenshots read the main render target, so they contain the guide overlay
+ * exactly as the normal renderer draws it.
  */
 public final class AutoTest {
     private static final Logger LOG = LoggerFactory.getLogger("MPT-AutoTest");
@@ -45,14 +46,10 @@ public final class AutoTest {
 
     private static final String CONFIGURATOR = "mekanism:configurator";
     private static final String PIPE = "mekanism:basic_mechanical_pipe";
-    private static final String CABLE = "mekanism:basic_universal_cable";
-    private static final String TUBE = "mekanism:basic_pressurized_tube";
-    private static final String CONDUCTOR = "mekanism:basic_thermodynamic_conductor";
-    private static final String TRANSPORTER = "mekanism:basic_logistical_transporter";
 
     /** Wall the first pipe is placed onto; its south face is the placement target. */
     private static final BlockPos WALL = new BlockPos(14, -60, 19);
-    /** First pipe, placed by the player onto the wall's south face. */
+    /** First pipe, placed by the player onto the wall's south face (non-sneak -> all NONE). */
     private static final BlockPos ANCHOR = new BlockPos(14, -60, 20);
     /** Second pipe, placed by the player onto the anchor's south face. */
     private static final BlockPos PLACED = new BlockPos(14, -60, 21);
@@ -60,51 +57,23 @@ public final class AutoTest {
     /** The flat test world's surface is the grass layer at y=-61, so feet rest at y=-60. */
     private static final double FEET = -60.0;
 
-    /**
-     * Aim points lie on the target face plane at a chosen cell offset, so the mod's expanded
-     * full-cube ray selects that cell. The centre and the top/bottom cells also cross the
-     * 0.5-wide pipe core, so the vanilla ray still hits the block and {@code useItemOn} fires
-     * Forge's RightClickBlock. Left/right/corner cells sit outside the core and are therefore
-     * reached only through the expanded ray (RightClickBlock is then a miss, and the
-     * RightClickItem path handles it) - that is the intended cell-select placement path.
-     */
     private static final Vec3 STAND_SOUTH = new Vec3(14.5, FEET, 22.6);
-    /** Wall (14,5,19) south face; plain stone, so the placed pipe must be all-NONE. */
+    /** Wall south face; plain stone, so the placed pipe must be all-NONE. */
     private static final Vec3 AIM_WALL_SOUTH = new Vec3(14.5, -59.5, 20.0);
-    /** Anchor (14,5,20) south face, centre cell. */
+    /** Anchor south face, centre cell (clicked face SOUTH). */
     private static final Vec3 AIM_ANCHOR_SOUTH = new Vec3(14.5, -59.5, 21.0);
     private static final Vec3 STAND_SOUTH_FAR = new Vec3(14.5, FEET, 23.4);
-    /** Placed (14,5,21) south face, centre cell (col 1 row 1 -> side SOUTH). */
+    /** Placed south face, centre cell (col 1 row 1 -> side SOUTH). */
     private static final Vec3 AIM_PLACED_SOUTH = new Vec3(14.5, -59.5, 22.0);
-    /** Placed south face, top cell (col 1 row 0 -> side UP). */
-    private static final Vec3 AIM_PLACED_SOUTH_TOP = new Vec3(14.5, -59.2, 22.0);
-    /** Placed south face, top-left corner cell (col 0 row 0 -> side NORTH), outside the core. */
-    private static final Vec3 AIM_PLACED_SOUTH_CORNER = new Vec3(14.2, -59.2, 22.0);
 
-    /** Close enough that the whole 1x1 face fills the frame (screenshots only). */
+    /** Close view of the anchor's west face for the guide screenshots. */
     private static final Vec3 STAND_WEST = new Vec3(12.8, FEET, 20.5);
     /** Anchor west face, centre cell. */
     private static final Vec3 AIM_ANCHOR_WEST = new Vec3(14.0, -59.5, 20.5);
-    /** Anchor west face, top-left corner cell (side NORTH), outside the core. */
-    private static final Vec3 AIM_ANCHOR_WEST_CORNER = new Vec3(14.0, -59.2, 20.2);
 
-    /** Close view of the placed pipe's west face for the cycle / mixed-state close-ups. */
-    private static final Vec3 STAND_PLACED_CLOSE = new Vec3(12.8, FEET, 21.5);
-    /** Placed pipe west face, centre cell. From here SOUTH is the left-hand edge cell. */
-    private static final Vec3 AIM_PLACED_WEST = new Vec3(14.0, -59.5, 21.5);
-
-    /** South-west three-quarter view framing both connected pipes. */
+    /** South-west three-quarter view framing both placed pipes. */
     private static final Vec3 STAND_PAIR = new Vec3(12.2, FEET, 22.2);
     private static final Vec3 AIM_PAIR = new Vec3(14.5, -59.5, 20.5);
-
-    private static final Vec3 STAND_OVERVIEW = new Vec3(18.5, FEET, 24.5);
-    private static final Vec3 AIM_OVERVIEW = new Vec3(14.5, -59.4, 20.5);
-
-    /** Network scene: oblique view showing both machines and the whole cable run. */
-    private static final Vec3 STAND_NETWORK = new Vec3(24.5, FEET, 18.5);
-    private static final Vec3 AIM_NETWORK = new Vec3(27.5, -59.6, 14.0);
-    /** Same viewpoint, crosshair on cable (27,5,15) so the guide overlay resolves. */
-    private static final Vec3 AIM_NETWORK_GUIDE = new Vec3(27.5, -59.6, 14.0);
 
     private enum State {
         NEED_SETUP,
@@ -134,9 +103,11 @@ public final class AutoTest {
     private int wait = 40;
     private boolean failure;
     private boolean anchorChecked;
-    private boolean placementChecked;
+    private boolean nonsneakChecked;
+    private boolean sneakChecked;
     private boolean cycleChecked;
-    private boolean mixedChecked;
+    private boolean guideChecked;
+    private boolean noGuideChecked;
 
     public AutoTest() {
         buildScenes();
@@ -145,69 +116,31 @@ public final class AutoTest {
     private void buildScenes() {
         scenes.add(new Scene("setup", "base", STAND_SOUTH, null, null, 0, false, null, null));
 
-        // 1. Place the first pipe against a plain stone wall: every side must be disconnected.
+        // 1. Place the first pipe against a plain stone wall (non-sneak): every side NONE.
         scenes.add(new Scene("place-anchor", null, STAND_SOUTH, AIM_WALL_SOUTH, PIPE, 1, false, null, null));
         scenes.add(new Scene("anchor-readback", null, STAND_PAIR, AIM_PAIR, "empty", 0, false, "empty",
-                "screenshot-1201-placement-anchor-all-none.png"));
+                "screenshot-1201-spec-anchor-all-none.png"));
 
-        // 2. Guides on the lone anchor (a 0.5-wide core, so the grid stands out clearly).
-        scenes.add(new Scene("guide-configurator-mode", null, STAND_WEST, AIM_ANCHOR_WEST, CONFIGURATOR, 0, false,
-                CONFIGURATOR, "screenshot-1201-guide-configurator.png"));
-        scenes.add(new Scene("guide-configurator-corner", null, STAND_WEST, AIM_ANCHOR_WEST_CORNER, CONFIGURATOR, 0,
-                false, CONFIGURATOR, "screenshot-1201-guide-configurator-corner-cell.png"));
-        scenes.add(new Scene("guide-placement-mode", null, STAND_WEST, AIM_ANCHOR_WEST, PIPE, 0, false, PIPE,
-                "screenshot-1201-guide-placement.png"));
-        scenes.add(new Scene("guide-placement-corner", null, STAND_WEST, AIM_ANCHOR_WEST_CORNER, PIPE, 0, false, PIPE,
-                "screenshot-1201-guide-placement-corner-cell.png"));
+        // 2. Guide: shown with the Configurator, absent with a transmitter item in hand.
+        scenes.add(new Scene("guide-configurator", null, STAND_WEST, AIM_ANCHOR_WEST, CONFIGURATOR, 0, false,
+                CONFIGURATOR, "screenshot-1201-spec-guide-configurator.png"));
+        scenes.add(new Scene("guide-transmitter-item", null, STAND_WEST, AIM_ANCHOR_WEST, PIPE, 0, false,
+                PIPE, "screenshot-1201-spec-guide-transmitter-item.png"));
 
-        // 3. Place the second pipe against the anchor: exactly one side open on each pipe.
-        scenes.add(new Scene("place-single-side", null, STAND_SOUTH, AIM_ANCHOR_SOUTH, PIPE, 1, false, null, null));
-        scenes.add(new Scene("placement-readback", null, STAND_PAIR, AIM_PAIR, "empty", 0, false, "empty",
-                "screenshot-1201-placement-result.png"));
-        // Wide shot of the finished placement rig, taken while both pipes are still in place.
-        scenes.add(new Scene("overview", null, STAND_OVERVIEW, AIM_OVERVIEW, "empty", 0, false, "empty",
-                "screenshot-1201-test-area-overview.png"));
+        // 3. (a) Non-sneak placement against the transmitter: placed all NONE, anchor unchanged.
+        scenes.add(new Scene("place-nonsneak", null, STAND_SOUTH, AIM_ANCHOR_SOUTH, PIPE, 1, false, null, null));
+        scenes.add(new Scene("nonsneak-readback", null, STAND_PAIR, AIM_PAIR, "empty", 0, false, "empty",
+                "screenshot-1201-spec-nonsneak-placement.png"));
 
-        // 4. Cycle real sides with sneak + right-click on the second pipe. The clicks use the
-        //    farther stance so the vanilla ray still crosses the pipe core; the screenshots use
-        //    the closer stance, which only needs the mod's expanded ray.
-        //    Centre of the viewed south face: NONE -> NORMAL -> PUSH.
-        scenes.add(new Scene("cycle-centre-push", null, STAND_SOUTH_FAR, AIM_PLACED_SOUTH, CONFIGURATOR, 2, true,
-                null, null));
-        scenes.add(new Scene("cycle-push-shot", null, STAND_PLACED_CLOSE, AIM_PLACED_WEST, CONFIGURATOR, 0, false,
-                CONFIGURATOR, "screenshot-1201-cycle-push.png"));
-        //    Top cell of the same face: NONE -> NORMAL -> PUSH -> PULL.
-        scenes.add(new Scene("cycle-top-pull", null, STAND_SOUTH_FAR, AIM_PLACED_SOUTH_TOP, CONFIGURATOR, 3, true,
-                null, null));
-        //    Mixed guide (viewed from the west): centre WEST=NONE, top UP=PULL, left SOUTH=PUSH,
-        //    right NORTH=NORMAL, so four different icon kinds share one grid.
-        scenes.add(new Scene("mixed-state-guide", null, STAND_PLACED_CLOSE, AIM_PLACED_WEST, CONFIGURATOR, 0, false,
-                CONFIGURATOR, "screenshot-1201-guide-mixed.png"));
+        // 4. (b) Sneak placement against the transmitter: clicked side NORMAL, counterpart opened.
+        scenes.add(new Scene("reset-placed", "reset-placed", STAND_SOUTH, null, null, 0, false, null, null));
+        scenes.add(new Scene("place-sneak", null, STAND_SOUTH, AIM_ANCHOR_SOUTH, PIPE, 1, true, null, null));
+        scenes.add(new Scene("sneak-readback", null, STAND_PAIR, AIM_PAIR, "empty", 0, false, "empty",
+                "screenshot-1201-spec-sneak-placement.png"));
 
-        // 6. Every transmitter type with the guide (one cycle each, so the grid is not uniform).
-        addTypeScenes(PIPE, "mechanical-pipe");
-        addTypeScenes(CABLE, "universal-cable");
-        addTypeScenes(TUBE, "pressurized-tube");
-        addTypeScenes(CONDUCTOR, "thermodynamic-conductor");
-        addTypeScenes(TRANSPORTER, "logistical-transporter");
-
-        // 7. Genuine connected network: two Mekanism machines joined by a cable run with two bends.
-        scenes.add(new Scene("network", "network", STAND_NETWORK, AIM_NETWORK, "empty", 0, false, "empty",
-                "screenshot-1201-network-scene.png"));
-        scenes.add(new Scene("network-guide", null, STAND_NETWORK, AIM_NETWORK_GUIDE, CONFIGURATOR, 0, false,
-                CONFIGURATOR, "screenshot-1201-network-scene-guide.png"));
-    }
-
-    private void addTypeScenes(String blockId, String name) {
-        // The type's transmitter is placed by the driver at ANCHOR with its default all-NORMAL
-        // configuration. Cycle its south side once (NORMAL -> PUSH) at the far stance, then
-        // capture the guide close-up from the west so the 3x3 grid fills the frame.
-        scenes.add(new Scene("type-" + name + "-setup", "type " + blockId, STAND_SOUTH, null, CONFIGURATOR, 0, false,
-                null, null));
-        scenes.add(new Scene("type-" + name + "-cycle", null, STAND_SOUTH, AIM_ANCHOR_SOUTH, CONFIGURATOR, 1, true,
-                null, null));
-        scenes.add(new Scene("type-" + name + "-guide", null, STAND_WEST, AIM_ANCHOR_WEST, CONFIGURATOR, 0, false,
-                CONFIGURATOR, "screenshot-1201-guide-type-" + name + ".png"));
+        // 5. (d) Configurator sneak + right-click cycling still works: SOUTH NONE -> NORMAL -> PUSH.
+        scenes.add(new Scene("cycle-push", null, STAND_SOUTH_FAR, AIM_PLACED_SOUTH, CONFIGURATOR, 2, true,
+                null, "screenshot-1201-spec-cycle-push.png"));
     }
 
     @SubscribeEvent
@@ -221,8 +154,6 @@ public final class AutoTest {
             return;
         }
         if (player.isDeadOrDying() || player.getHealth() <= 0.0F) {
-            // Keep the session going: a death (e.g. a mistimed teleport) would otherwise leave
-            // the death screen up and make every later interaction a no-op.
             marker("RESPAWN after death");
             player.respawn();
             wait = 60;
@@ -272,10 +203,6 @@ public final class AutoTest {
                 }
             }
             case NEED_AIM -> {
-                // Wait until the teleport has actually landed on this side before aiming: a stale
-                // client position makes the aim ray start somewhere else entirely. Re-emit the
-                // request periodically (the driver may not be listening yet) and give up after a
-                // bounded number of tries so one bad scene cannot stall the whole run.
                 if (scene.tp() != null && !arrived(player, scene.tp())) {
                     if (tpTries++ > 30) {
                         marker("TP_FAILED scene=" + scene.label() + " pos=(" + format(player.getX()) + ", "
@@ -363,9 +290,6 @@ public final class AutoTest {
             if (scene.sneak()) {
                 startSneak(player);
             }
-            // A real right-click is either use-on-block (vanilla ray hit a block) or a plain item
-            // use (vanilla ray missed). Guide cells outside the 0.5-wide pipe core produce the
-            // latter, and the mod's RightClickItem handler is what intercepts them.
             BlockHitResult blockHit = hit instanceof BlockHitResult bhr ? bhr : null;
             ConnectionType before = blockHit == null ? null
                     : rawType(minecraft, blockHit.getBlockPos(), blockHit.getDirection());
@@ -395,9 +319,11 @@ public final class AutoTest {
         if (sceneIndex >= scenes.size()) {
             marker("finished failure=" + (failure ? "yes" : "none")
                     + " anchorChecked=" + anchorChecked
-                    + " placementChecked=" + placementChecked
+                    + " nonsneakChecked=" + nonsneakChecked
+                    + " sneakChecked=" + sneakChecked
                     + " cycleChecked=" + cycleChecked
-                    + " mixedChecked=" + mixedChecked);
+                    + " guideChecked=" + guideChecked
+                    + " noGuideChecked=" + noGuideChecked);
             state = State.DONE;
             return;
         }
@@ -414,63 +340,67 @@ public final class AutoTest {
 
         if (!anchorChecked && "anchor-readback".equals(label)) {
             anchorChecked = true;
-            BlockState state = minecraft.level.getBlockState(ANCHOR);
-            boolean allNone = true;
-            for (Direction direction : Direction.values()) {
-                if (rawType(minecraft, ANCHOR, direction) != ConnectionType.NONE) {
-                    allNone = false;
-                }
-            }
-            boolean ok = "mekanism:basic_mechanical_pipe".equals(
-                    BuiltInRegistries.BLOCK.getKey(state.getBlock()).toString()) && allNone;
-            marker("ANCHOR_RESULT block=" + BuiltInRegistries.BLOCK.getKey(state.getBlock())
-                    + " allSidesNone=" + allNone + " ok=" + ok);
+            boolean allNone = allNone(minecraft, ANCHOR);
+            boolean ok = isMechanicalPipe(minecraft, ANCHOR) && allNone;
+            marker("ANCHOR_RESULT allSidesNone=" + allNone + " ok=" + ok);
             if (!ok) {
                 failure = true;
             }
         }
 
-        if (!placementChecked && "placement-readback".equals(label)) {
-            placementChecked = true;
-            BlockState placed = minecraft.level.getBlockState(PLACED);
+        if (!guideChecked && "guide-configurator".equals(label)) {
+            guideChecked = true;
+            boolean present = GuideTarget.resolve(minecraft.level, minecraft.player) != null;
+            marker("GUIDE_CONFIGURATOR_RESULT guidePresent=" + present + " ok=" + present);
+            if (!present) {
+                failure = true;
+            }
+        }
+
+        if (!noGuideChecked && "guide-transmitter-item".equals(label)) {
+            noGuideChecked = true;
+            boolean absent = GuideTarget.resolve(minecraft.level, minecraft.player) == null;
+            marker("GUIDE_TRANSMITTER_ITEM_RESULT guideAbsent=" + absent + " ok=" + absent);
+            if (!absent) {
+                failure = true;
+            }
+        }
+
+        if (!nonsneakChecked && "nonsneak-readback".equals(label)) {
+            nonsneakChecked = true;
+            boolean placedAllNone = isMechanicalPipe(minecraft, PLACED) && allNone(minecraft, PLACED);
+            boolean anchorUnchanged = isMechanicalPipe(minecraft, ANCHOR) && allNone(minecraft, ANCHOR);
+            boolean ok = placedAllNone && anchorUnchanged;
+            marker("NONSNEAK_RESULT placedAllNone=" + placedAllNone
+                    + " anchorAllNone=" + anchorUnchanged + " ok=" + ok);
+            if (!ok) {
+                failure = true;
+            }
+        }
+
+        if (!sneakChecked && "sneak-readback".equals(label)) {
+            sneakChecked = true;
             ConnectionType placedNorth = rawType(minecraft, PLACED, Direction.NORTH);
             ConnectionType anchorSouth = rawType(minecraft, ANCHOR, Direction.SOUTH);
-            boolean onlyNorth = allNoneExcept(minecraft, PLACED, Direction.NORTH);
-            boolean ok = "mekanism:basic_mechanical_pipe".equals(
-                    BuiltInRegistries.BLOCK.getKey(placed.getBlock()).toString())
+            boolean placedOnlyNorth = allNoneExcept(minecraft, PLACED, Direction.NORTH);
+            boolean anchorOnlySouth = allNoneExcept(minecraft, ANCHOR, Direction.SOUTH);
+            boolean ok = isMechanicalPipe(minecraft, PLACED) && isMechanicalPipe(minecraft, ANCHOR)
                     && placedNorth == ConnectionType.NORMAL
                     && anchorSouth == ConnectionType.NORMAL
-                    && onlyNorth;
-            marker("PLACE_RESULT block=" + BuiltInRegistries.BLOCK.getKey(placed.getBlock())
-                    + " placedNorth=" + placedNorth + " anchorSouth=" + anchorSouth
-                    + " placedOnlyNorth=" + onlyNorth + " ok=" + ok);
+                    && placedOnlyNorth && anchorOnlySouth;
+            marker("SNEAK_RESULT placedNorth=" + placedNorth + " anchorSouth=" + anchorSouth
+                    + " placedOnlyNorth=" + placedOnlyNorth + " anchorOnlySouth=" + anchorOnlySouth
+                    + " ok=" + ok);
             if (!ok) {
                 failure = true;
             }
         }
 
-        if (!cycleChecked && "cycle-centre-push".equals(label)) {
+        if (!cycleChecked && "cycle-push".equals(label)) {
             cycleChecked = true;
             ConnectionType south = rawType(minecraft, PLACED, Direction.SOUTH);
             marker("CYCLE_RESULT centreSouth=" + south + " ok=" + (south == ConnectionType.PUSH));
             if (south != ConnectionType.PUSH) {
-                failure = true;
-            }
-        }
-
-        if (!mixedChecked && "mixed-state-guide".equals(label)) {
-            mixedChecked = true;
-            // The mixed capture views the WEST face: centre=west, top edge=up, left edge=south,
-            // right edge=north, corners=east. Four configured values therefore share one grid.
-            ConnectionType centre = rawType(minecraft, PLACED, Direction.SOUTH);
-            ConnectionType top = rawType(minecraft, PLACED, Direction.UP);
-            ConnectionType corner = rawType(minecraft, PLACED, Direction.NORTH);
-            ConnectionType left = rawType(minecraft, PLACED, Direction.WEST);
-            boolean ok = centre == ConnectionType.PUSH && top == ConnectionType.PULL
-                    && corner == ConnectionType.NORMAL && left == ConnectionType.NONE;
-            marker("MIXED_RESULT centre(south)=" + centre + " top(up)=" + top + " corner(north)=" + corner
-                    + " left(west)=" + left + " ok=" + ok);
-            if (!ok) {
                 failure = true;
             }
         }
@@ -587,6 +517,15 @@ public final class AutoTest {
         return configured(tile.getTransmitter(), side);
     }
 
+    private static boolean allNone(Minecraft minecraft, BlockPos pos) {
+        for (Direction direction : Direction.values()) {
+            if (rawType(minecraft, pos, direction) != ConnectionType.NONE) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private static boolean allNoneExcept(Minecraft minecraft, BlockPos pos, Direction except) {
         for (Direction direction : Direction.values()) {
             if (direction != except && rawType(minecraft, pos, direction) != ConnectionType.NONE) {
@@ -594,6 +533,11 @@ public final class AutoTest {
             }
         }
         return true;
+    }
+
+    private static boolean isMechanicalPipe(Minecraft minecraft, BlockPos pos) {
+        BlockState state = minecraft.level.getBlockState(pos);
+        return "mekanism:basic_mechanical_pipe".equals(BuiltInRegistries.BLOCK.getKey(state.getBlock()).toString());
     }
 
     private static ConnectionType configured(Transmitter<?, ?, ?> transmitter, Direction side) {
@@ -623,7 +567,7 @@ public final class AutoTest {
         }
         return "pos=" + target.pos() + " face=" + target.face().getName()
                 + " cell=" + target.cell().side().getName() + " col=" + target.cell().col()
-                + " row=" + target.cell().row() + " mode=" + target.mode();
+                + " row=" + target.cell().row();
     }
 
     private static String format(double value) {

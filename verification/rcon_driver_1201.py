@@ -247,6 +247,9 @@ class Driver:
             self.setup_base()
         elif name.startswith("type "):
             self.setup_type(name[len("type "):].strip())
+        elif name == "reset-placed":
+            self.run("setblock %d %d %d minecraft:air" % PLACED)
+            self.log("  reset placed cell %s to air" % (PLACED,))
         elif name == "network":
             self.setup_network()
         else:

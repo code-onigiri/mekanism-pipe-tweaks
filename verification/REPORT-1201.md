@@ -79,3 +79,75 @@ Final clean `gradle build` after harness removal (2026-11-22):
 `build/libs/mekanism_pipe_tweaks-0.1.1.jar` (57,202 bytes) — contains
 `META-INF/mods.toml` (Forge format), LICENSE and NOTICE, and **no** autotest
 classes.
+
+## Spec change v0.2.0 — regression verification (2026-11-22)
+
+Applied the GT Modern behaviour revision to the 1.20.1 tree and verified it on
+a dedicated server + dev client under Xvfb `:99` (same method as above). The
+temporary harness was adapted from `verification/autotest-1201-src/`, copied
+into `src` for the run, then removed again.
+
+### Code removed / changed
+
+- **Guide trigger:** `GuideTarget.Mode` (CONFIGURATOR/PLACEMENT) and every
+  placement-mode branch removed. `GuideTarget.resolve` now returns a target only
+  when the main-hand item is `ItemConfigurator`; holding a transmitter item
+  yields `null`.
+- **Cell-select placement:** deleted `PlaceTransmitterMessage`,
+  `ModNetwork`'s second registration, and the client `RightClickItem`
+  interception / `PlaceTransmitterMessage` send path in
+  `GuideInteractionHandler`. Ordinary placement is vanilla again.
+- **Server guard:** deleted `GuardRecord`, `GUARDS`, `consumeGuard`,
+  `placeSelected` and the guard check in `ServerEvents`. The remaining
+  `CLICKS` map only maps a player's last right-click to the placed block's
+  face, as required to know which side to open when sneaking.
+- **Protocol:** `SimpleChannel` protocol version `1` → `2`.
+- **Placement rule:** a player-placed transmitter starts all-`NONE`; only when
+  `player.isShiftKeyDown()` and `connectClickedSide=true` is the clicked-facing
+  side opened. `openCounterpartSide` still gates the symmetric open.
+- **Version:** `0.2.0`; docs (`README.md`, `docs/DESIGN.md`) updated to match.
+
+### How the sneak state is read server-side
+
+`TransmitterPlacementLogic.onBlockPlaced` runs from
+`BlockEvent.EntityPlaceEvent` and reads `Player#isShiftKeyDown()` on the
+server-side player. The client's `ServerboundPlayerCommandPacket`
+PRESS/RELEASE_SHIFT_KEY updates that state before the subsequent
+`use_item_on` packet is handled, so the value is current at placement time.
+
+### Harness runs (client log markers)
+
+- Anchor placed non-sneak: `ANCHOR_RESULT allSidesNone=true ok=true`.
+- (a) Non-sneak against a transmitter:
+  `READBACK nonsneak-readback ... 20: all NONE | 21: all NONE`,
+  `NONSNEAK_RESULT placedAllNone=true anchorAllNone=true ok=true`.
+- (b) Sneak against a transmitter:
+  `READBACK sneak-readback ... 20: south=NORMAL/NORMAL, others NONE | 21: north=NORMAL/NORMAL, others NONE`,
+  `SNEAK_RESULT placedNorth=NORMAL anchorSouth=NORMAL placedOnlyNorth=true anchorOnlySouth=true ok=true`.
+- (c) Guide:
+  `GUIDE_CONFIGURATOR_RESULT guidePresent=true ok=true`,
+  `GUIDE_TRANSMITTER_ITEM_RESULT guideAbsent=true ok=true`.
+- (d) Cycling:
+  `CYCLE_RESULT centreSouth=PUSH ok=true` (two sneak+right-click cycles on the
+  centre cell).
+- Summary:
+  `MPT_AUTOTEST finished failure=none anchorChecked=true nonsneakChecked=true sneakChecked=true cycleChecked=true guideChecked=true noGuideChecked=true`.
+
+### Screenshots (`verification/screenshot-1201-spec-*.png`)
+
+- `screenshot-1201-spec-guide-configurator.png` — guide drawn while holding the
+  Configurator (pixel check: 3,477 distinctive grid-blue pixels in the centre
+  crop).
+- `screenshot-1201-spec-guide-transmitter-item.png` — no guide while holding a
+  Mechanical Pipe (same check: 0 grid-blue pixels).
+- `screenshot-1201-spec-sneak-placement.png` — result of the sneak placement.
+- Also captured: `...-spec-anchor-all-none.png`,
+  `...-spec-nonsneak-placement.png`, `...-spec-cycle-push.png`.
+
+### Release jar
+
+Final clean `gradle clean build` after harness removal (2026-11-22):
+`build/libs/mekanism_pipe_tweaks-0.2.0.jar` (50,441 bytes). It contains
+Forge-format `META-INF/mods.toml` (`modLoader = "javafml"`,
+`loaderVersion = "[47,)"`, `version = "0.2.0"`), LICENSE and NOTICE, and **no**
+`autotest` classes.
