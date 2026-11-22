@@ -1,0 +1,159 @@
+[12:54:13] watching run-test-client/logs/latest.log (from offset 0)
+[12:57:09] marker: world_ready player=Dev fov=70
+[12:57:09] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[12:57:09] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[12:57:09] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[12:57:10] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[12:57:10] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[12:57:10] time set noon -> Set the time to 6000
+[12:57:10] weather clear -> Set the weather to clear
+[12:57:11] fill 4 3 4 24 8 56 minecraft:air -> Successfully filled 9 block(s)
+[12:57:11] fill 4 2 4 24 2 56 minecraft:stone -> No blocks were filled
+[12:57:11] setblock 10 4 10 mekanism:basic_universal_cable -> Changed the block at 10, 4, 10
+[12:57:11] setblock 14 3 20 minecraft:stone -> Changed the block at 14, 3, 20
+[12:57:11] setblock 14 4 30 mekanism:basic_fluid_tank -> Changed the block at 14, 4, 30
+[12:57:12] setblock 14 4 40 mekanism:basic_universal_cable -> Changed the block at 14, 4, 40
+[12:57:12] op Dev -> Nothing changed. The player already is an operator
+[12:57:12] issuing hotbar setup (world_ready)
+[12:57:12] clear Dev -> Removed 65 item(s) from player Dev
+[12:57:12] gamemode creative Dev -> 
+[12:57:12] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[12:57:13] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[12:57:13] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[12:57:13] execute if block 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10 -> 10, 4, 10 has the following block data: {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:57:13]   SERVER A-anchor mekanism:basic_universal_cable at (10, 4, 10): {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:57:13] execute if block 14 4 30 mekanism:basic_fluid_tank run data get block 14 4 30 -> 14, 4, 30 has the following block data: {delay: 1, current_redstone: 0, active_state: 0b, x: 14, y: 4, update_delay: 0, z: 30, edit_mode: 0, id: "mekanism:basic_fluid_tank", redstone: 0b}
+[12:57:13]   SERVER C-machine mekanism:basic_fluid_tank at (14, 4, 30): {delay: 1, current_redstone: 0, active_state: 0b, x: 14, y: 4, update_delay: 0, z: 30, edit_mode: 0, id: "mekanism:basic_fluid_tank", redstone: 0b}
+[12:57:14] execute if block 14 4 40 mekanism:basic_universal_cable run data get block 14 4 40 -> 14, 4, 40 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 40, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:57:14]   SERVER D-pipe mekanism:basic_universal_cable at (14, 4, 40): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 40, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:57:14] marker: setup_wait attempt=1 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=1
+[12:57:14] issuing hotbar setup (harness reports missing slots: setup_wait attempt=1 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=1)
+[12:57:14] clear Dev -> Removed 129 item(s) from player Dev
+[12:57:14] gamemode creative Dev -> 
+[12:57:14] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[12:57:15] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[12:57:15] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[12:57:15] marker: setup_wait attempt=2 pipeSlot=-1 machinePipeSlot=-1 configuratorSlot=-1
+[12:57:15] issuing hotbar setup (harness reports missing slots: setup_wait attempt=2 pipeSlot=-1 machinePipeSlot=-1 configuratorSlot=-1)
+[12:57:15] clear Dev -> Removed 129 item(s) from player Dev
+[12:57:15] gamemode creative Dev -> 
+[12:57:16] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[12:57:16] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[12:57:16] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[12:57:16] marker: setup_wait attempt=3 pipeSlot=-1 machinePipeSlot=-1 configuratorSlot=-1
+[12:57:16] issuing hotbar setup (harness reports missing slots: setup_wait attempt=3 pipeSlot=-1 machinePipeSlot=-1 configuratorSlot=-1)
+[12:57:16] clear Dev -> Removed 129 item(s) from player Dev
+[12:57:17] gamemode creative Dev -> 
+[12:57:17] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[12:57:17] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[12:57:17] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[12:57:17] marker: setup_wait attempt=4 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=-1
+[12:57:17] issuing hotbar setup (harness reports missing slots: setup_wait attempt=4 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=-1)
+[12:57:18] clear Dev -> Removed 129 item(s) from player Dev
+[12:57:18] gamemode creative Dev -> 
+[12:57:19] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[12:57:20] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[12:57:20] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[12:57:20] marker: setup_wait attempt=5 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=-1
+[12:57:20] issuing hotbar setup (harness reports missing slots: setup_wait attempt=5 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=-1)
+[12:57:20] clear Dev -> Removed 129 item(s) from player Dev
+[12:57:21] gamemode creative Dev -> 
+[12:57:21] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[12:57:21] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[12:57:21] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[12:57:22] marker: setup_wait attempt=6 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=-1
+[12:57:22] issuing hotbar setup (harness reports missing slots: setup_wait attempt=6 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=-1)
+[12:57:22] clear Dev -> Removed 129 item(s) from player Dev
+[12:57:22] gamemode creative Dev -> 
+[12:57:22] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[12:57:22] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[12:57:23] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[12:57:23] marker: setup_wait attempt=7 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=-1
+[12:57:23] issuing hotbar setup (harness reports missing slots: setup_wait attempt=7 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=-1)
+[12:57:23] clear Dev -> Removed 129 item(s) from player Dev
+[12:57:23] gamemode creative Dev -> 
+[12:57:23] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[12:57:23] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[12:57:24] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[12:57:24] marker: setup_done pipeSlot=0 machinePipeSlot=1 configuratorSlot=2
+[12:57:24] issuing hotbar setup (verify hotbar after setup_done)
+[12:57:25] clear Dev -> Removed 129 item(s) from player Dev
+[12:57:25] gamemode creative Dev -> 
+[12:57:25] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[12:57:25] give Dev mekanism:basic_mechanical_pipe 64 -> Gave 64 [Basic Mechanical Pipe] to Dev
+[12:57:25] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[12:57:26] marker: TP A 10.500 3.000 12.800
+[12:57:26] tp Dev 10.500 3.000 12.800 -> Teleported Dev to 10.500000, 3.000000, 12.800000
+[12:57:26] teleported for A
+[12:57:28] marker: A place non-sneak anchor=BlockPos{x=10, y=4, z=10} clicked=SUCCESS
+[12:57:31] marker: A_RESULT placed=down=NONE up=NONE north=NONE south=NONE west=NONE east=NONE anchor=down=NORMAL up=NORMAL north=NORMAL south=NORMAL west=NORMAL east=NORMAL
+[12:57:31] execute if block 10 4 11 mekanism:basic_universal_cable run data get block 10 4 11 -> 10, 4, 11 has the following block data: {x: 10, y: 4, connection: [I; 3, 3, 3, 3, 3, 3], z: 11, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:57:31]   SERVER A-placed mekanism:basic_universal_cable at (10, 4, 11): {x: 10, y: 4, connection: [I; 3, 3, 3, 3, 3, 3], z: 11, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:57:32] execute if block 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10 -> 10, 4, 10 has the following block data: {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:57:32]   SERVER A-anchor mekanism:basic_universal_cable at (10, 4, 10): {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:57:32] marker: A_PASS ok=true
+[12:57:32] marker: TP B1 14.500 3.000 22.800
+[12:57:32] tp Dev 14.500 3.000 22.800 -> Teleported Dev to 14.500000, 3.000000, 22.800000
+[12:57:32] teleported for B1
+[12:57:34] marker: B1 place anchor-on-stone clicked=SUCCESS
+[12:57:39] marker: B1_ANCHOR_RAW down=NONE up=NONE north=NONE south=NONE west=NONE east=NONE
+[12:57:39] execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20 -> 14, 4, 20 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 3, 3, 3, 3], z: 20, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:57:39]   SERVER B-anchor mekanism:basic_universal_cable at (14, 4, 20): {x: 14, y: 4, connection: [I; 3, 3, 3, 3, 3, 3], z: 20, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:57:39] marker: B1_PASS anchor-all-none=true
+[12:57:39] marker: TP B2 14.500 3.000 22.800
+[12:57:39] tp Dev 14.500 3.000 22.800 -> Teleported Dev to 14.500000, 3.000000, 22.800000
+[12:57:39] teleported for B2
+[12:57:42] marker: B2 place sneak anchor=BlockPos{x=14, y=4, z=20} clicked=SUCCESS
+[12:57:45] marker: B2_PLACED_RAW down=NONE up=NONE north=NORMAL south=NONE west=NONE east=NONE
+[12:57:45] execute if block 14 4 21 mekanism:basic_universal_cable run data get block 14 4 21 -> 14, 4, 21 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 21, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[12:57:45]   SERVER B-placed mekanism:basic_universal_cable at (14, 4, 21): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 21, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[12:57:46] execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20 -> 14, 4, 20 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 3, 0, 3, 3], z: 20, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 8b}
+[12:57:46]   SERVER B-anchor mekanism:basic_universal_cable at (14, 4, 20): {x: 14, y: 4, connection: [I; 3, 3, 3, 0, 3, 3], z: 20, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 8b}
+[12:57:46] marker: B2_ANCHOR_RAW down=NONE up=NONE north=NONE south=NORMAL west=NONE east=NONE
+[12:57:46] marker: B2_PASS placed=true anchor=true
+[12:57:46] marker: B2 guide view expanded=pos=MutableBlockPos{x=14, y=4, z=21} cell=south col=1 row=1 face=south
+[12:57:47] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-8-spec-change-sneak-placement.png (1280x720)
+[12:57:47] marker: TP C 14.500 3.000 32.800
+[12:57:47] tp Dev 14.500 3.000 32.800 -> Teleported Dev to 14.500000, 3.000000, 32.800000
+[12:57:47] teleported for C
+[12:57:50] marker: C place sneak machine=BlockPos{x=14, y=4, z=30} clicked=SUCCESS held=mekanism:basic_mechanical_pipe
+[12:57:52] marker: C_PLACED_RAW down=NONE up=NONE north=NORMAL south=NONE west=NONE east=NONE
+[12:57:53] execute if block 14 4 31 mekanism:basic_mechanical_pipe run data get block 14 4 31 -> 14, 4, 31 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 31, id: "mekanism:basic_mechanical_pipe", acceptors: 4b, redstone: 0b, connections: 0b}
+[12:57:53]   SERVER C-placed mekanism:basic_mechanical_pipe at (14, 4, 31): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 31, id: "mekanism:basic_mechanical_pipe", acceptors: 4b, redstone: 0b, connections: 0b}
+[12:57:53] execute if block 14 4 30 mekanism:basic_fluid_tank run data get block 14 4 30 -> 14, 4, 30 has the following block data: {delay: 1, current_redstone: 0, active_state: 0b, x: 14, y: 4, update_delay: 0, z: 30, edit_mode: 0, id: "mekanism:basic_fluid_tank", redstone: 0b}
+[12:57:53]   SERVER C-machine mekanism:basic_fluid_tank at (14, 4, 30): {delay: 1, current_redstone: 0, active_state: 0b, x: 14, y: 4, update_delay: 0, z: 30, edit_mode: 0, id: "mekanism:basic_fluid_tank", redstone: 0b}
+[12:57:53] marker: C_PASS north-normal=true block=mekanism:basic_mechanical_pipe
+[12:57:53] marker: TP D1 14.500 3.000 42.800
+[12:57:53] tp Dev 14.500 3.000 42.800 -> Teleported Dev to 14.500000, 3.000000, 42.800000
+[12:57:53] teleported for D1
+[12:57:55] marker: D1 guide holding=mekanism:configurator target=pos=MutableBlockPos{x=14, y=4, z=40} cell=south col=1 row=1 face=south
+[12:57:57] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-8-spec-change-guide-configurator.png (1280x720)
+[12:57:57] marker: TP D2 14.500 3.000 42.800
+[12:57:58] tp Dev 14.500 3.000 42.800 -> Teleported Dev to 14.500000, 3.000000, 42.800000
+[12:57:58] teleported for D2
+[12:58:00] marker: D2 guide holding=mekanism:basic_universal_cable target=null
+[12:58:01] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-8-spec-change-guide-transmitter-item.png (1280x720)
+[12:58:02] marker: TP E 14.500 3.000 24.000
+[12:58:02] tp Dev 14.500 3.000 24.000 -> Teleported Dev to 14.500000, 3.000000, 24.000000
+[12:58:02] teleported for E
+[12:58:04] marker: E_BEFORE side=south raw=NONE icon=block guide=pos=MutableBlockPos{x=14, y=4, z=21} cell=south col=1 row=1 face=south
+[12:58:04] marker: E cycle side=south raw before=NONE clicked=SUCCESS
+[12:58:06] marker: E after cycle raw south=NORMAL guide=pos=MutableBlockPos{x=14, y=4, z=21} cell=south col=1 row=1 face=south
+[12:58:06] execute if block 14 4 21 mekanism:basic_universal_cable run data get block 14 4 21 -> 14, 4, 21 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 0, 3, 3], z: 21, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[12:58:06]   SERVER B-placed mekanism:basic_universal_cable at (14, 4, 21): {x: 14, y: 4, connection: [I; 3, 3, 0, 0, 3, 3], z: 21, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[12:58:07] marker: E_GUIDE_RESULT before=NONE/block after=NORMAL/connect
+[12:58:07] execute if block 14 4 21 mekanism:basic_universal_cable run data get block 14 4 21 -> 14, 4, 21 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 0, 3, 3], z: 21, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[12:58:07]   SERVER B-placed mekanism:basic_universal_cable at (14, 4, 21): {x: 14, y: 4, connection: [I; 3, 3, 0, 0, 3, 3], z: 21, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[12:58:07] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-8-spec-change-cycle.png (1280x720)
+[12:58:07] marker: finished failure=none
+[12:58:08] execute if block 10 4 11 mekanism:basic_universal_cable run data get block 10 4 11 -> 10, 4, 11 has the following block data: {x: 10, y: 4, connection: [I; 3, 3, 3, 3, 3, 3], z: 11, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:58:08]   SERVER final-A-placed mekanism:basic_universal_cable at (10, 4, 11): {x: 10, y: 4, connection: [I; 3, 3, 3, 3, 3, 3], z: 11, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[12:58:08] execute if block 14 4 21 mekanism:basic_universal_cable run data get block 14 4 21 -> 14, 4, 21 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 0, 3, 3], z: 21, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[12:58:08]   SERVER final-B-placed mekanism:basic_universal_cable at (14, 4, 21): {x: 14, y: 4, connection: [I; 3, 3, 0, 0, 3, 3], z: 21, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[12:58:08] execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20 -> 14, 4, 20 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 3, 0, 3, 3], z: 20, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 8b}
+[12:58:08]   SERVER final-B-anchor mekanism:basic_universal_cable at (14, 4, 20): {x: 14, y: 4, connection: [I; 3, 3, 3, 0, 3, 3], z: 20, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 8b}
+[12:58:08] execute if block 14 4 31 mekanism:basic_mechanical_pipe run data get block 14 4 31 -> 14, 4, 31 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 31, id: "mekanism:basic_mechanical_pipe", acceptors: 4b, redstone: 0b, connections: 0b}
+[12:58:08]   SERVER final-C-placed mekanism:basic_mechanical_pipe at (14, 4, 31): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 31, id: "mekanism:basic_mechanical_pipe", acceptors: 4b, redstone: 0b, connections: 0b}
+[12:58:08] execute if block 14 4 30 mekanism:basic_fluid_tank run data get block 14 4 30 -> 14, 4, 30 has the following block data: {delay: 1, current_redstone: 0, active_state: 0b, x: 14, y: 4, update_delay: 0, z: 30, edit_mode: 0, id: "mekanism:basic_fluid_tank", redstone: 0b}
+[12:58:08]   SERVER final-C-machine mekanism:basic_fluid_tank at (14, 4, 30): {delay: 1, current_redstone: 0, active_state: 0b, x: 14, y: 4, update_delay: 0, z: 30, edit_mode: 0, id: "mekanism:basic_fluid_tank", redstone: 0b}
+[12:58:08] client finished; exiting driver

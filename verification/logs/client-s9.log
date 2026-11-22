@@ -1,0 +1,22 @@
+WARN StatusConsoleListener Advanced terminal features are not available in this environment
+[11:12:24] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientdev, --version, 21.1.264, --assetIndex, 17, --assetsDir, /root/.gradle/caches/neoformruntime/assets, --gameDir, ., --fml.fmlVersion, 4.0.45, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.264, --fml.neoFormVersion, 20240808.144430, --quickPlayMultiplayer, 127.0.0.1:25565, --width, 1280, --height, 720]
+[11:12:24] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.13+9-LTS
+[11:12:24] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.13 by Eclipse Adoptium; OS Linux arch amd64 version 7.0.0-44-generic
+[11:12:25] [main/INFO] [ne.ne.fm.lo.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[11:12:26] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[11:12:27] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.5
+[11:12:27] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.5 got version 4.5
+[11:12:28] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/root/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.4+mixin.0.8.7/26d01f0567ab46e9ca0d2ed89d0ecc11aadbd433/sponge-mixin-0.16.4+mixin.0.8.7.jar%23126!/ Service=ModLauncher Env=CLIENT
+[11:12:28] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: llvmpipe (LLVM 20.1.2, 256 bits) GL version 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.5, Mesa
+[11:12:32] [main/INFO] [ne.ne.fm.lo.mo.lo.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[11:12:32] [main/INFO] [ne.ne.fm.lo.mo.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Mekanism 10.7.19 (mekanism)
+		Mekanism Pipe Tweaks 0.2.0 (mekanism_pipe_tweaks)
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.264 (neoforge)
+[11:12:47] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientdev' with arguments [--version, 21.1.264, --gameDir, ., --assetsDir, /root/.gradle/caches/neoformruntime/assets, --assetIndex, 17, --quickPlayMultiplayer, 127.0.0.1:25565, --width, 1280, --height, 720]
+[11:13:05] [pool-7-thread-1/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[11:13:06] [Datafixer Bootstrap/INFO] [mojang/DataFixerBuilder]: 229 Datafixer optimizations took 3679 milliseconds

@@ -1,1 +1,79 @@
-[16:16:25] watching verification/logs/client-s7-verify.log
+[17:39:50] watching verification/logs/client-s7-verify.log
+[17:41:48] marker: world_ready player=Dev pos=(-4.500, -57.000, 6.500) level=minecraft:overworld fov=70
+[17:41:49] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[17:41:49] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[17:41:49] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[17:41:49] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[17:41:49] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[17:41:50] time set noon -> Set the time to 6000
+[17:41:50] weather clear -> Set the weather to clear
+[17:41:50] fill 8 3 8 20 8 24 minecraft:air -> No blocks were filled
+[17:41:50] fill 8 2 8 20 2 24 minecraft:stone -> Successfully filled 221 block(s)
+[17:41:51] setblock 14 4 15 minecraft:air -> Could not set the block
+[17:41:51] setblock 14 4 14 mekanism:basic_universal_cable -> Changed the block at 14, 4, 14
+[17:41:51] clear Dev -> No items were found on player Dev
+[17:41:51] gamemode creative Dev -> 
+[17:41:52] op Dev -> Made Dev a server operator
+[17:41:52] give Dev mpt_fake_addon:fake_cable 64 -> Gave 64 [Fake Universal Cable] to Dev
+[17:41:52] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[17:41:53] execute if block 14 4 14 mekanism:basic_universal_cable run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[17:41:53]   SERVER anchor mekanism:basic_universal_cable at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[17:41:54] marker: setup_done pipeSlot=0 configuratorSlot=1 emptySlot=8
+[17:41:54] marker: TP place 14.500 3.000 16.800
+[17:41:54] tp Dev 14.500 3.000 16.800 -> Teleported Dev to 14.500000, 3.000000, 16.800000
+[17:41:54] teleported for place
+[17:41:57] marker: placement click anchor=BlockPos{x=14, y=4, z=14} face=SOUTH item=mpt_fake_addon:fake_cable selected=0 hit=BLOCK location=(14.500, 4.497, 14.688)
+[17:41:57] marker: placement useItemOn -> SUCCESS
+[17:41:59] marker: placed block at BlockPos{x=14, y=4, z=15}: mpt_fake_addon:fake_cable
+[17:41:59] execute if block 14 4 15 mpt_fake_addon:fake_cable run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mpt_fake_addon:fake_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[17:41:59]   SERVER placed mpt_fake_addon:fake_cable at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 15, id: "mpt_fake_addon:fake_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[17:41:59] execute if block 14 4 14 mekanism:basic_universal_cable run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 8b}
+[17:41:59]   SERVER anchor-after mekanism:basic_universal_cable at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 8b}
+[17:41:59] marker: connections anchor at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[17:41:59] marker: connections placed at BlockPos{x=14, y=4, z=15}: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[17:41:59] marker: raw placed: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[17:41:59] marker: PLACE_RESULT ok=true north=NORMAL
+[17:42:00] execute if block 14 4 15 mpt_fake_addon:fake_cable -> Test passed
+[17:42:00] marker: TP guide 14.500 3.000 18.000
+[17:42:00] tp Dev 14.500 3.000 18.000 -> Teleported Dev to 14.500000, 3.000000, 18.000000
+[17:42:00] teleported for guide
+[17:42:02] marker: guide view holding=mekanism:configurator vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=15} face=south location=(14.500, 4.497, 15.688) expanded=cell=south col=1 row=1 face=south mode=CONFIGURATOR
+[17:42:02] marker: raw before cycle: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[17:42:02] marker: cell before row=0 col=0 side=north raw=NORMAL icon=connect
+[17:42:02] marker: cell before row=0 col=1 side=up raw=NONE icon=block
+[17:42:02] marker: cell before row=0 col=2 side=north raw=NORMAL icon=connect
+[17:42:02] marker: cell before row=1 col=0 side=west raw=NONE icon=block
+[17:42:02] marker: cell before row=1 col=1 side=south raw=NONE icon=block
+[17:42:02] marker: cell before row=1 col=2 side=east raw=NONE icon=block
+[17:42:02] marker: cell before row=2 col=0 side=north raw=NORMAL icon=connect
+[17:42:02] marker: cell before row=2 col=1 side=down raw=NONE icon=block
+[17:42:02] marker: cell before row=2 col=2 side=north raw=NORMAL icon=connect
+[17:42:02] marker: cycle side=south #1 raw before=NONE useItemOn -> SUCCESS
+[17:42:04] marker: raw after cycle #1: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NORMAL/NONE west=NONE/NONE east=NONE/NONE
+[17:42:04] execute if block 14 4 15 mpt_fake_addon:fake_cable run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 0, 3, 3], z: 15, id: "mpt_fake_addon:fake_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[17:42:04]   SERVER placed mpt_fake_addon:fake_cable at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 0, 3, 3], z: 15, id: "mpt_fake_addon:fake_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[17:42:04] marker: cycle side=south #2 raw before=NORMAL useItemOn -> SUCCESS
+[17:42:05] marker: raw after cycle #2 side=south=PUSH
+[17:42:05] execute if block 14 4 15 mpt_fake_addon:fake_cable run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 1, 3, 3], z: 15, id: "mpt_fake_addon:fake_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[17:42:05]   SERVER placed mpt_fake_addon:fake_cable at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 1, 3, 3], z: 15, id: "mpt_fake_addon:fake_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[17:42:05] marker: guide view after holding=mekanism:configurator vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=15} face=south location=(14.500, 4.497, 15.688) expanded=cell=south col=1 row=1 face=south mode=CONFIGURATOR
+[17:42:05] marker: raw after cycles: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=PUSH/NONE west=NONE/NONE east=NONE/NONE
+[17:42:06] execute if block 14 4 15 mpt_fake_addon:fake_cable run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 1, 3, 3], z: 15, id: "mpt_fake_addon:fake_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[17:42:06]   SERVER placed mpt_fake_addon:fake_cable at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 1, 3, 3], z: 15, id: "mpt_fake_addon:fake_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[17:42:06] marker: cell after row=0 col=0 side=north raw=NORMAL icon=connect
+[17:42:06] marker: cell after row=0 col=1 side=up raw=NONE icon=block
+[17:42:06] marker: cell after row=0 col=2 side=north raw=NORMAL icon=connect
+[17:42:06] marker: cell after row=1 col=0 side=west raw=NONE icon=block
+[17:42:06] marker: cell after row=1 col=1 side=south raw=PUSH icon=push
+[17:42:06] marker: cell after row=1 col=2 side=east raw=NONE icon=block
+[17:42:06] marker: cell after row=2 col=0 side=north raw=NORMAL icon=connect
+[17:42:06] marker: cell after row=2 col=1 side=down raw=NONE icon=block
+[17:42:06] marker: cell after row=2 col=2 side=north raw=NORMAL icon=connect
+[17:42:06] marker: GUIDE_RESULT south=PUSH icon=push
+[17:42:06] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-7-addon-guide.png (1280x720)
+[17:42:06] marker: finished failure=none side=PUSH
+[17:42:06] execute if block 14 4 15 mpt_fake_addon:fake_cable run data get block 14 4 15 -> 14, 4, 15 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 1, 3, 3], z: 15, id: "mpt_fake_addon:fake_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[17:42:06]   SERVER final-placed mpt_fake_addon:fake_cable at (14, 4, 15): {x: 14, y: 4, connection: [I; 3, 3, 0, 1, 3, 3], z: 15, id: "mpt_fake_addon:fake_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[17:42:06] execute if block 14 4 14 mekanism:basic_universal_cable run data get block 14 4 14 -> 14, 4, 14 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 8b}
+[17:42:06]   SERVER final-anchor mekanism:basic_universal_cable at (14, 4, 14): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 14, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 8b}
+[17:42:06] client finished; exiting driver

@@ -33,7 +33,6 @@ neoForge {
         client {
             client()
             gameDirectory = project.file('run-test-client')
-            jvmArgument '-Dmpt.autotest=true'
             programArguments.addAll '--quickPlayMultiplayer', '127.0.0.1:25565', '--width', '1280', '--height', '720'
         }
         server {
@@ -60,8 +59,6 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
     // Mekanism 10.7.x for Minecraft 1.21.1 (CurseForge file id pinned for reproducibility).
     implementation 'curse.maven:mekanism-268560:7904058'
-    // TEMPORARY verification dependency: the fake addon under test.
-    runtimeOnly files('/home/hatch/workspace/mpt-fake-addon/build/libs/mpt_fake_addon-1.0.0.jar')
 }
 
 tasks.named('processResources', ProcessResources).configure {

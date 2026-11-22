@@ -1,0 +1,340 @@
+[08:22:46] watching /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/logs/latest.log
+[08:22:46] marker: world_ready player=Dev pos=(-4.500, -57.000, 6.500) level=minecraft:overworld fov=70
+[08:22:46] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[08:22:46] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[08:22:47] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[08:22:47] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[08:22:47] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[08:22:47] time set noon -> Set the time to 6000
+[08:22:47] weather clear -> Set the weather to clear
+[08:22:47] fill 4 3 4 24 8 56 minecraft:air -> No blocks were filled
+[08:22:48] fill 4 2 4 24 2 56 minecraft:stone -> Successfully filled 892 block(s)
+[08:22:48] setblock 10 4 10 mekanism:basic_universal_cable -> Unknown block type 'mekanism:basic_universal_cable' | ...k 10 4 10 mekanism:basic_universal_cable<--[HERE]
+[08:22:48] setblock 14 3 20 minecraft:stone -> Changed the block at 14, 3, 20
+[08:22:48] setblock 14 4 30 mekanism:basic_energy_cube -> Unknown block type 'mekanism:basic_energy_cube' | ...k 14 4 30 mekanism:basic_energy_cube<--[HERE]
+[08:22:48] setblock 14 4 40 mekanism:basic_mechanical_pipe -> Unknown block type 'mekanism:basic_mechanical_pipe' | ...k 14 4 40 mekanism:basic_mechanical_pipe<--[HERE]
+[08:22:48] clear Dev -> No player was found
+[08:22:49] gamemode creative Dev -> No player was found
+[08:22:49] op Dev -> Nothing changed. The player already is an operator
+[08:22:49] give Dev mekanism:basic_universal_cable 64 -> Unknown item 'mekanism:basic_universal_cable' | give Dev mekanism:basic_universal_cable 64<--[HERE]
+[08:22:49] give Dev mekanism:configurator -> Unknown item 'mekanism:configurator' | give Dev mekanism:configurator<--[HERE]
+[08:22:49] execute if block 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10 -> Unknown block type 'mekanism:basic_universal_cable' | ...k 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10<--[HERE]
+[08:22:49]   SERVER A-anchor at (10, 4, 10): not present as mekanism:basic_universal_cable
+[08:22:49] execute if block 14 4 30 mekanism:basic_energy_cube run data get block 14 4 30 -> Unknown block type 'mekanism:basic_energy_cube' | ...k 14 4 30 mekanism:basic_energy_cube run data get block 14 4 30<--[HERE]
+[08:22:49]   SERVER C-machine at (14, 4, 30): not present as mekanism:basic_energy_cube
+[08:22:49] execute if block 14 4 40 mekanism:basic_mechanical_pipe run data get block 14 4 40 -> Unknown block type 'mekanism:basic_mechanical_pipe' | ...k 14 4 40 mekanism:basic_mechanical_pipe run data get block 14 4 40<--[HERE]
+[08:22:49]   SERVER D-pipe at (14, 4, 40): not present as mekanism:basic_mechanical_pipe
+[08:22:49] marker: setup_done pipeSlot=0 configuratorSlot=1 emptySlot=8
+[08:22:49] marker: TP place 14.500 3.000 16.800
+[08:22:50] tp Dev 14.500 3.000 16.800 -> No entity was found
+[08:22:50] teleported for place
+[08:22:50] marker: placement click anchor=BlockPos{x=14, y=4, z=14} face=SOUTH item=mpt_fake_addon:fake_cable selected=0 hit=BLOCK location=(14.500, 4.497, 14.688)
+[08:22:50] marker: placement useItemOn -> SUCCESS
+[08:22:50] marker: placed block at BlockPos{x=14, y=4, z=15}: mpt_fake_addon:fake_cable
+[08:22:50] marker: connections anchor at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[08:22:50] marker: connections placed at BlockPos{x=14, y=4, z=15}: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[08:22:50] marker: raw placed: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[08:22:50] marker: PLACE_RESULT ok=true north=NORMAL
+[08:22:50] marker: TP guide 14.500 3.000 18.000
+[08:22:50] tp Dev 14.500 3.000 18.000 -> No entity was found
+[08:22:50] teleported for guide
+[08:22:50] marker: guide view holding=mekanism:configurator vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=15} face=south location=(14.500, 4.497, 15.688) expanded=cell=south col=1 row=1 face=south mode=CONFIGURATOR
+[08:22:50] marker: raw before cycle: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[08:22:50] marker: cell before row=0 col=0 side=north raw=NORMAL icon=connect
+[08:22:50] marker: cell before row=0 col=1 side=up raw=NONE icon=block
+[08:22:50] marker: cell before row=0 col=2 side=north raw=NORMAL icon=connect
+[08:22:50] marker: cell before row=1 col=0 side=west raw=NONE icon=block
+[08:22:50] marker: cell before row=1 col=1 side=south raw=NONE icon=block
+[08:22:50] marker: cell before row=1 col=2 side=east raw=NONE icon=block
+[08:22:50] marker: cell before row=2 col=0 side=north raw=NORMAL icon=connect
+[08:22:50] marker: cell before row=2 col=1 side=down raw=NONE icon=block
+[08:22:50] marker: cell before row=2 col=2 side=north raw=NORMAL icon=connect
+[08:22:50] marker: cycle side=south #1 raw before=NONE useItemOn -> SUCCESS
+[08:22:50] marker: raw after cycle #1: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NORMAL/NONE west=NONE/NONE east=NONE/NONE
+[08:22:50] marker: cycle side=south #2 raw before=NORMAL useItemOn -> SUCCESS
+[08:22:50] marker: raw after cycle #2 side=south=PUSH
+[08:22:50] marker: guide view after holding=mekanism:configurator vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=15} face=south location=(14.500, 4.497, 15.688) expanded=cell=south col=1 row=1 face=south mode=CONFIGURATOR
+[08:22:50] marker: raw after cycles: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=PUSH/NONE west=NONE/NONE east=NONE/NONE
+[08:22:50] marker: cell after row=0 col=0 side=north raw=NORMAL icon=connect
+[08:22:50] marker: cell after row=0 col=1 side=up raw=NONE icon=block
+[08:22:50] marker: cell after row=0 col=2 side=north raw=NORMAL icon=connect
+[08:22:50] marker: cell after row=1 col=0 side=west raw=NONE icon=block
+[08:22:50] marker: cell after row=1 col=1 side=south raw=PUSH icon=push
+[08:22:50] marker: cell after row=1 col=2 side=east raw=NONE icon=block
+[08:22:50] marker: cell after row=2 col=0 side=north raw=NORMAL icon=connect
+[08:22:50] marker: cell after row=2 col=1 side=down raw=NONE icon=block
+[08:22:50] marker: cell after row=2 col=2 side=north raw=NORMAL icon=connect
+[08:22:50] marker: GUIDE_RESULT south=PUSH icon=push
+[08:22:50] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-7-addon-guide.png (1280x720)
+[08:22:50] marker: finished failure=none side=PUSH
+[08:22:50] execute if block 10 4 11 mekanism:basic_universal_cable run data get block 10 4 11 -> Unknown block type 'mekanism:basic_universal_cable' | ...k 10 4 11 mekanism:basic_universal_cable run data get block 10 4 11<--[HERE]
+[08:22:50]   SERVER final-A-placed at (10, 4, 11): not present as mekanism:basic_universal_cable
+[08:22:50] execute if block 14 4 21 mekanism:basic_universal_cable run data get block 14 4 21 -> Unknown block type 'mekanism:basic_universal_cable' | ...k 14 4 21 mekanism:basic_universal_cable run data get block 14 4 21<--[HERE]
+[08:22:50]   SERVER final-B-placed at (14, 4, 21): not present as mekanism:basic_universal_cable
+[08:22:50] execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20 -> Unknown block type 'mekanism:basic_universal_cable' | ...k 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20<--[HERE]
+[08:22:50]   SERVER final-B-anchor at (14, 4, 20): not present as mekanism:basic_universal_cable
+[08:22:50] execute if block 14 4 31 mekanism:basic_universal_cable run data get block 14 4 31 -> Unknown block type 'mekanism:basic_universal_cable' | ...k 14 4 31 mekanism:basic_universal_cable run data get block 14 4 31<--[HERE]
+[08:22:50]   SERVER final-C-placed at (14, 4, 31): not present as mekanism:basic_universal_cable
+[08:22:50] client finished; exiting driver
+[08:27:42] watching /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/logs/latest.log
+[08:27:42] marker: world_ready player=Dev pos=(-4.500, -57.000, 6.500) level=minecraft:overworld fov=70
+[08:27:42] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[08:27:42] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[08:27:43] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[08:27:43] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[08:27:43] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[08:27:43] time set noon -> Set the time to 6000
+[08:27:43] weather clear -> Set the weather to clear
+[08:27:43] fill 4 3 4 24 8 56 minecraft:air -> Successfully filled 1 block(s)
+[08:27:44] fill 4 2 4 24 2 56 minecraft:stone -> No blocks were filled
+[08:27:44] setblock 10 4 10 mekanism:basic_universal_cable -> Changed the block at 10, 4, 10
+[08:27:44] setblock 14 3 20 minecraft:stone -> Changed the block at 14, 3, 20
+[08:27:44] setblock 14 4 30 mekanism:basic_energy_cube -> Changed the block at 14, 4, 30
+[08:27:44] setblock 14 4 40 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 40
+[08:27:44] clear Dev -> No player was found
+[08:27:45] gamemode creative Dev -> No player was found
+[08:27:45] op Dev -> Nothing changed. The player already is an operator
+[08:27:45] give Dev mekanism:basic_universal_cable 64 -> No player was found
+[08:27:45] give Dev mekanism:configurator -> No player was found
+[08:27:45] execute if block 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10 -> 10, 4, 10 has the following block data: {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[08:27:45]   SERVER A-anchor mekanism:basic_universal_cable at (10, 4, 10): {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[08:27:45] execute if block 14 4 30 mekanism:basic_energy_cube run data get block 14 4 30 -> 14, 4, 30 has the following block data: {current_redstone: 0, component_config: {eject0: 0b, config3: [I; 0, 0, 0, 0, 0, 0], eject3: 0b, config0: [I; 0, 0, 0, 0, 0, 0]}, x: 14, y: 4, z: 30, id: "mekanism:basic_energy_cube", redstone: 0b, control_type: 0}
+[08:27:45]   SERVER C-machine mekanism:basic_energy_cube at (14, 4, 30): {current_redstone: 0, component_config: {eject0: 0b, config3: [I; 0, 0, 0, 0, 0, 0], eject3: 0b, config0: [I; 0, 0, 0, 0, 0, 0]}, x: 14, y: 4, z: 30, id: "mekanism:basic_energy_cube", redstone: 0b, co
+[08:27:45] execute if block 14 4 40 mekanism:basic_mechanical_pipe run data get block 14 4 40 -> 14, 4, 40 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 40, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[08:27:45]   SERVER D-pipe mekanism:basic_mechanical_pipe at (14, 4, 40): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 40, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[08:27:45] marker: setup_done pipeSlot=0 configuratorSlot=1 emptySlot=8
+[08:27:45] marker: TP place 14.500 3.000 16.800
+[08:27:46] tp Dev 14.500 3.000 16.800 -> No entity was found
+[08:27:46] teleported for place
+[08:27:46] marker: placement click anchor=BlockPos{x=14, y=4, z=14} face=SOUTH item=mpt_fake_addon:fake_cable selected=0 hit=BLOCK location=(14.500, 4.497, 14.688)
+[08:27:46] marker: placement useItemOn -> SUCCESS
+[08:27:46] marker: placed block at BlockPos{x=14, y=4, z=15}: mpt_fake_addon:fake_cable
+[08:27:46] marker: connections anchor at BlockPos{x=14, y=4, z=14}: down=NORMAL/NONE up=NORMAL/NONE north=NORMAL/NONE south=NORMAL/NORMAL west=NORMAL/NONE east=NORMAL/NONE
+[08:27:46] marker: connections placed at BlockPos{x=14, y=4, z=15}: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[08:27:46] marker: raw placed: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[08:27:46] marker: PLACE_RESULT ok=true north=NORMAL
+[08:27:46] marker: TP guide 14.500 3.000 18.000
+[08:27:46] tp Dev 14.500 3.000 18.000 -> No entity was found
+[08:27:46] teleported for guide
+[08:27:46] marker: guide view holding=mekanism:configurator vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=15} face=south location=(14.500, 4.497, 15.688) expanded=cell=south col=1 row=1 face=south mode=CONFIGURATOR
+[08:27:46] marker: raw before cycle: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NONE/NONE west=NONE/NONE east=NONE/NONE
+[08:27:46] marker: cell before row=0 col=0 side=north raw=NORMAL icon=connect
+[08:27:46] marker: cell before row=0 col=1 side=up raw=NONE icon=block
+[08:27:46] marker: cell before row=0 col=2 side=north raw=NORMAL icon=connect
+[08:27:46] marker: cell before row=1 col=0 side=west raw=NONE icon=block
+[08:27:46] marker: cell before row=1 col=1 side=south raw=NONE icon=block
+[08:27:46] marker: cell before row=1 col=2 side=east raw=NONE icon=block
+[08:27:46] marker: cell before row=2 col=0 side=north raw=NORMAL icon=connect
+[08:27:46] marker: cell before row=2 col=1 side=down raw=NONE icon=block
+[08:27:46] marker: cell before row=2 col=2 side=north raw=NORMAL icon=connect
+[08:27:46] marker: cycle side=south #1 raw before=NONE useItemOn -> SUCCESS
+[08:27:46] marker: raw after cycle #1: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=NORMAL/NONE west=NONE/NONE east=NONE/NONE
+[08:27:46] marker: cycle side=south #2 raw before=NORMAL useItemOn -> SUCCESS
+[08:27:46] marker: raw after cycle #2 side=south=PUSH
+[08:27:46] marker: guide view after holding=mekanism:configurator vanillaHit=BLOCK pos=MutableBlockPos{x=14, y=4, z=15} face=south location=(14.500, 4.497, 15.688) expanded=cell=south col=1 row=1 face=south mode=CONFIGURATOR
+[08:27:46] marker: raw after cycles: down=NONE/NONE up=NONE/NONE north=NORMAL/NORMAL south=PUSH/NONE west=NONE/NONE east=NONE/NONE
+[08:27:46] marker: cell after row=0 col=0 side=north raw=NORMAL icon=connect
+[08:27:46] marker: cell after row=0 col=1 side=up raw=NONE icon=block
+[08:27:46] marker: cell after row=0 col=2 side=north raw=NORMAL icon=connect
+[08:27:46] marker: cell after row=1 col=0 side=west raw=NONE icon=block
+[08:27:46] marker: cell after row=1 col=1 side=south raw=PUSH icon=push
+[08:27:46] marker: cell after row=1 col=2 side=east raw=NONE icon=block
+[08:27:46] marker: cell after row=2 col=0 side=north raw=NORMAL icon=connect
+[08:27:46] marker: cell after row=2 col=1 side=down raw=NONE icon=block
+[08:27:46] marker: cell after row=2 col=2 side=north raw=NORMAL icon=connect
+[08:27:46] marker: GUIDE_RESULT south=PUSH icon=push
+[08:27:46] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-7-addon-guide.png (1280x720)
+[08:27:46] marker: finished failure=none side=PUSH
+[08:27:46] execute if block 10 4 11 mekanism:basic_universal_cable run data get block 10 4 11 -> 
+[08:27:46]   SERVER final-A-placed at (10, 4, 11): not present as mekanism:basic_universal_cable
+[08:27:46] execute if block 14 4 21 mekanism:basic_universal_cable run data get block 14 4 21 -> 
+[08:27:46]   SERVER final-B-placed at (14, 4, 21): not present as mekanism:basic_universal_cable
+[08:27:46] execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20 -> 
+[08:27:46]   SERVER final-B-anchor at (14, 4, 20): not present as mekanism:basic_universal_cable
+[08:27:46] execute if block 14 4 31 mekanism:basic_universal_cable run data get block 14 4 31 -> 
+[08:27:46]   SERVER final-C-placed at (14, 4, 31): not present as mekanism:basic_universal_cable
+[08:27:46] client finished; exiting driver
+[08:44:40] watching /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/logs/latest.log
+[08:58:57] watching /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/logs/latest.log
+[09:00:28] marker: world_ready player=Dev fov=70
+[09:00:28] marker: world_ready player=Dev fov=70
+[09:00:28] FAILED 'gamerule doDaylightCycle false': connection closed
+[09:00:28] FAILED 'gamerule doWeatherCycle false': [Errno 32] Broken pipe
+[09:00:28] FAILED 'gamerule doMobSpawning false': [Errno 32] Broken pipe
+[09:00:28] FAILED 'gamerule sendCommandFeedback false': [Errno 32] Broken pipe
+[09:00:28] FAILED 'difficulty peaceful': [Errno 32] Broken pipe
+[09:00:28] FAILED 'time set noon': [Errno 32] Broken pipe
+[09:00:28] FAILED 'weather clear': [Errno 32] Broken pipe
+[09:00:28] FAILED 'fill 4 3 4 24 8 56 minecraft:air': [Errno 32] Broken pipe
+[09:00:28] FAILED 'fill 4 2 4 24 2 56 minecraft:stone': [Errno 32] Broken pipe
+[09:00:28] FAILED 'setblock 10 4 10 mekanism:basic_universal_cable': [Errno 32] Broken pipe
+[09:00:28] FAILED 'setblock 14 3 20 minecraft:stone': [Errno 32] Broken pipe
+[09:00:28] FAILED 'setblock 14 4 30 mekanism:basic_energy_cube': [Errno 32] Broken pipe
+[09:00:28] FAILED 'setblock 14 4 40 mekanism:basic_mechanical_pipe': [Errno 32] Broken pipe
+[09:00:28] FAILED 'clear Dev': [Errno 32] Broken pipe
+[09:00:28] FAILED 'gamemode creative Dev': [Errno 32] Broken pipe
+[09:00:28] FAILED 'op Dev': [Errno 32] Broken pipe
+[09:00:28] FAILED 'give Dev mekanism:basic_universal_cable 64': [Errno 32] Broken pipe
+[09:00:28] FAILED 'give Dev mekanism:configurator': [Errno 32] Broken pipe
+[09:00:28] FAILED 'execute if block 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10': [Errno 32] Broken pipe
+[09:00:28]   SERVER A-anchor at (10, 4, 10): not present as mekanism:basic_universal_cable
+[09:00:28] FAILED 'execute if block 14 4 30 mekanism:basic_energy_cube run data get block 14 4 30': [Errno 32] Broken pipe
+[09:00:28]   SERVER C-machine at (14, 4, 30): not present as mekanism:basic_energy_cube
+[09:00:28] FAILED 'execute if block 14 4 40 mekanism:basic_mechanical_pipe run data get block 14 4 40': [Errno 32] Broken pipe
+[09:00:28]   SERVER D-pipe at (14, 4, 40): not present as mekanism:basic_mechanical_pipe
+[09:00:28] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:00:28] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:00:28] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:00:29] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:00:29] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:00:29] time set noon -> Set the time to 6000
+[09:00:29] weather clear -> Set the weather to clear
+[09:00:30] fill 4 3 4 24 8 56 minecraft:air -> No blocks were filled
+[09:00:30] fill 4 2 4 24 2 56 minecraft:stone -> Successfully filled 1113 block(s)
+[09:00:31] setblock 10 4 10 mekanism:basic_universal_cable -> Changed the block at 10, 4, 10
+[09:00:31] setblock 14 3 20 minecraft:stone -> Changed the block at 14, 3, 20
+[09:00:31] setblock 14 4 30 mekanism:basic_energy_cube -> Changed the block at 14, 4, 30
+[09:00:32] setblock 14 4 40 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 40
+[09:00:32] clear Dev -> No items were found on player Dev
+[09:00:32] gamemode creative Dev -> 
+[09:00:32] op Dev -> Nothing changed. The player already is an operator
+[09:00:33] give Dev mekanism:basic_universal_cable 64 -> Gave 64 [Basic Universal Cable] to Dev
+[09:00:33] give Dev mekanism:configurator -> Gave 1 [Configurator] to Dev
+[09:00:33] execute if block 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10 -> 10, 4, 10 has the following block data: {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:00:33]   SERVER A-anchor mekanism:basic_universal_cable at (10, 4, 10): {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:00:33] execute if block 14 4 30 mekanism:basic_energy_cube run data get block 14 4 30 -> 14, 4, 30 has the following block data: {current_redstone: 0, component_config: {eject0: 0b, config3: [I; 0, 0, 0, 0, 0, 0], eject3: 0b, config0: [I; 0, 0, 0, 0, 0, 0]}, x: 14, y: 4, z: 30, id: "mekanism:basic_energy_cube", redstone: 0b, control_type: 0}
+[09:00:33]   SERVER C-machine mekanism:basic_energy_cube at (14, 4, 30): {current_redstone: 0, component_config: {eject0: 0b, config3: [I; 0, 0, 0, 0, 0, 0], eject3: 0b, config0: [I; 0, 0, 0, 0, 0, 0]}, x: 14, y: 4, z: 30, id: "mekanism:basic_energy_cube", redstone: 0b, co
+[09:00:34] execute if block 14 4 40 mekanism:basic_mechanical_pipe run data get block 14 4 40 -> 14, 4, 40 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 40, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:00:34]   SERVER D-pipe mekanism:basic_mechanical_pipe at (14, 4, 40): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 40, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:00:34] marker: setup_done pipeSlot=0 configuratorSlot=1
+[09:00:34] marker: TP A 10.500 3.000 12.800
+[09:00:34] FAILED 'tp Dev 10.500 3.000 12.800': [Errno 32] Broken pipe
+[09:00:34] teleported for A
+[09:00:34] marker: setup_done pipeSlot=0 configuratorSlot=1
+[09:00:34] marker: TP A 10.500 3.000 12.800
+[09:00:35] tp Dev 10.500 3.000 12.800 -> Teleported Dev to 10.500000, 3.000000, 12.800000
+[09:00:35] teleported for A
+[09:00:38] marker: A place non-sneak anchor=BlockPos{x=10, y=4, z=10} clicked=SUCCESS
+[09:00:38] marker: A place non-sneak anchor=BlockPos{x=10, y=4, z=10} clicked=SUCCESS
+[09:00:40] marker: A_RESULT placed=down=NONE up=NONE north=NONE south=NONE west=NONE east=NONE anchor=down=NORMAL up=NORMAL north=NORMAL south=NORMAL west=NORMAL east=NORMAL
+[09:00:40] marker: A_RESULT placed=down=NONE up=NONE north=NONE south=NONE west=NONE east=NONE anchor=down=NORMAL up=NORMAL north=NORMAL south=NORMAL west=NORMAL east=NORMAL
+[09:00:40] FAILED 'execute if block 10 4 11 mekanism:basic_universal_cable run data get block 10 4 11': [Errno 32] Broken pipe
+[09:00:40]   SERVER A-placed at (10, 4, 11): not present as mekanism:basic_universal_cable
+[09:00:40] FAILED 'execute if block 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10': [Errno 32] Broken pipe
+[09:00:40]   SERVER A-anchor at (10, 4, 10): not present as mekanism:basic_universal_cable
+[09:00:40] marker: A_PASS ok=true
+[09:00:40] marker: TP B1 14.500 3.000 22.800
+[09:00:40] FAILED 'tp Dev 14.500 3.000 22.800': [Errno 32] Broken pipe
+[09:00:40] teleported for B1
+[09:00:40] execute if block 10 4 11 mekanism:basic_universal_cable run data get block 10 4 11 -> 10, 4, 11 has the following block data: {x: 10, y: 4, connection: [I; 3, 3, 3, 3, 3, 3], z: 11, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:00:40]   SERVER A-placed mekanism:basic_universal_cable at (10, 4, 11): {x: 10, y: 4, connection: [I; 3, 3, 3, 3, 3, 3], z: 11, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:00:41] execute if block 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10 -> 10, 4, 10 has the following block data: {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:00:41]   SERVER A-anchor mekanism:basic_universal_cable at (10, 4, 10): {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:00:41] marker: A_PASS ok=true
+[09:00:41] marker: TP B1 14.500 3.000 22.800
+[09:00:41] tp Dev 14.500 3.000 22.800 -> Teleported Dev to 14.500000, 3.000000, 22.800000
+[09:00:41] teleported for B1
+[09:00:42] marker: B1 place anchor-on-stone clicked=SUCCESS
+[09:00:42] marker: B1 place anchor-on-stone clicked=SUCCESS
+[09:00:45] marker: B1_ANCHOR_RAW down=NONE up=NONE north=NONE south=NONE west=NONE east=NONE
+[09:00:45] FAILED 'execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20': [Errno 32] Broken pipe
+[09:00:45]   SERVER B-anchor at (14, 4, 20): not present as mekanism:basic_universal_cable
+[09:00:45] marker: B1_PASS anchor-all-none=true
+[09:00:45] marker: B1_ANCHOR_RAW down=NONE up=NONE north=NONE south=NONE west=NONE east=NONE
+[09:00:45] marker: TP B2 14.500 3.000 22.800
+[09:00:45] FAILED 'tp Dev 14.500 3.000 22.800': [Errno 32] Broken pipe
+[09:00:45] teleported for B2
+[09:00:45] execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20 -> 14, 4, 20 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 3, 3, 3, 3], z: 20, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:00:45]   SERVER B-anchor mekanism:basic_universal_cable at (14, 4, 20): {x: 14, y: 4, connection: [I; 3, 3, 3, 3, 3, 3], z: 20, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:00:45] marker: B1_PASS anchor-all-none=true
+[09:00:45] marker: TP B2 14.500 3.000 22.800
+[09:00:45] tp Dev 14.500 3.000 22.800 -> Teleported Dev to 14.500000, 3.000000, 22.800000
+[09:00:45] teleported for B2
+[09:00:48] marker: B2 place sneak anchor=BlockPos{x=14, y=4, z=20} clicked=SUCCESS
+[09:00:48] marker: B2 place sneak anchor=BlockPos{x=14, y=4, z=20} clicked=SUCCESS
+[09:00:50] marker: B2_PLACED_RAW down=NONE up=NONE north=NORMAL south=NONE west=NONE east=NONE
+[09:00:50] FAILED 'execute if block 14 4 21 mekanism:basic_universal_cable run data get block 14 4 21': [Errno 32] Broken pipe
+[09:00:50]   SERVER B-placed at (14, 4, 21): not present as mekanism:basic_universal_cable
+[09:00:50] FAILED 'execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20': [Errno 32] Broken pipe
+[09:00:50]   SERVER B-anchor at (14, 4, 20): not present as mekanism:basic_universal_cable
+[09:00:50] marker: B2_ANCHOR_RAW down=NONE up=NONE north=NONE south=NORMAL west=NONE east=NONE
+[09:00:50] marker: B2_PASS placed=true anchor=true
+[09:00:50] marker: B2_PLACED_RAW down=NONE up=NONE north=NORMAL south=NONE west=NONE east=NONE
+[09:00:50] execute if block 14 4 21 mekanism:basic_universal_cable run data get block 14 4 21 -> 14, 4, 21 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 21, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:00:50]   SERVER B-placed mekanism:basic_universal_cable at (14, 4, 21): {x: 14, y: 4, connection: [I; 3, 3, 0, 3, 3, 3], z: 21, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 4b}
+[09:00:50] marker: B2 guide view expanded=pos=MutableBlockPos{x=14, y=4, z=21} cell=south col=1 row=1 face=south
+[09:00:51] execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20 -> 14, 4, 20 has the following block data: {x: 14, y: 4, connection: [I; 3, 3, 3, 0, 3, 3], z: 20, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 8b}
+[09:00:51]   SERVER B-anchor mekanism:basic_universal_cable at (14, 4, 20): {x: 14, y: 4, connection: [I; 3, 3, 3, 0, 3, 3], z: 20, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 8b}
+[09:00:51] marker: B2_ANCHOR_RAW down=NONE up=NONE north=NONE south=NORMAL west=NONE east=NONE
+[09:00:51] marker: B2_PASS placed=true anchor=true
+[09:00:51] marker: B2 guide view expanded=pos=MutableBlockPos{x=14, y=4, z=21} cell=south col=1 row=1 face=south
+[09:00:52] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-8-spec-change-sneak-placement.png (1280x720)
+[09:00:52] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-8-spec-change-sneak-placement.png (1280x720)
+[09:00:52] marker: TP C 14.500 3.000 32.800
+[09:00:52] marker: TP C 14.500 3.000 32.800
+[09:00:52] FAILED 'tp Dev 14.500 3.000 32.800': [Errno 32] Broken pipe
+[09:00:52] teleported for C
+[09:00:53] tp Dev 14.500 3.000 32.800 -> Teleported Dev to 14.500000, 3.000000, 32.800000
+[09:00:53] teleported for C
+[09:11:02] watching /home/hatch/workspace/mekanism-pipe-tweaks/run-test-client/logs/latest.log
+[09:11:02] marker: world_ready player=Dev fov=70
+[09:11:02] gamerule doDaylightCycle false -> Gamerule doDaylightCycle is now set to: false
+[09:11:02] gamerule doWeatherCycle false -> Gamerule doWeatherCycle is now set to: false
+[09:11:02] gamerule doMobSpawning false -> Gamerule doMobSpawning is now set to: false
+[09:11:02] gamerule sendCommandFeedback false -> Gamerule sendCommandFeedback is now set to: false
+[09:11:03] difficulty peaceful -> The difficulty did not change; it is already set to peaceful
+[09:11:03] time set noon -> Set the time to 6000
+[09:11:03] weather clear -> Set the weather to clear
+[09:11:03] fill 4 3 4 24 8 56 minecraft:air -> No blocks were filled
+[09:11:03] fill 4 2 4 24 2 56 minecraft:stone -> Successfully filled 1113 block(s)
+[09:11:03] setblock 10 4 10 mekanism:basic_universal_cable -> Changed the block at 10, 4, 10
+[09:11:04] setblock 14 3 20 minecraft:stone -> Changed the block at 14, 3, 20
+[09:11:04] setblock 14 4 30 mekanism:metallurgic_infuser -> Changed the block at 14, 4, 30
+[09:11:04] setblock 14 4 40 mekanism:basic_mechanical_pipe -> Changed the block at 14, 4, 40
+[09:11:04] clear Dev -> No player was found
+[09:11:04] gamemode creative Dev -> No player was found
+[09:11:04] op Dev -> Nothing changed. The player already is an operator
+[09:11:05] give Dev mekanism:basic_universal_cable 64 -> No player was found
+[09:11:05] give Dev mekanism:configurator -> No player was found
+[09:11:05] execute if block 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10 -> 10, 4, 10 has the following block data: {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:11:05]   SERVER A-anchor mekanism:basic_universal_cable at (10, 4, 10): {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:11:05] execute if block 14 4 30 mekanism:metallurgic_infuser run data get block 14 4 30 -> 14, 4, 30 has the following block data: {current_redstone: 0, component_config: {config2: [I; 0, 0, 0, 0, 0, 0], eject0: 0b, config3: [I; 0, 0, 0, 0, 0, 0], eject3: 0b, config0: [I; 0, 0, 0, 0, 0, 0], eject2: 0b}, active_state: 0b, x: 14, progress: 0, used_so_far: 0L, y: 4, update_delay: 0, z: 30, id: "mekanism:metallurgic_infuser", redstone: 0b, control_type: 0}
+[09:11:05]   SERVER C-machine mekanism:metallurgic_infuser at (14, 4, 30): {current_redstone: 0, component_config: {config2: [I; 0, 0, 0, 0, 0, 0], eject0: 0b, config3: [I; 0, 0, 0, 0, 0, 0], eject3: 0b, config0: [I; 0, 0, 0, 0, 0, 0], eject2: 0b}, active_state: 0b, x: 14, p
+[09:11:05] execute if block 14 4 40 mekanism:basic_mechanical_pipe run data get block 14 4 40 -> 14, 4, 40 has the following block data: {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 40, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:11:05]   SERVER D-pipe mekanism:basic_mechanical_pipe at (14, 4, 40): {x: 14, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 40, id: "mekanism:basic_mechanical_pipe", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:11:05] marker: setup_done pipeSlot=0 configuratorSlot=1
+[09:11:05] marker: TP A 10.500 3.000 12.800
+[09:11:05] tp Dev 10.500 3.000 12.800 -> No entity was found
+[09:11:05] teleported for A
+[09:11:05] marker: A place non-sneak anchor=BlockPos{x=10, y=4, z=10} clicked=SUCCESS
+[09:11:05] marker: A_RESULT placed=down=NONE up=NONE north=NONE south=NONE west=NONE east=NONE anchor=down=NORMAL up=NORMAL north=NORMAL south=NORMAL west=NORMAL east=NORMAL
+[09:11:05] execute if block 10 4 11 mekanism:basic_universal_cable run data get block 10 4 11 -> 
+[09:11:05]   SERVER A-placed at (10, 4, 11): not present as mekanism:basic_universal_cable
+[09:11:06] execute if block 10 4 10 mekanism:basic_universal_cable run data get block 10 4 10 -> 10, 4, 10 has the following block data: {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:11:06]   SERVER A-anchor mekanism:basic_universal_cable at (10, 4, 10): {x: 10, y: 4, connection: [I; 0, 0, 0, 0, 0, 0], z: 10, id: "mekanism:basic_universal_cable", acceptors: 0b, redstone: 0b, connections: 0b}
+[09:11:06] marker: A_PASS ok=true
+[09:11:06] marker: TP B1 14.500 3.000 22.800
+[09:11:06] tp Dev 14.500 3.000 22.800 -> No entity was found
+[09:11:06] teleported for B1
+[09:11:06] marker: B1 place anchor-on-stone clicked=SUCCESS
+[09:11:06] marker: B1_ANCHOR_RAW down=NONE up=NONE north=NONE south=NONE west=NONE east=NONE
+[09:11:06] execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20 -> 
+[09:11:06]   SERVER B-anchor at (14, 4, 20): not present as mekanism:basic_universal_cable
+[09:11:06] marker: B1_PASS anchor-all-none=true
+[09:11:06] marker: TP B2 14.500 3.000 22.800
+[09:11:06] tp Dev 14.500 3.000 22.800 -> No entity was found
+[09:11:06] teleported for B2
+[09:11:06] marker: B2 place sneak anchor=BlockPos{x=14, y=4, z=20} clicked=SUCCESS
+[09:11:06] marker: B2_PLACED_RAW down=NONE up=NONE north=NORMAL south=NONE west=NONE east=NONE
+[09:11:06] execute if block 14 4 21 mekanism:basic_universal_cable run data get block 14 4 21 -> 
+[09:11:06]   SERVER B-placed at (14, 4, 21): not present as mekanism:basic_universal_cable
+[09:11:06] execute if block 14 4 20 mekanism:basic_universal_cable run data get block 14 4 20 -> 
+[09:11:06]   SERVER B-anchor at (14, 4, 20): not present as mekanism:basic_universal_cable
+[09:11:06] marker: B2_ANCHOR_RAW down=NONE up=NONE north=NONE south=NORMAL west=NONE east=NONE
+[09:11:06] marker: B2_PASS placed=true anchor=true
+[09:11:06] marker: B2 guide view expanded=pos=MutableBlockPos{x=14, y=4, z=21} cell=south col=1 row=1 face=south
+[09:11:06] marker: screenshot saved /home/hatch/workspace/mekanism-pipe-tweaks/verification/screenshot-8-spec-change-sneak-placement.png (1280x720)
+[09:11:06] marker: TP C 14.500 3.000 32.800
+[09:11:07] tp Dev 14.500 3.000 32.800 -> No entity was found
+[09:11:07] teleported for C
+[09:13:05] marker: setup_done pipeSlot=-1 configuratorSlot=-1

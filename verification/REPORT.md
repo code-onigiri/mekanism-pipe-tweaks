@@ -560,3 +560,178 @@ a tile extending `TileEntityTransmitter` directly and an energy transmitter — 
 correctly with no code or configuration change: placement opened only the clicked side,
 the Configurator guide rendered on it, and sneak-cycling changed the configured type with
 the guide icon and server state following. The audit and the in-game proof agree.
+
+---
+
+## 8. Spec change 0.2.0 (2026-11-22)
+
+### 8.1 What changed
+
+Per `docs/DESIGN.md` §11: the guide resolves only while the Configurator is in the main
+hand (the `PLACEMENT` guide mode and the transmitter-item display path are gone); cell-select
+placement, `PlaceTransmitterPayload` and the server double-placement guard are removed
+(ordinary right-click placement is pure vanilla, with only the post-placement connection
+state rewritten); and a placed transmitter opens the clicked side only when the player is
+sneaking. `connectClickedSide` gates the sneak connection and `openCounterpartSide` gates
+the symmetric transmitter open. Version 0.2.0.
+
+### 8.2 Method
+
+Same established method as §2/§4/§7: dedicated server (`build/moddev/runServer.sh`, RCON
+`25575`), dev client under Xvfb `:99` at 1280x720 with `-Dmpt.autotest=true`, and the
+stdlib Python RCON driver. The temporary `AutoTest` harness drove only ordinary player
+actions (teleport, item selection, look rotation, `gameMode.useItemOn`, real
+`PRESS_SHIFT_KEY`/`RELEASE_SHIFT_KEY` packets) and reported `MPT_AUTOTEST` markers.
+
+The 09:12 failure was a harness/setup problem, not a mod problem: the hotbar items were not
+present (`setup_done pipeSlot=-1 configuratorSlot=-1`). In this run the driver re-issued the
+hotbar setup whenever the harness reported `setup_wait`, and the harness retried until all
+three items were found. The successful setup was:
+
+```
+MPT_AUTOTEST setup_wait attempt=1 pipeSlot=0 machinePipeSlot=-1 configuratorSlot=1
+...
+MPT_AUTOTEST setup_done pipeSlot=0 machinePipeSlot=1 configuratorSlot=2
+```
+
+The transmitted scene used `mekanism:basic_universal_cable` (A/B), a
+`mekanism:basic_mechanical_pipe` against a `mekanism:basic_fluid_tank` (C), and a
+`mekanism:basic_universal_cable` viewpoint pipe (D/E). Logs:
+`logs/client-s10.log`, `logs/server-s10.log`, `logs/rcon-driver-s10.log`; driver
+`rcon_driver_s9.py` (reused verbatim). NBT direction order below is
+`down, up, north, south, west, east` with `NORMAL=0`, `PUSH=1`, `PULL=2`, `NONE=3`.
+
+### 8.3 A — non-sneak placement against a transmitter
+
+The anchor A `(10,4,10)` was placed with `/setblock` (so it keeps vanilla all-`NORMAL`
+state). Holding the cable, not sneaking, the harness clicked the anchor's south face:
+
+```
+A place non-sneak anchor=BlockPos{x=10, y=4, z=10} clicked=SUCCESS
+A_RESULT placed=down=NONE up=NONE north=NONE south=NONE west=NONE east=NONE
+         anchor=down=NORMAL up=NORMAL north=NORMAL south=NORMAL west=NORMAL east=NORMAL
+A_PASS ok=true
+```
+
+Server-side NBT agreed on both sides of the operation:
+
+```
+placed (10,4,11): connection: [I; 3, 3, 3, 3, 3, 3]   (all NONE)
+anchor (10,4,10): connection: [I; 0, 0, 0, 0, 0, 0]   (all NORMAL, unchanged)
+```
+
+**PASS.** Without sneaking the placed transmitter is fully disconnected and the anchor is
+untouched.
+
+### 8.4 B — sneak placement against a transmitter (counterpart open)
+
+B1 placed an anchor on plain stone without sneaking; it was all `NONE`
+(`B1_PASS anchor-all-none=true`). B2 then sneaked and clicked the anchor's south face:
+
+```
+B2 place sneak anchor=BlockPos{x=14, y=4, z=20} clicked=SUCCESS
+B2_PLACED_RAW down=NONE up=NONE north=NORMAL south=NONE west=NONE east=NONE
+B2_ANCHOR_RAW down=NONE up=NONE north=NONE south=NORMAL west=NONE east=NONE
+B2_PASS placed=true anchor=true
+```
+
+Server-side NBT for both blocks:
+
+```
+placed (14,4,21): connection: [I; 3, 3, 0, 3, 3, 3]   → north only
+anchor (14,4,20): connection: [I; 3, 3, 3, 0, 3, 3]   → south only
+```
+
+The clicked side (`north` on the new pipe, `south` on the anchor) is the only configured
+connection on each block; the anchor's facing side was opened symmetrically. The 10:57
+session produced the same two readbacks and is preserved in the rotated client log.
+
+**PASS.** Sneak placement opens the clicked side, and the transmitter counterpart is opened.
+
+[![screenshot-8-spec-change-sneak-placement.png](screenshot-8-spec-change-sneak-placement.png)](screenshot-8-spec-change-sneak-placement.png)
+
+### 8.5 C — sneak placement against a machine that accepts the transmission type
+
+The machine C was a `mekanism:basic_fluid_tank` at `(14,4,30)`, which accepts a fluid
+transmission. Holding `mekanism:basic_mechanical_pipe` and sneaking, the harness clicked
+its south face:
+
+```
+C place sneak machine=BlockPos{x=14, y=4, z=30} clicked=SUCCESS
+                  held=mekanism:basic_mechanical_pipe
+C_PLACED_RAW down=NONE up=NONE north=NORMAL south=NONE west=NONE east=NONE
+C_PASS north-normal=true block=mekanism:basic_mechanical_pipe
+```
+
+Server-side NBT:
+
+```
+placed  (14,4,31): connection: [I; 3, 3, 0, 3, 3, 3]   → north only
+machine (14,4,30): unchanged (fluid tank NBT carries no connection array)
+```
+
+The earlier 10:57 attempt failed this phase (`C_PASS north-normal=false`) because the
+harness held an energy cable against a fluid tank; a fluid tank does not accept energy, so
+all-`NONE` was the correct outcome. With the matching transmission type (fluid pipe vs
+fluid tank) the clicked side opens as specified.
+
+**PASS.** The clicked side is `NORMAL` and every other side is `NONE`.
+
+### 8.6 Guide — Configurator only
+
+Viewed a pipe holding the Configurator (D1) and then the nearby pipe item (D2):
+
+```
+D1 guide holding=mekanism:configurator
+         target=pos=MutableBlockPos{x=14, y=4, z=40} cell=south col=1 row=1 face=south
+D2 guide holding=mekanism:basic_universal_cable target=null
+```
+
+The D1 screenshot shows the 3x3 grid and icons on the pipe with the Configurator selected
+in the hotbar. The D2 screenshot shows the same viewpoint with the cable selected and **no**
+grid. `GuideTarget.resolve(...)` returns `null` while holding the pipe, so nothing is
+rendered or resolvable.
+
+[![screenshot-8-spec-change-guide-configurator.png](screenshot-8-spec-change-guide-configurator.png)](screenshot-8-spec-change-guide-configurator.png)
+
+[![screenshot-8-spec-change-guide-transmitter-item.png](screenshot-8-spec-change-guide-transmitter-item.png)](screenshot-8-spec-change-guide-transmitter-item.png)
+
+**PASS.** The guide renders only with the Configurator in hand and does not resolve with a
+transmitter item in hand.
+
+### 8.7 Configurator sneak + right-click cycle, guide following
+
+On B2's placed pipe `(14,4,21)` the harness selected the Configurator, looked at its south
+face, and sent a real sneak + right-click:
+
+```
+E_BEFORE side=south raw=NONE icon=block
+         guide=pos=...{x=14, y=4, z=21} cell=south col=1 row=1 face=south
+E cycle side=south raw before=NONE clicked=SUCCESS
+E after cycle raw south=NORMAL guide=pos=...{x=14, y=4, z=21} cell=south col=1 row=1 face=south
+E_GUIDE_RESULT before=NONE/block after=NORMAL/connect
+```
+
+Server NBT changed from `[I; 3, 3, 0, 3, 3, 3]` (north only) to
+`[I; 3, 3, 0, 0, 3, 3]` (north + south), matching the client readback. The screenshot shows
+the Configurator's own action-bar message "Connection type changed to: Normal" and the
+centre guide icon switched from the disconnected/block icon to the connect icon.
+
+[![screenshot-8-spec-change-cycle.png](screenshot-8-spec-change-cycle.png)](screenshot-8-spec-change-cycle.png)
+
+**PASS.** The sneak + right-click cycle still works and the guide icon follows the configured
+state.
+
+### 8.8 Verdict
+
+All 0.2.0 checks pass in one uninterrupted run (`finished failure=none`):
+
+| Check | Result |
+|-------|--------|
+| A — non-sneak placement against a transmitter | placed all `NONE`, anchor unchanged — PASS |
+| B1 — non-sneak placement on stone | anchor all `NONE` — PASS |
+| B2 — sneak placement against a transmitter | placed north `NORMAL`, anchor south `NORMAL`, all else `NONE` — PASS |
+| C — sneak placement against an accepting machine | clicked north `NORMAL`, all else `NONE` — PASS |
+| Guide with Configurator | resolves and renders (3x3 grid) — PASS |
+| Guide with transmitter item | `guide=null`, nothing rendered — PASS |
+| Configurator sneak + right-click cycle | `NONE → NORMAL`, guide icon follows — PASS |

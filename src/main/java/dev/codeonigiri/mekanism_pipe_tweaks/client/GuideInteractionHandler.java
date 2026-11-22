@@ -1,7 +1,6 @@
 package dev.codeonigiri.mekanism_pipe_tweaks.client;
 
 import dev.codeonigiri.mekanism_pipe_tweaks.network.CycleSidePayload;
-import dev.codeonigiri.mekanism_pipe_tweaks.network.PlaceTransmitterPayload;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -10,6 +9,10 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 
+/**
+ * Client-side click handling for the guide. Placement is pure vanilla; the only interaction the
+ * mod intercepts is the Configurator's sneak + right-click connection cycle.
+ */
 public final class GuideInteractionHandler {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
@@ -17,63 +20,17 @@ public final class GuideInteractionHandler {
             return;
         }
         Player player = event.getEntity();
+        if (!player.isShiftKeyDown()) {
+            return;
+        }
         // Use the expanded full-cube raycast, not event.getHitVec(): the vanilla ray misses the
         // thin pipe whenever the crosshair is outside its silhouette.
         GuideTarget target = GuideTarget.resolve(event.getLevel(), player);
         if (target == null) {
             return;
         }
-        if (target.mode() == GuideTarget.Mode.CONFIGURATOR) {
-            if (!player.isShiftKeyDown()) {
-                return;
-            }
-            event.setCanceled(true);
-            event.setCancellationResult(InteractionResult.SUCCESS);
-            PacketDistributor.sendToServer(new CycleSidePayload(target.pos(), target.cell().side()));
-            return;
-        }
-        PlaceTransmitterPayload payload = placementPayload(target, event.getHand());
-        if (payload == null) {
-            return;
-        }
         event.setCanceled(true);
         event.setCancellationResult(InteractionResult.SUCCESS);
-        PacketDistributor.sendToServer(payload);
-    }
-
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
-        if (!event.getLevel().isClientSide() || event.getHand() != InteractionHand.MAIN_HAND) {
-            return;
-        }
-        GuideTarget target = GuideTarget.resolve(event.getLevel(), event.getEntity());
-        if (target == null) {
-            return;
-        }
-        // The vanilla ray can be a plain item use (air / entity) while the expanded ray still
-        // points at a transmitter; intercept the placement in that case too.
-        PlaceTransmitterPayload payload = placementPayload(target, event.getHand());
-        if (payload == null) {
-            return;
-        }
-        event.setCanceled(true);
-        event.setCancellationResult(InteractionResult.SUCCESS);
-        PacketDistributor.sendToServer(payload);
-    }
-
-    /**
-     * The cell-select placement to send for a click on {@code target}, or {@code null} when the
-     * click must fall through to vanilla. The centre cell is the clicked face itself, so it is
-     * left to the vanilla placement path.
-     */
-    private static PlaceTransmitterPayload placementPayload(GuideTarget target, InteractionHand hand) {
-        if (target.mode() != GuideTarget.Mode.PLACEMENT) {
-            return null;
-        }
-        GuideGeometry.Cell cell = target.cell();
-        if (cell.side() == target.face()) {
-            return null;
-        }
-        return new PlaceTransmitterPayload(target.pos(), cell.side(), target.face(), hand);
+        PacketDistributor.sendToServer(new CycleSidePayload(target.pos(), target.cell().side()));
     }
 }

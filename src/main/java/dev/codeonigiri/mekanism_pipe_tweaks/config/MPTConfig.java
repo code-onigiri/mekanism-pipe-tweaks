@@ -28,7 +28,9 @@ public final class MPTConfig {
             .comment("Apply the GregTech-style placement rules to Logistical Transporters.")
             .define("enableItem", true);
     public static final ModConfigSpec.BooleanValue CONNECT_CLICKED_SIDE = BUILDER
-            .comment("Open the side facing the clicked block. When false every side starts disconnected.")
+            .comment("When placing while sneaking, open the side facing the clicked block (and, against a",
+                    "transmitter, that transmitter's counterpart side). When false every side starts",
+                    "disconnected even when sneaking; without sneaking nothing is opened either way.")
             .define("connectClickedSide", true);
     public static final ModConfigSpec.BooleanValue OPEN_COUNTERPART_SIDE = BUILDER
             .comment("When placing against another transmitter, also open that transmitter's facing side.")
