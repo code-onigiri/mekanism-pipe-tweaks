@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import java.util.ArrayList;
 import java.util.List;
-import mekanism.common.content.network.transmitter.Transmitter;
 import mekanism.common.lib.transmitter.ConnectionType;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
@@ -67,7 +66,7 @@ public final class GuideRenderer {
         Vec3 iconCentre = blockCentre.add(normal.scale(0.5 + ICON_OFFSET));
 
         drawGrid(buffers, pose, gridCentre, right, up);
-        drawCellIcons(buffers, pose, target, iconCentre, right, up, normal);
+        drawCellIcons(buffers, pose, level, target, iconCentre, right, up);
 
         poseStack.popPose();
         flush(buffers);
@@ -91,7 +90,6 @@ public final class GuideRenderer {
         for (ResourceLocation icon : GuideTextures.ICONS) {
             buffers.endBatch(RenderType.textSeeThrough(icon));
         }
-        buffers.endBatch(RenderType.textSeeThrough(GuideTextures.TRIANGLE));
     }
 
     private static void drawGrid(MultiBufferSource buffers, PoseStack.Pose pose, Vec3 centre, Vec3 right, Vec3 up) {
@@ -106,43 +104,33 @@ public final class GuideRenderer {
     }
 
     /**
-     * Draw data for one cell of the 3x3 face grid, computed once so the icon pass and the
-     * direction-arrow pass iterate the same cells in the same order.
+     * Draw data for one cell of the 3x3 face grid. {@code icon} is {@code null} when the cell has
+     * nothing to show (placement mode only marks empty neighbouring positions).
      */
-    private record CellVisual(GuideGeometry.Cell cell, ConnectionType type, int alpha, Vec3 centre) {
+    private record CellVisual(GuideGeometry.Cell cell, ResourceLocation icon, int alpha, Vec3 centre) {
     }
 
-    private static void drawCellIcons(MultiBufferSource buffers, PoseStack.Pose pose, GuideTarget target,
-                                      Vec3 iconCentre, Vec3 right, Vec3 up, Vec3 normal) {
-        List<CellVisual> cells = cellVisuals(target, iconCentre, right, up);
-
-        for (CellVisual cell : cells) {
-            VertexConsumer consumer = buffers.getBuffer(RenderType.textSeeThrough(iconFor(cell.type())));
+    private static void drawCellIcons(MultiBufferSource buffers, PoseStack.Pose pose, Level level,
+                                      GuideTarget target, Vec3 iconCentre, Vec3 right, Vec3 up) {
+        for (CellVisual cell : cellVisuals(level, target, iconCentre, right, up)) {
+            if (cell.icon() == null) {
+                continue;
+            }
+            VertexConsumer consumer = buffers.getBuffer(RenderType.textSeeThrough(cell.icon()));
             addTexturedQuad(consumer, pose, cell.centre(), right, up, ICON_HALF, ICON_HALF, 0, 0, 1, 1,
                     (cell.alpha() << 24) | 0xFFFFFF);
         }
-
-        VertexConsumer overlay = buffers.getBuffer(RenderType.textSeeThrough(GuideTextures.TRIANGLE));
-        for (CellVisual cell : cells) {
-            if (cell.type() != ConnectionType.PUSH && cell.type() != ConnectionType.PULL) {
-                continue;
-            }
-            Vec3 direction = arrowDirection(cell.cell().col(), cell.cell().row(), right, up, cell.type());
-            addTexturedQuad(overlay, pose, cell.centre(), direction, normal.cross(direction).normalize(),
-                    ICON_HALF, ICON_HALF, 0, 0, 1, 1, (cell.alpha() << 24) | 0xFFFFFF);
-        }
     }
 
-    private static List<CellVisual> cellVisuals(GuideTarget target, Vec3 iconCentre, Vec3 right, Vec3 up) {
+    private static List<CellVisual> cellVisuals(Level level, GuideTarget target, Vec3 iconCentre, Vec3 right, Vec3 up) {
         Direction face = target.face();
         GuideGeometry.Cell hovered = target.cell();
         List<CellVisual> cells = new ArrayList<>(9);
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
                 Direction side = GuideGeometry.sideFor(face, col, row);
-                ConnectionType configured = configuredType(target.transmitter(), side);
                 int alpha = col == hovered.col() && row == hovered.row() ? HOVERED_ALPHA : NON_HOVERED_ALPHA;
-                cells.add(new CellVisual(new GuideGeometry.Cell(side, col, row), configured, alpha,
+                cells.add(new CellVisual(new GuideGeometry.Cell(side, col, row), iconFor(level, target, side), alpha,
                         cellCentre(iconCentre, right, up, col, row)));
             }
         }
@@ -153,23 +141,18 @@ public final class GuideRenderer {
         return faceCentre.add(right.scale(GuideGeometry.cellU(col))).add(up.scale(GuideGeometry.cellV(row)));
     }
 
-    private static Vec3 arrowDirection(int col, int row, Vec3 right, Vec3 up, ConnectionType type) {
-        Vec3 direction;
-        if (row == 0) {
-            direction = up;
-        } else if (row == 2) {
-            direction = up.scale(-1);
-        } else if (col == 0) {
-            direction = right.scale(-1);
-        } else if (col == 2) {
-            direction = right;
-        } else {
-            // The centre cell (looked-at face) and corner cells (opposite face) are degenerate:
-            // an in-plane arrow cannot show toward/away from the viewer, so PUSH is drawn pointing
-            // up and PULL pointing down.
-            direction = up;
+    /**
+     * The two GT states. With the Configurator every side is either connected or disconnected;
+     * PUSH/PULL are only Mekanism-internal variants of "connected" and are shown as connected.
+     * While holding a transmitter, only empty neighbouring positions get the connect icon: those
+     * are the sides a new transmitter can be placed on.
+     */
+    private static ResourceLocation iconFor(Level level, GuideTarget target, Direction side) {
+        if (target.mode() == GuideTarget.Mode.PLACEMENT) {
+            return level.isEmptyBlock(target.pos().relative(side)) ? GuideTextures.CONNECT : null;
         }
-        return type == ConnectionType.PULL ? direction.scale(-1) : direction;
+        ConnectionType type = target.transmitter().getConnectionTypeRaw(side);
+        return type == null || type == ConnectionType.NONE ? GuideTextures.BLOCK : GuideTextures.CONNECT;
     }
 
     private static void addTexturedQuad(VertexConsumer consumer, PoseStack.Pose pose, Vec3 centre,
@@ -219,19 +202,5 @@ public final class GuideRenderer {
         int r = Mth.clamp((int) (red * 255.0F), 0, 255);
         int g = Mth.clamp((int) (green * 255.0F), 0, 255);
         return (a << 24) | (r << 16) | (g << 8) | 0xFF;
-    }
-
-    private static ConnectionType configuredType(Transmitter<?, ?, ?> transmitter, Direction side) {
-        ConnectionType type = transmitter.getConnectionTypeRaw(side);
-        return type == null ? ConnectionType.NONE : type;
-    }
-
-    private static ResourceLocation iconFor(ConnectionType type) {
-        return switch (type) {
-            case NORMAL -> GuideTextures.CONNECT;
-            case NONE -> GuideTextures.BLOCK;
-            case PUSH -> GuideTextures.PUSH;
-            case PULL -> GuideTextures.PULL;
-        };
     }
 }

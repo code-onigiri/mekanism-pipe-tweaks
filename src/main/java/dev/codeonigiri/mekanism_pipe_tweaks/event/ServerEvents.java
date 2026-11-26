@@ -1,6 +1,7 @@
 package dev.codeonigiri.mekanism_pipe_tweaks.event;
 
 import dev.codeonigiri.mekanism_pipe_tweaks.placement.TransmitterPlacementLogic;
+import dev.codeonigiri.mekanism_pipe_tweaks.tool.TransmitterItems;
 import mekanism.common.item.ItemConfigurator;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
@@ -32,7 +33,8 @@ public final class ServerEvents {
         if (player.getMainHandItem().getItem() instanceof ItemConfigurator) {
             return;
         }
-        TransmitterPlacementLogic.recordClick(player.getUUID(), level.dimension(), event.getPos(), event.getFace(), level.getGameTime());
+        TransmitterPlacementLogic.recordClick(player.getUUID(), level.dimension(), event.getPos(), event.getFace(),
+                TransmitterItems.blockOf(player.getMainHandItem()), level.getGameTime());
     }
 
     @SubscribeEvent

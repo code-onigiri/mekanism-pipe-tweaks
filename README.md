@@ -5,17 +5,21 @@ GregTech-style placement and connection behaviour for Mekanism transmitters
 other Mekanism addons, which are supported automatically:
 
 - Transmitters are placed with all sides disconnected.
-- If you place one while sneaking, the side facing the block you clicked
-  starts connected; placing against an existing transmitter also opens that
-  transmitter's facing side, so the pair actually connects.
-- A GregTech-style sided grid guide is shown only while holding the
-  Configurator (in one of its "Configurate" modes) and looking at a
-  transmitter. Holding a transmitter item does not show it.
-- Right-click any cell of the guide to cycle that side's connection type.
-  Sneaking is not required, and the whole block face is clickable, not just
-  the thin pipe silhouette.
-- No dedicated items; the Mekanism Configurator remains the only tool, and
-  placement itself is ordinary vanilla placement.
+- Placing one while sneaking opens the side facing the block you clicked.
+- Placing a transmitter against a same-genre transmitter connects the two facing
+  sides regardless of sneaking, like GregTech's pipe placement. The existing
+  transmitter's facing side is opened too, so the pair actually connects.
+- A GregTech-style sided grid guide is shown while holding the Configurator (in
+  one of its "Configurate" modes) and looking at a transmitter, and while
+  holding a transmitter item and looking at a same-genre transmitter.
+- With the Configurator, right-click any cell to toggle that side between
+  connected and disconnected. PUSH/PULL count as connected; there is no
+  4-state cycle. Sneaking is not required, and the whole block face is
+  clickable, not just the thin pipe silhouette.
+- While holding a transmitter, cells whose neighbouring position is empty show
+  a connect icon. Click one to place the held transmitter on that side,
+  connected to the looked-at transmitter.
+- No dedicated items; the Mekanism Configurator remains the only tool.
 
 ## Configuration
 
@@ -29,7 +33,8 @@ The common config file (`config/mekanism_pipe_tweaks-common.toml`) has these key
 | `enableHeat` | `true` | Apply the rules to Thermodynamic Conductors. |
 | `enableItem` | `true` | Apply the rules to Logistical Transporters. |
 | `connectClickedSide` | `true` | Enable the sneak-placement connection: while sneaking, open the side facing the clicked block. `false` leaves every side disconnected even when sneaking. |
-| `openCounterpartSide` | `true` | Also open the facing side of the transmitter that was placed against. |
+| `connectPlacedPipe` | `true` | When placed against a same-genre transmitter, connect the two facing sides regardless of sneaking. |
+| `openCounterpartSide` | `true` | Also open the facing side of a compatible neighbour transmitter when a side is connected, on placement or with the Configurator. |
 | `nonPlayerPlacement` | `"VANILLA"` | Dispensers/structures/other non-player placements: `VANILLA` keeps Mekanism's all-sides-connected default, `NONE` disconnects every side, `CLICKED` opens the side facing the block that was placed against. |
 
 A transmitter whose transmission type is disabled is left untouched: it keeps

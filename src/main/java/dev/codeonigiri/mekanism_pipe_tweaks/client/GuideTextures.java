@@ -5,14 +5,13 @@ import java.util.List;
 import net.minecraft.resources.ResourceLocation;
 
 public final class GuideTextures {
+    /** A side that is connected, or (in placement mode) an empty side a transmitter can go on. */
     public static final ResourceLocation CONNECT = texture("tool_pipe_connect");
+    /** A side that is disconnected. Placement mode draws nothing on occupied sides. */
     public static final ResourceLocation BLOCK = texture("tool_pipe_block");
-    public static final ResourceLocation PUSH = texture("tool_pipe_connect_push");
-    public static final ResourceLocation PULL = texture("tool_pipe_connect_pull");
-    public static final ResourceLocation TRIANGLE = texture("tool_triangle");
 
-    /** The per-state cell icons, in the order the renderer flushes their batches. */
-    public static final List<ResourceLocation> ICONS = List.of(CONNECT, BLOCK, PUSH, PULL);
+    /** The cell icons, in the order the renderer flushes their batches. */
+    public static final List<ResourceLocation> ICONS = List.of(CONNECT, BLOCK);
 
     private GuideTextures() {
     }
