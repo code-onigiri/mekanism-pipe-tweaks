@@ -1,10 +1,10 @@
 package dev.codeonigiri.mekanism_pipe_tweaks.connection;
 
+import dev.codeonigiri.mekanism_pipe_tweaks.tool.Configurators;
 import dev.codeonigiri.mekanism_pipe_tweaks.transmitter.Transmitters;
 import mekanism.api.text.EnumColor;
 import mekanism.common.MekanismLang;
 import mekanism.common.content.network.transmitter.Transmitter;
-import mekanism.common.item.ItemConfigurator;
 import mekanism.common.lib.transmitter.ConnectionType;
 import mekanism.common.tile.transmitter.TileEntityTransmitter;
 import net.minecraft.core.BlockPos;
@@ -17,7 +17,7 @@ public final class SideCycleLogic {
     }
 
     public static void apply(ServerPlayer player, BlockPos pos, Direction side) {
-        if (!(player.getMainHandItem().getItem() instanceof ItemConfigurator)) {
+        if (!Configurators.isCycling(player.getMainHandItem())) {
             return;
         }
         if (!player.canInteractWithBlock(pos, 1.0)) {

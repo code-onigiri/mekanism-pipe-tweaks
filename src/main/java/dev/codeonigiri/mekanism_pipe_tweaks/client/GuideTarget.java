@@ -1,10 +1,10 @@
 package dev.codeonigiri.mekanism_pipe_tweaks.client;
 
+import dev.codeonigiri.mekanism_pipe_tweaks.tool.Configurators;
 import dev.codeonigiri.mekanism_pipe_tweaks.transmitter.Transmitters;
 import java.util.Objects;
 import mekanism.common.block.transmitter.BlockTransmitter;
 import mekanism.common.content.network.transmitter.Transmitter;
-import mekanism.common.item.ItemConfigurator;
 import mekanism.common.tile.transmitter.TileEntityTransmitter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,7 +22,7 @@ public record GuideTarget(BlockPos pos, Direction face, GuideGeometry.Cell cell,
 
     public static GuideTarget resolve(Level level, Player player) {
         ItemStack held = player.getMainHandItem();
-        if (!(held.getItem() instanceof ItemConfigurator)) {
+        if (!Configurators.isCycling(held)) {
             return null;
         }
         return resolve(level, held, GuideTargeting.raycast(level, player));

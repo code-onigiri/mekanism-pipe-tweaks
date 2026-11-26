@@ -9,8 +9,11 @@ other Mekanism addons, which are supported automatically:
   starts connected; placing against an existing transmitter also opens that
   transmitter's facing side, so the pair actually connects.
 - A GregTech-style sided grid guide is shown only while holding the
-  Configurator and looking at a transmitter. Holding a transmitter item does
-  not show it.
+  Configurator (in one of its "Configurate" modes) and looking at a
+  transmitter. Holding a transmitter item does not show it.
+- Right-click any cell of the guide to cycle that side's connection type.
+  Sneaking is not required, and the whole block face is clickable, not just
+  the thin pipe silhouette.
 - No dedicated items; the Mekanism Configurator remains the only tool, and
   placement itself is ordinary vanilla placement.
 
