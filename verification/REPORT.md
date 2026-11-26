@@ -306,8 +306,8 @@ were deleted, and a clean `gradle clean build` was run for this fix round.
 * The temporary `build.gradle` run tweaks (`--quickPlayMultiplayer`,
   `-Dmpt.autotest`) and the `run-test-*` game directories were reverted/deleted.
 
-Repro helpers kept for reference: `verification/rcon_driver.py`,
-`verification/fetch_assets.py`.
+The one-off RCON and asset-fetch helpers were removed from the repository after verification;
+they remain recoverable from git history.
 
 ---
 
@@ -417,8 +417,7 @@ that configured connection type. No contradiction with the intended icon behavio
 found.
 
 Artifacts: `screenshot-5-mixed-guide.png`, `screenshot-6-all-types.png`,
-`logs/client-s6.log`, `logs/server-s6.log`, `logs/rcon-driver-s6.log`, driver
-`rcon_driver_s6.py`.
+`logs/client-s6.log`, `logs/server-s6.log`, `logs/rcon-driver-s6.log`.
 
 ---
 
@@ -541,7 +540,7 @@ the client readback. The captured screenshot is the PUSH state.
 [![screenshot-7-addon-guide.png](screenshot-7-addon-guide.png)](screenshot-7-addon-guide.png)
 
 Artifacts: `screenshot-7-addon-guide.png`, `logs/client-s7.log`, `logs/server-s7.log`,
-`logs/rcon-driver-s7.log`, driver `rcon_driver_s7.py`. The fake addon project remains at
+`logs/rcon-driver-s7.log`. The fake addon project remains at
 `~/workspace/mpt-fake-addon/` for reproduction; it is not part of the release.
 
 ### 7.4 Cleanup and release jar
