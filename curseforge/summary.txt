@@ -1,1 +1,1 @@
-GregTech-style placement for Mekanism transmitters: pipes and cables start fully disconnected, sneak-place to connect the side you clicked, with a GregTech-style 3x3 sided guide on the Configurator. Addon transmitters supported automatically.
+GregTech-style placement for Mekanism transmitters: pipes start disconnected, auto-connect to same-genre pipes, with a 3x3 guide for the Configurator and while holding a pipe. Addon transmitters supported automatically.

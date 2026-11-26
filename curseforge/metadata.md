@@ -40,24 +40,26 @@
 2. `02-placement-single-side.png` — 設置時はクリック面だけ接続
 3. `03-all-transmitter-types.png` — 全トランスミッター種別でのガイド
 4. `04-addon-transmitter-support.png` — 他アドオンのトランスミッターでも動作
-5. `05-cell-select-placement.png` — セル選択設置
+5. `05-cell-select-placement.png` — セル選択設置（v0.3.0 で復活）
 
 ## ファイル投稿
 
-### v0.1.1（最新・推奨はこちらだけ先に上げる）
+### v0.3.0（最新・推奨）
 
-- ファイル: `build/libs/mekanism_pipe_tweaks-0.1.1.jar`（GitHubリリースにも添付済み）
-- Display name: `Mekanism Pipe Tweaks 0.1.1 (1.21.1)`
+- ファイル: `build/libs/mekanism_pipe_tweaks-0.3.0.jar`（GitHubリリース v0.3.0 にも添付済み）
+- Display name: `Mekanism Pipe Tweaks 0.3.0 (1.21.1)`
 - Release type: Release
 - Game versions: 1.21.1 / NeoForge
-- Changelog: `changelog-0.1.1.md`
+- Changelog: `changelog-0.3.0.md`
 - Required dependency: Mekanism
+- クライアントとサーバーの両方で 0.3.0 が必要（ネットワークプロトコル 3）
+- Minecraft 1.20.1 / Forge 版は CF には上げず、GitHub リリース `v0.3.0-1.20.1` で配布
 
-### v0.1.0（旧版として残す場合）
+### 旧版（残す場合）
 
-- ファイル: GitHubリリース v0.1.0 の jar
-- Display name: `Mekanism Pipe Tweaks 0.1.0 (1.21.1)`
-- Changelog: `changelog-0.1.0.md`
+- v0.2.0: GitHubリリース v0.2.0 の jar / Changelog: `changelog-0.2.0.md`
+- v0.1.1: GitHubリリース v0.1.1 の jar / Changelog: `changelog-0.1.1.md`
+- v0.1.0: GitHubリリース v0.1.0 の jar / Changelog: `changelog-0.1.0.md`
 
 ## 注意
 
