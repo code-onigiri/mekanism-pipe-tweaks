@@ -32,8 +32,14 @@ public final class MPTConfig {
                     "transmitter, that transmitter's counterpart side). When false every side starts",
                     "disconnected even when sneaking; without sneaking nothing is opened either way.")
             .define("connectClickedSide", true);
+    public static final ForgeConfigSpec.BooleanValue CONNECT_PLACED_PIPE = BUILDER
+            .comment("When a transmitter is placed against a same-genre transmitter, connect the two",
+                    "facing sides regardless of sneaking (GregTech's pipe placement behaviour).")
+            .define("connectPlacedPipe", true);
     public static final ForgeConfigSpec.BooleanValue OPEN_COUNTERPART_SIDE = BUILDER
-            .comment("When placing against another transmitter, also open that transmitter's facing side.")
+            .comment("When connecting a side (on placement or with the Configurator), also open a",
+                    "compatible neighbour transmitter's facing side. Mekanism needs both sides open",
+                    "before the pair actually connects.")
             .define("openCounterpartSide", true);
     public static final ForgeConfigSpec.EnumValue<NonPlayerPlacement> NON_PLAYER_PLACEMENT = BUILDER
             .comment("Placement by dispensers, structures and other non-player sources.",

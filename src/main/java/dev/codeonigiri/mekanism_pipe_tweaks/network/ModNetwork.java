@@ -10,15 +10,16 @@ import net.minecraftforge.network.simple.SimpleChannel;
  * The wire contents and the server-side semantics follow the 1.21.1 build:
  *
  * <ul>
- *   <li>{@link CycleSideMessage}: cycle one side's connection type on a transmitter.</li>
+ *   <li>{@link CycleSideMessage}: toggle one side's connection on a transmitter.</li>
+ *   <li>{@link PlaceTransmitterMessage}: place the held transmitter on a guide cell.</li>
  * </ul>
  */
 public final class ModNetwork {
     /**
-     * Protocol version 2: the place-transmitter message was removed in 0.2.0, so the channel
-     * is incompatible with 0.1.x clients and servers.
+     * Protocol version 3: the placement-guide message returned in 0.3.0, and the toggle became
+     * two-state. Older clients/servers are incompatible.
      */
-    private static final String PROTOCOL_VERSION = "2";
+    private static final String PROTOCOL_VERSION = "3";
 
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
             new ResourceLocation(MekanismPipeTweaks.MOD_ID, "main"),
@@ -33,5 +34,7 @@ public final class ModNetwork {
         int id = 0;
         CHANNEL.registerMessage(id++, CycleSideMessage.class,
                 CycleSideMessage::encode, CycleSideMessage::decode, CycleSideMessage::handle);
+        CHANNEL.registerMessage(id++, PlaceTransmitterMessage.class,
+                PlaceTransmitterMessage::encode, PlaceTransmitterMessage::decode, PlaceTransmitterMessage::handle);
     }
 }

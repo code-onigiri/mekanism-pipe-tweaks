@@ -72,7 +72,15 @@ public final class Transmitters {
      * {@link Transmitter}, so this works for addon blocks without a lookup table.
      */
     public static boolean isEnabled(Block block) {
-        return isAnyEnabled(BLOCK_TYPES.computeIfAbsent(block, Transmitters::typesOf));
+        return isAnyEnabled(transmissionTypes(block));
+    }
+
+    /**
+     * The transmission types a transmitter block supports, read from a detached instance of its own
+     * tile entity and cached per block. An empty set means the types could not be determined.
+     */
+    public static Set<TransmissionType> transmissionTypes(Block block) {
+        return BLOCK_TYPES.computeIfAbsent(block, Transmitters::typesOf);
     }
 
     private static boolean isAnyEnabled(Set<TransmissionType> types) {

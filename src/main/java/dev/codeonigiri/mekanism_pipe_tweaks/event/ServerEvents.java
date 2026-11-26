@@ -1,14 +1,10 @@
 package dev.codeonigiri.mekanism_pipe_tweaks.event;
 
 import dev.codeonigiri.mekanism_pipe_tweaks.placement.TransmitterPlacementLogic;
-import dev.codeonigiri.mekanism_pipe_tweaks.transmitter.Transmitters;
-import mekanism.common.content.network.transmitter.Transmitter;
+import dev.codeonigiri.mekanism_pipe_tweaks.tool.TransmitterItems;
 import mekanism.common.item.ItemConfigurator;
-import mekanism.common.tile.transmitter.TileEntityTransmitter;
-import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
@@ -16,7 +12,11 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 /**
- * Server-side event entry points for the placement rules and the guide's connection cycling.
+ * Server-side event entry points for the placement rules.
+ *
+ * <p>Connection toggling is driven entirely by {@code CycleSideMessage}; the client cancels the
+ * right-click at the input stage, so no use-on packet reaches the server for a toggle click. A
+ * Configurator click is therefore never recorded as a placement click.
  */
 public final class ServerEvents {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -28,22 +28,13 @@ public final class ServerEvents {
             return;
         }
         Player player = event.getEntity();
-
-        // Shift + configurator on a governed transmitter cycles the hovered cell's connection type.
-        // Cancelling here also skips recording below, so a cycle click is never mistaken for a
-        // placement click.
-        if (player.isShiftKeyDown() && player.getMainHandItem().getItem() instanceof ItemConfigurator) {
-            TileEntityTransmitter tile = Transmitters.tileAt(level, event.getPos());
-            Transmitter<?, ?, ?> transmitter = tile == null ? null : tile.getTransmitter();
-            if (transmitter != null && Transmitters.isEnabled(transmitter)) {
-                event.setCanceled(true);
-                event.setCancellationResult(InteractionResult.SUCCESS);
-                return;
-            }
+        // A Configurator (in any mode) does not place a transmitter, so its click must not seed the
+        // placement matching used to open the clicked side.
+        if (player.getMainHandItem().getItem() instanceof ItemConfigurator) {
+            return;
         }
-
-        Direction face = event.getFace();
-        TransmitterPlacementLogic.recordClick(player.getUUID(), level.dimension(), event.getPos(), face, level.getGameTime());
+        TransmitterPlacementLogic.recordClick(player.getUUID(), level.dimension(), event.getPos(), event.getFace(),
+                TransmitterItems.blockOf(player.getMainHandItem()), level.getGameTime());
     }
 
     @SubscribeEvent
